@@ -1,0 +1,7 @@
+dist/
+node_modules/
+.publish/
+.git/
+/_changed
+/_original
+package-lock.json

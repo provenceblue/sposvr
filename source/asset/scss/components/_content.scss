@@ -1,0 +1,51 @@
+@use "../base/variable"as v;
+@use "../base/mixin"as m;
+
+.round__box{
+    display:block;
+    background-color: #fff;
+    border-radius: v.$padding-5;
+    padding: v.$padding-8;
+    height:100%;
+    &.outline{
+        border: 1px solid v.$gray-color-20;
+    }
+    &.bg__gray{
+        background-color: v.$gray-color-5;
+    }
+}
+.flag{
+    display: inline-flex;
+    font-size: v.$font-body-small;
+    font-weight: v.$font-weight-semi-bold;
+    background-color: #fff;
+    border-radius: 32px;
+    padding: v.$padding-3 v.$padding-6;
+    text-transform: capitalize;
+    &.emergency{
+        background-color: v.$color-dager;
+        color: #fff;
+        span{
+            display:inline-flex;
+            padding-left: v.$padding-7;
+            background: url(../images/common/ico-siren.svg) no-repeat left center / 16px;
+        }
+    }
+    &.new{
+        background-color: v.$color-dager-lighter;
+        color: v.$color-dager;
+    }
+    &.noti{
+        background-color: v.$color-information-lighter;
+        color: v.$color-information;
+    }
+    &.data {
+        background-color: v.$color-success-lighter;
+        color: v.$color-success;
+    }
+    &.small{
+        border-radius: 4px;
+        padding: 0 8px;
+        font-weight: v.$font-weight-regular;
+    }
+}

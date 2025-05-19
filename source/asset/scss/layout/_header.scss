@@ -1,0 +1,421 @@
+@use "../base/variable"as v;
+@use "../base/mixin"as m;
+
+.header {
+    &__inner {
+        @include m.flex-center();
+
+        &:first-child {
+            background-color: #EEF2F7;
+            height: 60px;
+        }
+    }
+
+    .notice__area {
+        @include m.flex-between();
+        align-items: center;
+        width: v.$content-size;
+
+        div>ul {
+            display: inline-flex;
+            li > span{
+                line-height:36px;
+            }
+            .age{
+                padding-left: 32px;
+                background: url(../images/common/ico_megaphone.svg) no-repeat center left;
+                span{
+                    color: v.$color-information;
+                    font-weight: v.$font-weight-semi-bold;
+                }
+            }
+            .maximum{ 
+                margin-left: v.$padding-2;
+                padding-right: 78px;
+                background: url(../images/common/img-sale-notice.png) no-repeat center right /70px;
+                span{
+                    color: v.$color-dager-dark;
+                    font-weight: v.$font-weight-semi-bold;
+                }
+            }
+            .my_store{
+                span{
+                   @include m.ellipsis(330px, 1);                
+                }
+            }
+            .store{
+                display: flex;
+                align-items: center;
+            }
+            .btn-alam{
+                padding:6px;
+                span{
+                    display:block;
+                    @include m.square(24px);
+                    background: url(../images/common/ico-bell.svg) no-repeat center center /24px;
+                    @include m.hidden-text();
+                }
+            }
+        }
+    }
+
+    .logo__area {
+        display: flex;
+        width: v.$content-size;
+        background-color: #fff;
+        height:80px;
+        align-items: center;
+
+        a{
+            display: flex;
+            align-items: center;
+            span{
+                font-size: v.$font-heading-medium;
+                color: v.$gray-color-50;
+                padding-left: v.$padding-3;
+            }
+        }
+    }
+
+    .gnb {
+        @include m.position($t: 60px, $l: 0);
+        width: 100%;
+
+        &__inner {
+            @include m.set-inner();
+
+            ul {
+                @include m.flex-center-all;
+                margin: 0;
+                height:80px;
+                column-gap: v.$gap-5;
+                transition: all 0.188s ease-in;
+
+                li a{
+                    display: block;
+                    padding:0 v.$padding-6;
+                    font-weight: v.$font-weight-bold;
+                    font-size: v.$font-body-large;
+                    color: v.$gray-color-70;
+                }
+            }
+        }
+    }
+
+
+}
+
+// .header {
+//     &__inner {
+//         position: relative;
+//         max-width: 1140px;
+//         width: 100%;
+//         margin: 0 auto;
+//         padding: 0 36px;
+
+//         &__box {
+//             padding: 18px 0 40px;
+//             background: #fff;
+//         }
+
+//         &__wrap {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+//             max-width: 1140px;
+//             width: 100%;
+//             margin: 0 auto;
+//         }
+//     }
+
+//     &--fixed {
+//         .h1-logo {
+//             top: 16px;
+//         }
+//         .header__inner {
+//             padding: 0;
+
+//             &__box {
+//                 position: fixed;
+//                 top: 0;
+//                 left: 0;
+//                 right: 0;
+//                 z-index: 1;
+//                 padding: 16px 0;
+//                 // padding: 0;
+//             }
+
+//             &__wrap {
+//                 align-items: center;
+//                 padding: 0 36px;
+//             }
+//         }
+//     }
+// }
+
+// .h1-logo {
+//     width: 194px;
+//     height: 42px;
+//     background: url(@/assets/images/common/h1_logo_navy.png) no-repeat;
+//     font-size: 0;
+//     cursor: pointer;
+// }
+
+// .gnb {
+//     display: flex;
+//     gap: 37px;
+//     justify-content: right;
+
+//     &__anchor {
+//         position: relative;
+//         font-size: 22px;
+//         line-height: 24px;
+//         font-weight: 700;
+//         color: #222;
+//         &--primary {
+//             color: #1d64cc;
+//         }
+//         &--active {
+//             &:after {
+//                 content: "";
+//                 position: absolute;
+//                 bottom: -4px;
+//                 left: 0;
+//                 width: 100%;
+//                 height: 3px;
+//                 background-color: #132442;
+//             }
+//         }
+//     }
+// }
+
+// .utility-menu {
+//     display: flex;
+//     justify-content: flex-end;
+//     gap: 16px;
+//     padding-top: 16px;
+
+//     &__anchor {
+//         font-size: 14px;
+//         font-weight: 400;
+//         line-height: 24px;
+//         color: #777;
+//         &--primary {
+//             color: #ff8a53;
+//         }
+//     }
+// }
+
+// .h2-title {
+//     @include mixin.hiddenText;
+// }
+
+// .button-utility,
+// .button-navigation {
+//     display: none;
+// }
+
+// .mypage {
+//     display: none;
+// }
+
+// @media (max-width: 1140px) {
+//     .gnb {
+//         &__anchor {
+//             font-size: 19px;
+//         }
+//     }
+// }
+
+// @media (max-width: 1024px) {
+//     .header {
+//         &__inner {
+//             width: 100%;
+//             padding: 20px 0;
+
+//             &__box {
+//                 padding: 0;
+//             }
+//             &__wrap {
+//                 padding: 0;
+//             }
+//         }   
+//         &--fixed {            
+//             .h1-logo {
+//                 top: 0;
+//             }
+
+//             .header__inner {
+//                 padding: 0;
+//                 &__box {
+//                     padding: 20px 0;
+//                 }
+//                 &__wrap {
+//                     padding: 0;
+//                 }
+//             }
+//             .utility-menu {
+//                 display: none;
+//             }
+//         }
+//     }
+
+//     .h1-logo {
+//         position: relative;
+//         top: 0;
+//         left: 0;
+//         width: 110px;
+//         height: 24px;
+//         background: url(@/assets/images/common/m_h1_logo_navy.png) no-repeat 0 0 / 100%;
+//         margin: auto;
+//         font-size: 0;
+
+//     }
+
+//     .gnb,
+//     .utility-menu {
+//         display: none;
+//     }
+
+//     .button-utility,
+//     .button-navigation {
+//         display: block;
+//         width: 32px;
+//         height: 32px;
+//         position: absolute;
+//         top: 16px;
+//         left: 16px;
+//         background-position: 50% 50%;
+//         background-repeat: no-repeat;
+//         background-size: 100%;
+//         text-indent: -9999px;
+//         z-index: 1;
+
+//         span {
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             width: 24px;
+//             height: 2px;
+//             background: #132442;
+//             transform: translate(-50%, -50%);
+//             transition: all 0.5s;
+
+//             &:before,
+//             &:after {
+//                 content: "";
+//                 width: 100%;
+//                 height: 2px;
+//                 position: absolute;
+//                 background: #132442;
+//                 transition: all 0.5s;
+//             }
+
+//             &:before {
+//                 top: -7px;
+//                 left: 0;
+//             }
+
+//             &:after {
+//                 top: 7px;
+//                 right: 0;
+//             }
+//         }
+//     }
+
+//     .button-utility {
+//         position: fixed;
+//         left: auto;
+//         right: 16px;
+//         background-image: url(@/assets/images/common/m_btn_util.png);
+//     }
+
+//      .header.active .btn_navigation span {
+//          width: 2.6rem;
+//          background: transparent;
+//      }
+
+//      .header.active .btn_navigation span:before,
+//      .header.active .btn_navigation span:after {
+//          background: rgba(200, 200, 200, 1);
+//      }
+
+//      .header.active .btn_navigation span:before {
+//          top: 0;
+//          transform: rotate(45deg);
+//      }
+
+//      .header.active .btn_navigation span:after {
+//          top: 0;
+//          width: 100%;
+//          transform: rotate(-45deg);
+//      }
+
+//     .mypage {
+//         display: none;
+//         position: fixed;
+//         top: 64px;
+//         right: 16px;
+//         padding: 16px;
+//         border: 1px solid #eaeaea;
+//         border-radius: 8px;
+//         background: #fff;
+//         z-index: 1;
+
+//         &--active {
+//             display: block;
+//         }
+
+//         &__item {
+//             padding-bottom: 12px;
+
+//             &:last-child {
+//                 padding-bottom: 0;
+//             }
+//         }
+
+//         &__anchor {
+//             position: relative;
+//             color: #ccc;
+//             font-weight: 700;
+//             line-height: 18px;
+//             padding-left: 36px;
+
+//             &:before {
+//                 content: "";
+//                 position: absolute;
+//                 top: 50%;
+//                 left: 0;
+//                 width: 24px;
+//                 height: 24px;
+//                 background-repeat: no-repeat;
+//                 background-size: 24px 24px;
+//                 margin-top: -12px;
+//             }
+
+//             &--logout {
+//                 &:before {
+//                     background-image: url(@/assets/images/common/m_icon_logout.png);
+//                 }
+//             }
+
+//             &--login {
+//                 &:before {
+//                     background-image: url(@/assets/images/common/m_icon_login.png);
+//                 }
+//             }
+
+//             &--join {
+//                 &:before {
+//                     background-image: url(@/assets/images/common/m_icon_join.png);
+//                 }
+//             }
+
+//             &--edit {
+//                 &:before {
+//                     background-image: url(@/assets/images/common/m_icon_edit.png);
+//                 }
+//             }
+//         }
+//     }
+// }

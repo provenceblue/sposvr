@@ -1,0 +1,58 @@
+@use 'variable' as v ;
+@use 'mixin' as m;
+
+body{
+  font-size: v.$font-body-medium;
+  line-height: v.$line-height-base;
+  letter-spacing: v.$letter-spacing-base;
+  font-family: v.$font-family-base;
+  color: v.$text-color-base;
+  font-weight: v.$font-weight-regular;
+  
+}
+
+.skip__navi {
+  height: 0;
+  .skipLink {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    z-index: 5000;
+    overflow: hidden;
+    &:focus,
+    &:active {
+      top: 0px;
+      left: 0px;
+      color: rgb(255, 255, 255);
+      padding: 10px 20px;
+      background: rgb(30, 100, 186);
+      }
+  }
+}
+
+.blind {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: -9999em;
+  left: -9999em;
+  display: block;
+  text-indent: -9999em;
+  font-size: 0px;
+  line-height: 0;
+}
+.h1 {
+  font-size: v.$font-heading-xlarge;
+  font-weight: v.$font-weight-bold;
+}
+
+.h2 {
+  font-size: v.$font-heading-large;
+  font-weight: v.$font-weight-bold;
+}
+
+.h3 {
+  font-size: v.$font-heading-medium;
+  font-weight: v.$font-weight-bold;
+}

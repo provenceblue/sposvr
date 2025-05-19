@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>동행복권 판매인 포탈</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            text-align: center;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            
+            background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83,1) 100%);
+        }
+
+        .gate {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: #fff;
+        }
+
+        .gate h1 {
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        .flex-box {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        .flex-box>div {
+            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 15px 10px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .flex-box>div+div {
+            margin-left: 15px;
+        }
+
+        .flex-box a {
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .flex-box a:hover {
+            text-decoration: underline;
+            font-weight: 400;
+        }
+
+        .flex-box li+li {
+            margin-top: 20px;
+        }
+
+        .flex-box li:last-child {
+            margin-bottom: 20px;
+        }
+
+        .flex-box .title {
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gate">
+        <h1>동행복권 판매인 포탈</h1>
+        <div class="flex-box">
+            <div>
+                <ul>
+                    <li class="title"><span>서비스</span></li>
+                    <li><a href="../html/__guide/index.html" target="_blank">가이드</a></li>
+                    <li><a href="../html/login/login.html" target="_blank">로그인</a></li>
+                    <li><a href="./02.html" target="_blank">메인</a></li>
+                    <li><a href="../html/contract/index.html" target="_blank">전자계약</a></li>
+                    <li><a href="./04.html" target="_blank">판매점 관리</a></li>
+                    <li><a href="./05.html" target="_blank">영업 정보</a></li>
+                    <li><a href="./06.html" target="_blank">영업 지원</a></li>
+                    <li><a href="./07.html" target="_blank">소통</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

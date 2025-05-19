@@ -1,0 +1,126 @@
+// ------------------------------------
+// Sass variables.
+// ------------------------------------
+//fonts
+$font-family-base: "Pretendard GOV",
+sans-serif;
+//line-height
+$line-height-base: 1.5 !default;
+//letter spacing
+$letter-spacing-base:  0 !default;
+$letter-spacing-large: 1px !default;
+//primary color
+$primary-color: #11957D !default;
+$primary-color-lighter: #F3FAF8 !default;
+$primary-color-light: #99D5C7 !default;
+$primary-color-dark: #0E6C5E !default;
+$primary-color-darker: #0A594B !default;
+//secondary-color
+$secondary-color: #4C881E !default;
+$secondary-color-lighter: #F2F8ED !default;
+$secondary-color-dark: #3B6F19 !default;
+$secondary-color-darker: #2D5112 !default;
+//gray color
+$gray-color-0: #fff !default;
+$gray-color-5: #F4F5F6 !default;
+$gray-color-10: #E6E8EA !default;
+$gray-color-20: #CDD1D5 !default;
+$gray-color-30: #B1B8BE !default;
+$gray-color-40: #8A949E !default;
+$gray-color-50: #6D7882 !default;
+$gray-color-60: #58616A !default;
+$gray-color-70: #464C53 !default;
+$gray-color-80: #33363D !default;
+$gray-color-90: #1E2124 !default;
+$gray-color-95: #131416 !default;
+$gray-color-100: #000 !default;
+//color
+$color-dager-lighter: #FDEFEC !default;
+$color-dager-light: #F7AFA1 !default;
+$color-dager: #DE3412 !default;
+$color-dager-dark: #BD2C0F !default;
+$color-dager-darker: #8A240F !default;
+$color-warning-lighter: #FFF3DB !default;
+$color-warning-light: #FFE0A3 !default;
+$color-warning: #FFB114 !default;
+$color-warning-dark: #C78500 !default;
+$color-warning-darker: #8A5C00 !default;
+$color-success-lighter: #EAF6EC !default;
+$color-success-light: #A9DAB4 !default;
+$color-success: #228738 !default;
+$color-success-dark: #285D33 !default;
+$color-success-darker: #122B18 !default;
+$color-information-lighter: #E7F4FE !default;
+$color-information-light: #9ED2FA !default;
+$color-information: #096AB3 !default;
+$color-information-dark: #053961 !default;
+$color-information-darker: #021A2C !default;
+//font color
+$text-color-base: $gray-color-90 !default;
+$text-color-sub: $gray-color-70 !default;
+//font weight
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 700 !default;
+//content size 
+$content-size: 1280px !default;
+//break point
+$breakpoint-small: 360px !default;
+$breakpoint-medium: 768px !default;
+$breakpoint-large: 1024px !default;
+$breakpoint-xlarge: 1280px !default;
+$breakpoint-xxlarge: 1440px !default;
+//spacing
+$spacing-small: 8px !default;
+$spacing-medium: 16px !default;
+$spacing-large: 24px !default;
+//display
+$font-display-large:60px !default;
+$font-display-medium:44px !default;
+$font-display-small:36px !default;
+//font body
+$font-body-large:19px !default;
+$font-body-medium:17px !default;
+$font-body-small:15px !default;
+$font-body-xsmall:13px !default;
+//font heading
+$font-heading-xlarge:40px !default;
+$font-heading-large:32px !default;
+$font-heading-medium:24px !default;
+$font-heading-small:19px !default;
+$font-heading-xsmall:17px !default;
+$font-heading-xxsmall:15px !default;
+//gap
+$gap-1: 2px !default;
+$gap-2: 4px !default;
+$gap-3: 8px !default;
+$gap-4: 12px !default;
+$gap-5: 16px !default;
+$gap-6: 20px !default;
+$gap-7: 24px !default;
+$gap-8: 32px !default;
+$gap-9: 40px !default;
+$gap-10: 48px !default;
+$gap-11: 64px !default;
+$gap-12: 80px !default;
+//padding
+$padding-1: 2px !default;
+$padding-2: 4px !default;
+$padding-3: 8px !default;
+$padding-4: 10px !default;
+$padding-5: 12px !default;
+$padding-6: 16px !default;
+$padding-7: 20px !default;
+$padding-8: 24px !default;
+$padding-9: 32px !default;
+$padding-10: 40px !default;
+//icon size
+$icon-size-1: 12px !default;
+$icon-size-2: 16px !default;
+$icon-size-3: 20px !default;
+$icon-size-4: 24px !default;
+$icon-size-5: 32px !default;
+$icon-size-6: 40px !default;
+//content color
+$color-surface-box: #EEF2F7 !default;

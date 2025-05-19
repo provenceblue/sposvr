@@ -1,0 +1,393 @@
+<!--<!DOCTYPE html>-->
+<html lang="ko">
+
+<head>
+
+  <head>
+    @@include('@@webRoot/html/_include/head.html',{
+    "title": "base | 관리자 | Guide "
+    })
+
+    <link rel="stylesheet" href="./resources/guide.css">
+    <link rel="stylesheet" href="./resources/jquery-ui.css">
+    <link rel="stylesheet" href="./resources/a11y-dark.min.css">
+    <script src="./resources/highlight.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </head>
+
+<body class="guide">
+  <div class="guide-header">
+    <h1><a href="index.html">UI GUIDE</a></h1>
+    <ul class="gnb">
+      <li class="is-active"><a href="base.html">Base</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="layout.html">Layout</a></li>
+      <li><a href="page.html">Page</a></li>
+    </ul>
+  </div>
+  <div class="guide-container">
+    <!-- <div class="box">
+      <h2>타이틀</h2>
+      <dl class="flex-dl">
+        <dt>
+          <pre>
+            <code>
+            </code>
+          </pre>
+        </dt>
+        <dd data-description="heading">
+          <h1 class="h1">페이지 타이틀</h1>
+          <h2 class="h2">타이틀 [완료]</h2>
+          <h3 class="h3">팝업 타이틀 / 바텀시트 타이틀</h3>
+          <h4 class="h4">항목 타이틀 / 앱바 타이틀</h4>
+        </dd>
+      </dl>
+    </div> -->
+    <!--form (checkbox)-->
+    <div class="box">
+      <h2>체크박스</h2>
+      <dl class="flex-dl">
+        <dt>
+          <pre><code></code></pre>
+        </dt>
+        <dd data-description="checkbox">
+          <!--checkbox default-->
+          <span class="form__area">
+            <input type="checkbox" class="checkbox__input" id="chk1">
+            <label for="chk1">체크박스</label>
+          </span>
+          <!--checkbox checked-->
+          <span class="form__area">
+            <input type="checkbox" class="checkbox__input" id="chk2" checked>
+            <label for="chk2">체크박스(checked)</label>
+          </span>
+          <!--checkbox disabled-->
+          <span class="form__area">
+            <input type="checkbox" class="checkbox__input" id="chk2" disabled>
+            <label for="chk2">체크박스(disabled)</label>
+          </span>
+          <!--checkbox disabled checked-->
+          <span class="form__area">
+            <input type="checkbox" class="checkbox__input" id="chk3" disabled checked>
+            <label for="chk3">체크박스(disabled checked)</label>
+          </span>
+          <!--checkbox large size-->
+          <span class="form__area">
+            <input type="checkbox" class="checkbox__input large" id="chk4">
+            <label for="chk4">체크박스(large)</label>
+          </span>
+          <!--checkbox large size disabled-->
+          <span class="form__area">
+            <input type="checkbox" class="checkbox__input large" id="chk5" disabled>
+            <label for="chk4">체크박스(large)</label>
+          </span>
+        </dd>
+      </dl>
+    </div>
+
+    <!--form (radio)-->
+    <div class="box">
+      <h2>라디오박스</h2>
+      <dl class="flex-dl">
+        <dt>
+          <pre>
+            <code>
+            </code>
+          </pre>
+        </dt>
+        <dd data-description="radio">
+          <!--radio default-->
+          <span class="form__area">
+            <input type="radio" class="radio__input" id="radioSample01" name="radioSample">
+            <label for="radioSample01">라디오</label>
+          </span>
+          <!--radio checked-->
+          <span class="form__area">
+            <input type="radio" class="radio__input" id="radioSample02" name="radioSample" checked>
+            <label for="radioSample02">라디오(checked)</label>
+          </span>
+          <!--radio disabled-->
+          <span class="form__area">
+            <input type="radio" class="radio__input" id="radioSample03" name="radioSample2" disabled>
+            <label for="radioSample03">라디오(disabled)</label>
+          </span>
+          <!--radio disabled checked-->
+          <span class="form__area">
+            <input type="radio" class="radio__input" id="radioSample04" name="radioSample2" disabled checked>
+            <label for="radioSample04">라디오(disabled checked)</label>
+          </span>
+          <!--radio large size-->
+          <span class="form__area">
+            <input type="radio" class="radio__input large" id="radioSample05" name="radioSample3" checked>
+            <label for="radioSample05">라디오(large)</label>
+          </span>
+          <!--radio large size disabled-->
+          <span class="form__area">
+            <input type="radio" class="radio__input large" id="radioSample06" name="radioSample3"
+              disabled>
+            <label for="radioSample06">라디오(large)</label>
+          </span>
+        </dd>
+      </dl>
+    </div>
+
+
+    <!--INPUT-->
+    <div class="box">
+      <h2>입력폼</h2>
+      <dl class="flex-dl">
+        <dt>
+          <pre>
+            <code>
+            </code>
+          </pre>
+        </dt>
+        <dd data-description="input type">
+          <!--input value-->
+          <span class="form__area">
+            <input type="text" class="input__box" value="value">
+          </span>
+          <hr>
+          <!--input placeholder-->
+          <span class="form__area">
+            <input type="text" class="input__box" placeholder="placeholder">
+          </span>
+          <hr>
+          <!--input full size-->
+          <span class="form__area">
+            <input type="text" class="input__box full" placeholder="width 100%">
+          </span>
+          <hr>
+          <!--input warning-->
+          <span class="form__area">
+            <input type="text" class="input__box warning" placeholder="warning">
+          </span>
+          <hr>
+          <!--input disabled-->
+          <span class="form__area">
+            <input type="text" class="input__box" placeholder="disabled" disabled value="">
+          </span>
+          <hr>
+          <!--input small size-->
+          <span class="form__area">
+            <input type="text" class="input__box small" placeholder="small size">
+          </span>
+          <hr>
+          <!--input large size-->
+          <span class="form__area">
+            <input type="text" class="input__box large" placeholder="large size">
+          </span>
+        </dd>
+        <dd data-description="textarea">
+          <!--textarea default-->
+          <span class="form__area full">
+            <textarea name="" id="" class="text__box">내용텍스트</textarea>
+          </span>
+          <hr>
+          <!--textarea placeholder-->
+          <span class="form__area full">
+            <textarea name="" id="" class="text__box" placeholder="입력해주세요."></textarea>
+          </span>
+          <hr>
+          <!--textarea warning-->
+          <span class="form__area full">
+            <textarea name="" id="" class="text__box warning" placeholder="에러입니다."></textarea>
+          </span>
+          <hr>
+          <!--textarea disabled-->
+          <span class="form__area full">
+            <textarea name="" id="" class="text__box " placeholder="비활성화" disabled></textarea>
+          </span>
+        </dd>
+
+      </dl>
+    </div>
+    <div class="box">
+      <h2>셀렉트박스</h2>
+      <dl class="flex-dl">
+        <dt>
+          <pre>
+            <code>
+            </code>
+          </pre>
+        </dt>
+        <dd data-description="select">
+          <!--select-->
+          <div class="form__area">
+            <span class="select__label">선택해주세요.</span>
+            <select name="" id="formSelectSample01" title="타이틀" class="select__box">
+              <option selected disabled hidden></option>
+              <option value="1">선택 option 1</option>
+              <option value="2">선택 option 2</option>
+              <option value="3">선택 option 3</option>
+              <option value="4">선택 option 4</option>
+            </select>
+          </div>
+          <hr>
+          <!--select disabled-->
+          <div class="form__area">
+            <select name="" id="formSelectSample01" title="타이틀" class="select__box" disabled>
+              <option value="">disabled</option>
+              <option value="">선택 option 1</option>
+              <option value="">선택 option 2</option>
+              <option value="">선택 option 3</option>
+              <option value="">선택 option 4</option>
+            </select>
+          </div>
+          <hr>
+          <!--select warning-->
+          <div class="form__area">
+            <select name="" id="formSelectSample01" title="타이틀" class="select__box warning">
+              <option value="">Warning </option>
+              <option value="">선택 option 1</option>
+              <option value="">선택 option 2</option>
+              <option value="">선택 option 3</option>
+              <option value="">선택 option 4</option>
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <!--datepicker-->
+    <div class="box">
+      <h2>날짜입력</h2>
+      <dl class="flex-dl">
+        <dt>
+          <pre>
+            <code>
+            </code>
+          </pre>
+        </dt>
+        <dd data-description="datepicker">
+          <!--datepicker-->
+          <div class="form__area">
+            <input id="datepicker" v-model="searchDate" type="text" class="input__box date__picker"
+              data-target="#operationBegin" data-toggle="datetimepicker" title="시작날짜 선택" placeholder="기간입력">
+          </div>
+          <hr>
+          <!--datepicker small size-->
+          <div class="form__area">
+            <input id="datepicker2" v-model="searchDate" type="text" class="input__box date__picker small"
+              data-target="#operationBegin" data-toggle="datetimepicker" title="시작날짜 선택" placeholder="기간입력">
+          </div>
+          <hr>
+          <!--datepicker large size-->
+          <div class="form__area">
+            <input id="datepicker3" v-model="searchDate" type="text" class="input__box date__picker large"
+              data-target="#operationBegin" data-toggle="datetimepicker" title="시작날짜 선택" placeholder="기간입력">
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <!--button-->
+    <div class="box">
+      <h2>버튼</h2>
+      <dl class="flex-dl">
+        <dt>
+          <pre>
+            <code>
+            </code>
+          </pre>
+        </dt>
+        <dd data-description="size: medium">
+          <!--size: medium-->
+          <div class="btn-group">
+          <button type="button" class="btn primary"><span>버튼</span></button>
+          <button type="button" class="btn primary outline"><span>버튼</span></button>
+          <button type="button" class="btn tertiary"><span>버튼</span></button>
+          <button type="button" class="btn tertiary outline"><span>버튼</span></button>
+          <!--disabled-->
+          <button type="button" class="btn primary" disabled><span>버튼</span></button>
+          <button type="button" class="btn primary outline" disabled><span>버튼</span></button>
+          <button type="button" class="btn tertiary" disabled><span>버튼</span></button>
+          <button type="button" class="btn tertiary outline" disabled><span>버튼</span></button>
+          </div>
+        </dd>
+        <dd data-description="size: large">
+          <!--size: large-->
+          <div class="btn-group">
+            <button type="button" class="btn primary large"><span>버튼</span></button>
+            <button type="button" class="btn primary outline large"><span>버튼</span></button>
+            <button type="button" class="btn tertiary large"><span>버튼</span></button>
+            <button type="button" class="btn tertiary outline large"><span>버튼</span></button>
+            <!--disabled-->
+            <button type="button" class="btn primary large" disabled><span>버튼</span></button>
+            <button type="button" class="btn primary outline large" disabled><span>버튼</span></button>
+            <button type="button" class="btn tertiary large" disabled><span>버튼</span></button>
+            <button type="button" class="btn tertiary outline large" disabled><span>버튼</span></button>
+          </div>
+        </dd>
+        <dd data-description="size: small">
+          <!--size: small-->
+          <div class="btn-group">
+            <button type="button" class="btn primary small"><span>버튼</span></button>
+            <button type="button" class="btn primary outline small"><span>버튼</span></button>
+            <button type="button" class="btn tertiary small"><span>버튼</span></button>
+            <button type="button" class="btn tertiary outline small"><span>버튼</span></button>
+            <!--disabled-->
+            <button type="button" class="btn primary small" disabled><span>버튼</span></button>
+            <button type="button" class="btn primary outline small" disabled><span>버튼</span></button>
+            <button type="button" class="btn tertiary small" disabled><span>버튼</span></button>
+            <button type="button" class="btn tertiary outline small" disabled><span>버튼</span></button>
+          </div>
+        </dd>
+        <dd data-description="size: xsmall">
+          <!--size: xsmall-->
+          <div class="btn-group">
+            <button type="button" class="btn primary xsmall"><span>버튼</span></button>
+            <button type="button" class="btn primary outline xsmall"><span>버튼</span></button>
+            <button type="button" class="btn tertiary xsmall"><span>버튼</span></button>
+            <button type="button" class="btn tertiary outline xsmall"><span>버튼</span></button>
+            <!--disabled-->
+            <button type="button" class="btn primary xsmall" disabled><span>버튼</span></button>
+            <button type="button" class="btn primary outline xsmall" disabled><span>버튼</span></button>
+            <button type="button" class="btn tertiary xsmall" disabled><span>버튼</span></button>
+            <button type="button" class="btn tertiary outline xsmall" disabled><span>버튼</span></button>
+          </div>
+        </dd>
+        <dd data-description="type : text">
+          <!--type: text-->
+          <div class="btn-group">
+            <button type="button" class="btn text"><span>버튼</span></button>
+            <button type="button" class="btn text lerge"><span>버튼</span></button>
+            <button type="button" class="btn text small"><span>버튼</span></button>
+            <button type="button" class="btn text xsmall"><span>버튼</span></button>
+            <!--disabled-->
+            <button type="button" class="btn text" disabled><span>버튼</span></button>
+            <button type="button" class="btn text lerge" disabled><span>버튼</span></button>
+            <button type="button" class="btn text small" disabled><span>버튼</span></button>
+            <button type="button" class="btn text xsmall" disabled><span>버튼</span></button>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+
+  </div>
+  <!--Common Library-->
+  @@include('@@webRoot/html/_include/common-js.html')
+  <!--Add Library (this page only)-->
+  <script src="./resources/guide.js"></script>
+
+  <script src="../../asset/js/ui.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker , #datepicker2, #datepicker3").datepicker({
+        changeMonth: true,
+        changeYear: true,
+      });
+      $(".select__box").on('change', function () {
+        //console.log($(this).find('option').index($(this).find('option:selected')));
+        $(this).prev('.select__label').hide();
+      })
+    });
+  </script>
+
+</body>
+
+</html>
