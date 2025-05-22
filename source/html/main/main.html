@@ -27,8 +27,13 @@
                                     <span>판매점 ID :</span>
                                     <em>000000000(온라인)</em> / <em>000000000(인쇄)</em>
                                 </div>
-                                <a href="#none" class="btn_go_page"><span>영업현황 보러가기</span><i
-                                        class="arrow-right"></i></a>
+                                <div class="status__area">
+                                    <div class="status"><span>온라인, 인쇄 일시중지</span></div>
+                                    <a href="#none" class="btn_go_page">
+                                        <span>영업현황 보러가기</span>
+                                        <i class="arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="info__area">
@@ -67,28 +72,47 @@
                                     </div>
                                 </li>
                                 <li class="sub__content">
-                                    <div class="lastweek">
-                                        <ul class="type__1">
+                                    <div class="lastweek round__box">
+                                        <ul>
                                             <li>
-                                                <div class="round__box">
-                                                    <span>지난주에는</span>
-                                                    <em>934,386천원<b>(+10<span class="percent">%</span>)</b></em>
-                                                    판매했어요.
+                                                <div>
+                                                    <span>이번주 온라인복권</span>
+                                                    <em>934,386천원</em>
+                                                    <b class="up">+10<span class="percent">%</span></b>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <span>이번주 인쇄복권</span>
+                                                    <em>934,386천원</em>
+                                                    <b class="down">-10<span class="percent">%</span></b>
                                                 </div>
                                             </li>
                                         </ul>
-                                        <!-- <ul class="type__2">
-                                            <li></li>
-                                            <li></li>
-                                        </ul> -->
                                     </div>
-                                    <div class="education">
-                                        <div class="round__box">
-                                            <div class="title"><span>필수교육현황</span></div>
-                                            <div class="content">
+                                    <div class="education round__box">
+                                        <div class="title"><span>필수교육현황</span></div>
+                                        <div class="list">
+                                            <!-- nodata -->
+                                            <!-- <div class="nodata">
                                                 <span>진행중인</span>필수 교육이 없습니다.
-
-                                            </div>
+                                            </div> -->
+                                            <!--// nodata  -->
+                                            <ul>
+                                                <li>
+                                                    <div class="incomplete">
+                                                        <span>
+                                                            미완료
+                                                            <a href="#none">1<em>건</em></a>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="total">
+                                                        <span>전체 3건</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </li>
@@ -499,7 +523,7 @@
                             <ul>
                                 <li>
                                     <div class="round__box outline calendar">
-                                        <div class="datepicker" id="mainDatepicker"></div>
+                                        <div id="mainDatepicker"></div>
                                     </div>
                                 </li>
                                 <li>
@@ -530,7 +554,7 @@
                                 </li>
                                 <li>
                                     <div class="round__box outline">
-                                        <div class="top sun"><em>03</em> / <span>일</span></div>
+                                        <div class="top"><em>04</em> / <span>월</span></div>
                                         <div class="content">
                                             <div class="plan speeto">
                                                 <em>스피또</em>
@@ -556,7 +580,7 @@
                                 </li>
                                 <li>
                                     <div class="round__box outline">
-                                        <div class="top sun"><em>03</em> / <span>일</span></div>
+                                        <div class="top"><em>05</em> / <span>화</span></div>
                                         <div class="content">
                                             <div class="plan speeto">
                                                 <em>스피또</em>
@@ -582,7 +606,7 @@
                                 </li>
                                 <li>
                                     <div class="round__box outline">
-                                        <div class="top sun"><em>03</em> / <span>일</span></div>
+                                        <div class="top"><em>06</em> / <span>수</span></div>
                                         <div class="content">
                                             <div class="plan speeto">
                                                 <em>스피또</em>
@@ -608,7 +632,7 @@
                                 </li>
                                 <li>
                                     <div class="round__box outline">
-                                        <div class="top sun"><em>03</em> / <span>일</span></div>
+                                        <div class="top"><em>07</em> / <span>목</span></div>
                                         <div class="content">
                                             <div class="plan speeto">
                                                 <em>스피또</em>
@@ -634,7 +658,7 @@
                                 </li>
                                 <li>
                                     <div class="round__box outline">
-                                        <div class="top sun"><em>03</em> / <span>일</span></div>
+                                        <div class="top"><em>08</em> / <span>금</span></div>
                                         <div class="content">
                                             <div class="plan speeto">
                                                 <em>스피또</em>
@@ -660,7 +684,7 @@
                                 </li>
                                 <li>
                                     <div class="round__box outline">
-                                        <div class="top sun"><em>03</em> / <span>일</span></div>
+                                        <div class="top"><em>09</em> / <span>토</span></div>
                                         <div class="content">
                                             <div class="plan speeto">
                                                 <em>스피또</em>
@@ -699,37 +723,49 @@
 
     <!-- Add Script -->
     <script>
-        const swiper = new Swiper('#slideNotice', {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-            navigation: {
-                nextEl: '#arrow-next-slide',
-                prevEl: '#arrow-prev-slide',
-            },
-            spaceBetween: 24,
+        $(function () {
+            const swiper = new Swiper('#slideNotice', {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                navigation: {
+                    nextEl: '#arrow-next-slide',
+                    prevEl: '#arrow-prev-slide',
+                },
+                spaceBetween: 24,
+            });
+            const swiper2 = new Swiper('#slideSpeeto', {
+                slidesPerView: 1,
+                grid: {
+                    rows: 2,
+                },
+                navigation: {
+                    nextEl: '#arrow-next-slide2',
+                    prevEl: '#arrow-prev-slide2',
+                },
+            })
+            const swiper3 = new Swiper('#slideEdu', {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                navigation: {
+                    nextEl: '#arrow-next-slide3',
+                    prevEl: '#arrow-prev-slide3',
+                },
+                spaceBetween: 32,
+            });
+
+            const today = new Date();
+            $("#mainDatepicker").datepicker({
+                language: "ko",
+                todayHighlight: true,
+                maxViewMode: 0,
+                format: 'yyyy-mm-dd',
+            });
+
+            $('#mainDatepicker').datepicker('setDate', today);
+
+            
+
         });
-        const swiper2 = new Swiper('#slideSpeeto', {
-            slidesPerView: 1,
-            grid: {
-                rows: 2,
-            },
-            navigation: {
-                nextEl: '#arrow-next-slide2',
-                prevEl: '#arrow-prev-slide2',
-            },
-        })
-        const swiper3 = new Swiper('#slideEdu', {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-            navigation: {
-                nextEl: '#arrow-next-slide3',
-                prevEl: '#arrow-prev-slide3',
-            },
-            spaceBetween: 32,
-        });
-        $( function() {
-        $( "#mainDatepicker" ).datepicker();
-        } );
     </script>
 </body>
 

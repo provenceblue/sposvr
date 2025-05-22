@@ -1,0 +1,43 @@
+@use "../base/variable"as v;
+@use "../base/mixin"as m;
+
+.container{
+    @include m.set-inner();
+    margin-top:140px;
+    padding-top: v.$padding-10;
+    padding-bottom: 120px;
+}
+.page__wrap{
+    display: flex;
+    .left__menu{
+        flex-basis: 254px;
+        a,
+        button{  
+            display: block;
+            padding: v.$padding-6 v.$padding-3;
+            font-weight: v.$font-weight-bold;
+            border-bottom: 1px solid v.$gray-color-20;
+        }
+        a{
+            span{
+                display: block;
+                background: url(../images/common/arrow-right-g.svg) no-repeat right center / 20px;
+            }   
+        }
+
+    }
+    .content {
+        flex-grow: 1;
+        padding-left: v.$gap-10;
+        .page__title{
+            margin-bottom: v.$gap-10;
+            h2{
+                font-size: v.$font-heading-xlarge;
+            }
+            .sub__text{
+                font-size: v.$font-heading-small;
+                margin-top: v.$padding-8;
+            }
+        }
+    }
+}

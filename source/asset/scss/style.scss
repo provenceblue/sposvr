@@ -5,6 +5,7 @@
 @forward "base/base";
 @forward "layout/header";
 @forward "layout/footer";
+@forward "layout/layout";
 @forward "components/input";
 @forward "components/buttons";
 @forward "components/modal";
@@ -14,4 +15,5 @@
 
 //pages
 @forward "pages/main";
+@forward "pages/contract";
 

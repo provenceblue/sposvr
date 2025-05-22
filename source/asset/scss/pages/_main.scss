@@ -1,7 +1,10 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
-$content__padding: 64px;
 
+$content__padding: 64px;
+#main .header__wrap{
+    border-bottom: none;
+}
 .key__visual {
     background: linear-gradient(180deg, #237CA4 0%, #2FD0D0 85.58%);
 
@@ -9,10 +12,10 @@ $content__padding: 64px;
         @include m.set-inner();
         padding: 48px 0;
         min-height: 448px;
-        background: url(../images/main/main-visual.png) no-repeat right bottom;
+        background: url(../images/main/main-visual.png) no-repeat right bottom / 541px;
 
         .top__area {
-            max-width: 737px;
+            max-width: 797px;
 
             .title {
                 color: rgba(255, 255, 255, 0.7);
@@ -21,7 +24,7 @@ $content__padding: 64px;
                 font-size: v.$font-heading-medium;
 
                 em {
-                    @include m.ellipsis(590px, 1);
+                    @include m.ellipsis(650px, 1);
                     color: #fff;
                     font-size: v.$font-heading-large;
                     margin-top: -3px;
@@ -41,26 +44,41 @@ $content__padding: 64px;
                     line-height: 24px;
 
                 }
-
-                .btn_go_page {
-                    display: flex;
-                    background-color: v.$gray-color-90;
-                    color: #fff;
-                    padding: v.$padding-2 v.$padding-6;
-                    border-radius: v.$gap-8;
-                    align-items: center;
-
-                    span {
+                .status__area{
+                    &>*{
+                        display: inline-flex;
+                    }
+                    .status{
+                        background-color: v.$color-dager-lighter;
+                        color: v.$color-dager-dark;
+                        padding: v.$padding-2 v.$padding-6;
+                        border-radius: v.$gap-8;
                         font-size: v.$font-body-small;
-                        line-height: 24px;
+                        font-weight: v.$font-weight-medium;
+                        
+                    }
+                    .btn_go_page {
+                        background-color: v.$gray-color-90;
+                        color: #fff;
+                        padding: v.$padding-2 v.$padding-6;
+                        border-radius: v.$gap-8;
+                        align-items: center;
+                        margin-left: v.$padding-5;
+
+                        span {
+                            font-size: v.$font-body-small;
+                            line-height: 24px;
+                        }
+
+                        i {
+                            display: inline-block;
+                            @include m.square(20px);
+                            background: url(../images/common/arrow-right-w.svg) no-repeat;
+                        }
                     }
 
-                    i {
-                        display: inline-block;
-                        @include m.square(20px);
-                        background: url(../images/common/arrow-right-w.svg) no-repeat;
-                    }
                 }
+                
             }
         }
 
@@ -71,10 +89,13 @@ $content__padding: 64px;
             &>ul {
                 display: grid;
                 gap: v.$gap-4;
-                grid-template-columns: 2fr 1fr;
+                grid-template-columns: 485px 300px;
             }
 
             .year {
+                &>.round__box {
+                    height: 244px;
+                }
                 .title {
                     background: url(../images/main/arrow-up.png) no-repeat right top;
 
@@ -156,9 +177,6 @@ $content__padding: 64px;
                 gap: 12px;
 
                 &>div {
-                    flex-basis: calc(50% - 12px);
-                    flex-shrink: 0;
-                    flex-grow: 0;
 
                     & ul,
                     & li {
@@ -167,14 +185,56 @@ $content__padding: 64px;
                 }
 
                 .round__box {
-
-                    padding: v.$padding-6 v.$padding-5;
+                    padding: v.$padding-5 v.$padding-6;
                 }
 
                 .lastweek {
                     text-align: center;
 
-                    .round__box {
+                    &.round__box {
+                        height:132px;
+
+                        &>ul{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: v.$padding-3 0;
+
+                            &>li {
+                                flex: 1 1 45%;
+                                padding:0 0 0 12px;
+                                &:first-child{
+                                    padding:0 12px 0 0;
+                                    border-right: 1px dashed #B1B8BE;
+                                }
+                            &>div{
+                                
+                                >span {
+                                    display: block;
+                                    font-size: v.$font-body-small;
+                                    
+                                }
+                                em{
+                                    display: block;
+                                    margin-top: v.$padding-3;
+                                    font-size: 22px;
+                                    font-weight: v.$font-weight-semi-bold;
+                                }
+                                b{
+                                    display: block;
+                                    margin-top: v.$padding-3;
+                                    font-weight: v.$font-weight-semi-bold;
+                                    &.up{
+                                        color: v.$color-dager-dark;
+                                    }
+                                    &.down{
+                                        color: v.$color-information;
+                                    }
+                                }
+                            }    
+                                
+                            }
+                        }
                         &>span {
                             display: block;
                         }
@@ -191,19 +251,61 @@ $content__padding: 64px;
                 .education {
                     text-align: center;
 
+                    &.round__box {
+                        height: 100px;
+                    }
                     .title {
-                        font-size: v.$font-heading-medium;
+                        font-size: v.$font-body-large;
                         font-weight: v.$font-weight-semi-bold;
+                        line-height: 29px;
+                        margin-top: v.$padding-2;
                     }
 
-                    .content {
-                        margin-top: v.$padding-3;
-                        font-size: v.$font-body-small;
-                        line-height: 120%;
-
-                        span {
-                            display: block;
+                    .list {
+                        .nodata{
+                            margin-top: v.$padding-2;
+                            font-size: v.$font-body-small;
+                            line-height: 120%;
+                            span {
+                                display: block;
+                            }
                         }
+                        &>ul{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-top: v.$padding-5;
+                            >li{
+                                flex: 1 1 45%;
+                                
+                                &:first-child{
+                                    position: relative;
+                                    &::after{
+                                        position: absolute;
+                                        right:0;
+                                        @include m.position-center('y');
+                                        display: block;
+                                        content: '';
+                                        width: 1px;
+                                        height: 16px;
+                                        background-color: #CDD1D5;
+                                        
+                                    }
+
+                                }
+                                a{
+                                    text-decoration: underline;
+                                    font-weight: v.$font-weight-semi-bold;
+                                    color: v.$color-dager-dark;
+                                    em{
+                                        font-weight: v.$font-weight-regular;
+                                    }
+                                }
+                            }
+                            
+                        }
+
+                        
                     }
                 }
             }
@@ -693,31 +795,48 @@ $content__padding: 64px;
                 .calendar{
                     padding: v.$padding-6;
                     .datepicker{
+                        width:100%;
                         text-align: center;
-                        .ui-datepicker-prev,
-                        .ui-datepicker-next {
-                            display: none;
+                        padding: 0;
+                        .prev,
+                        .next {
+                            pointer-events : none;
+                            user-select:none;
+                            color:transparent;
+                            @include m.hidden-text();
                         }
-                        .ui-datepicker-title{
-                            padding: 4px 8px;
+                        .datepicker-switch {
                             font-size: v.$font-heading-small;
                             font-weight: v.$font-weight-bold;
-                        }
-                        .ui-datepicker-calendar{
-                            margin-top: v.$padding-6;
-                            th{
-                                font-size: v.$font-body-small;
-                                font-weight: v.$font-weight-regular;
-                                height:38px;
-                                line-height:38px;
+                            cursor: auto;
+                            &:hover{
+                                background-color: #fff;
                             }
+                        }
+                        .dow{
+                            padding-top: 9px;
+                            line-height:38px;
+                            font-size: v.$font-body-small;
+                            font-weight: v.$font-weight-regular;
+                        }
+                        tbody{
                             td{
                                 height:38px;
                                 line-height:38px;
-                                &.ui-datepicker-current-day{
-                                    background-color: v.$primary-color;
+                                &.day.active{
+                                    background: v.$primary-color;
                                     border-radius: 50%;
                                     color: #fff;
+
+                                }
+                                &.old,
+                                &.new{
+                                    color: v.$gray-color-40;
+                                    
+                                }
+                                &.today{
+                                    border-radius: 50%;
+                                    background: #D6E0EB;
                                 }
                             }
                         }

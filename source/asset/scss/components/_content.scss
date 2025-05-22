@@ -9,10 +9,17 @@
     height:100%;
     &.outline{
         border: 1px solid v.$gray-color-20;
+        &.bg__red{
+            border-color: v.$color-dager-light;
+        }
     }
     &.bg__gray{
         background-color: v.$gray-color-5;
     }
+    &.bg__red{
+        background-color: v.$color-dager-lighter;
+    }
+
 }
 .flag{
     display: inline-flex;
