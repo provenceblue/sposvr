@@ -1,3 +1,4 @@
+
 // ------------------------------------
 // Sass variables.
 // ------------------------------------
@@ -66,8 +67,7 @@ $font-weight-bold: 700 !default;
 //content size 
 $content-size: 1280px !default;
 //break point
-$breakpoint-small: 360px !default;
-$breakpoint-medium: 768px !default;
+$breakpoint-mobile: 1280px !default;
 $breakpoint-large: 1024px !default;
 $breakpoint-xlarge: 1280px !default;
 $breakpoint-xxlarge: 1440px !default;
@@ -124,4 +124,9 @@ $icon-size-5: 32px !default;
 $icon-size-6: 40px !default;
 //content color
 $color-surface-box: #EEF2F7 !default;
+$color-surface-box2: #F5F7FA !default;
 $color-surface-footer: #F4F5F6 !default;
+
+$input-outline: dashed 1px $gray-color-60;
+
+

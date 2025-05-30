@@ -14,7 +14,7 @@
         <div class="container">
             <div class="page__wrap">
                 @@include('@@webRoot/html/_include/left-menu-1.html')
-                
+
                 <div class="content" id="content">
                     @@include('@@webRoot/html/_include/title.html',{
                     "title": "전자계약현황",
@@ -23,7 +23,7 @@
                     <div class="content__inner contract">
                         <div class="notice_box">
                             <div class="round__box outline bg__red">
-                                <i></i>
+                                <i aria-hidden="true"></i>
                                 <div class="noti__text">
                                     <span>신규 계약 건이 있습니다.</span>
                                     <span><em>2025년 00월 00일</em>까지 계약을 완료해주세요. (<em>14일</em> 남음)</span>
@@ -40,9 +40,9 @@
             </div>
 
         </div>
-
+        @@include('@@webRoot/html/_include/footer.html')
     </div>
-    @@include('@@webRoot/html/_include/footer.html')
+
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->

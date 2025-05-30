@@ -1,5 +1,6 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
+@use "../base/breakpoints"as b;
 
 footer{
     background-color: v.$color-surface-footer;
@@ -25,6 +26,9 @@ footer{
                 flex-wrap: wrap;
                 gap: v.$gap-7;
             }
+            b {
+                font-weight: v.$font-weight-regular;
+            }
         }
         .business__area{
             margin-top: v.$padding-8;
@@ -39,6 +43,9 @@ footer{
                 font-weight: v.$font-weight-semi-bold;
                 margin-left: v.$padding-8;
             }
+            b{
+                font-weight: v.$font-weight-regular;
+            }
         }
         .info{
             margin-top: v.$padding-8;
@@ -49,3 +56,53 @@ footer{
     }
 }
 
+@include b.size-mobile {
+    footer{
+        .footer__wrap {
+            max-width: 100%;
+            padding: v.$padding-8 v.$padding-6;
+
+            .logo__area{
+                img{
+                    height: 30px;
+                }
+                em{
+                    font-size: v.$font-heading-medium;
+                    margin-left: v.$padding-5;
+                }
+            }
+            .address__area,
+            .business__area {
+                font-size: v.$font-body-small;
+                &>ul{
+                    gap: v.$padding-3;
+                    flex-direction: column;
+                    em{
+                        display: none;
+                    }
+                    b{
+                        font-weight: v.$font-weight-semi-bold;
+                    }
+                }
+            }
+            .address__area{
+                margin-top: v.$padding-8;
+            }
+            .business__area{
+                margin-top: v.$padding-3;
+                a{
+                    display:block;
+                    margin-left: 0;
+                    margin-top: v.$padding-3;
+                }
+            }
+            .info,
+            .copyright {
+                margin-top: v.$padding-3;
+                font-size: v.$font-body-small;
+            }
+
+        }
+    }
+    
+}
