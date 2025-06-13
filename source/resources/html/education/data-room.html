@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "자료실 | 교육 &amp; 자료"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="education">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-3.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
+                    "depth1": "교육 &amp; 자료",
+                    "depth2": "자료실",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "자료실",
+                    "subtext": "자료 공유 게시판입니다.",
+                    })
+                    <div class="content__inner data">
+                        <div class="search__area">
+                            <!-- 검색영역, 모바일(바텀시트) 공통 -->
+                            <div class="bottom__sheet " data-layered-name="bsSearch" tabindex="0">
+                                <div class="bottom__header">
+                                    <span class="tit">상세검색</span>
+                                </div>
+                                <div class="bottom__inner">
+                                    <div class="contents">
+                                        <div class="input__area">
+                                            <ul>
+                                                <li>
+                                                    <div class="title"><span>기간</span></div>
+                                                    <div class="items">
+                                                        <div class="item date__area">
+                                                            <span class="form__area start__date">
+                                                                <input type="text" id="startDate"
+                                                                    placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker form-control"
+                                                                    title="숫자만입력가능">
+                                                                <label for="startDate">시작일자</label>
+                                                            </span>
+                                                            <em class="dash">-</em>
+                                                            <span class="form__area end__date">
+                                                                <input type="text" id="endDate" placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker" title="숫자만입력가능">
+                                                                <label for="endDate">종료일자</label>
+                                                            </span>
+                                                        </div>
+                                                        <div class="item period__set">
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_1" checked>
+                                                                <label for="period_1">3개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_2">
+                                                                <label for="period_2">6개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_3">
+                                                                <label for="period_3">9개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_4">
+                                                                <label for="period_4">12개월</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="title"><span>제목</span></div>
+                                                    <div class="items">
+                                                        <div class="item">
+                                                            <span class="form__area search__box">
+                                                                <input type="text" class="input__box" id="searchWord"
+                                                                    placeholder="검색어 입력">
+                                                                <label for="searchWord">검색어</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn__area">
+                                    <button type="button" class="btn primary outline large"><span>초기화</span></button>
+                                    <button type="button" class="btn primary large"><span>조회</span></button>
+                                </div>
+                                <button class="btn__close" data-action="close"><span>닫기</span></button>
+                            </div>
+
+                            <!--// 검색영역, 모바일(바텀시트) 공통 -->
+                        </div>
+                        <div class="board__wrap">
+                            <div class="board__top">
+                                <div class="total">
+                                    <div class="num__area">
+                                        <span>전체 <em>24</em>개</span>
+                                    </div>
+                                    <div class="search__period">
+                                        <span>2025.04.20</span>~<span>2025.05.30</span>
+                                    </div>
+                                </div>
+                                <div class="list__select">
+                                    <em>목록 표시 개수</em>
+                                    <span class="form__area">
+                                        <select title="목록 표시 개수" class="select__box noline">
+                                            <option value="">30개</option>
+                                            <option value="">50개</option>
+                                            <option value="">100개</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <div class="search__btn__area">
+                                    <button class="open__search__btn" data-call-layered="bsSearch">
+                                        <i class="svg__icon search" aria-hidden="true"></i>
+                                        <span>상세조회</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="board__list">
+                                <ul class="board__table">
+                                    <li class="board__tr thead">
+                                        <div class="th num">순번</div>
+                                        <div class="th title">제목</div>
+                                        <div class="th date">등록일</div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td num">
+                                            <span class="mo__label">순번</span>
+                                            <span>100</span>
+                                        </div>
+                                        <div class="td title">
+                                            <div class="flex__wrap">
+                                                <a href="#none" class="ellipsis"><span>판매인 매뉴얼 자료
+                                                        판매인 매뉴얼 자료
+                                                        판매인 매뉴얼 자료
+                                                        판매인 매뉴얼 자료
+                                                        판매인 매뉴얼 자료
+                                                        판매인 매뉴얼 자료
+                                                        판매인 매뉴얼 자료
+                                                    </span></a>
+                                                <i class="file_attach"><span>첨부파일 있음</span></i>
+                                            </div>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">등록일</span>
+                                            <span>2025.05.20</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td num">
+                                            <span class="mo__label">순번</span>
+                                            <span>99</span>
+                                        </div>
+                                        <div class="td title">
+                                            <div class="flex__wrap">
+                                                <a href="#none" class="ellipsis"><span>판매인 매뉴얼 자료
+                                                    </span></a>
+                                            </div>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">등록일</span>
+                                            <span>2025.05.20</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            @@include('@@webRoot/resources/html/_include/pagination.html')
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            // 기간설정 datepicker 
+            const today = new Date();
+            $("#startDate").datepicker({
+            dateFormat: 'yy.mm.dd',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+            dateFormat: 'yy.mm.dd',
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

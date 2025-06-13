@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "소모품 배송 현황 | 판매점MY"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="storeMy">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-5.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
+                    "depth1": "판매점MY",
+                    "depth2": "소모품 배송 현황",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "소모품 배송 현황",
+                    "subtext": "신청한 소모품의 배송 현황을 확인할 수 있습니다.",
+                    })
+                    <div class="content__inner delivery">
+                        <div class="search__area">
+                            <!-- 검색영역, 모바일(바텀시트) 공통 -->
+                            <div class="bottom__sheet " data-layered-name="bsSearch" tabindex="0">
+                                <div class="bottom__header">
+                                    <span class="tit">상세검색</span>
+                                </div>
+                                <div class="bottom__inner">
+                                    <div class="contents">
+                                        <div class="input__area">
+                                            <ul>
+                                                <li>
+                                                    <div class="title"><span>기간</span></div>
+                                                    <div class="items">
+                                                        <div class="item date__area">
+                                                            <span class="form__area start__date">
+                                                                <input type="text" id="startDate"
+                                                                    placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker form-control"
+                                                                    title="숫자만입력가능">
+                                                                <label for="startDate">시작일자</label>
+                                                            </span>
+                                                            <em class="dash">-</em>
+                                                            <span class="form__area end__date">
+                                                                <input type="text" id="endDate" placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker" title="숫자만입력가능">
+                                                                <label for="endDate">종료일자</label>
+                                                            </span>
+                                                        </div>
+                                                        <div class="item period__set">
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_1" checked>
+                                                                <label for="period_1">이번주</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_2">
+                                                                <label for="period_2">지난주</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_3">
+                                                                <label for="period_3">1개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_4">
+                                                                <label for="period_4">3개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_5">
+                                                                <label for="period_5">6개월</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="title"><span>구분</span></div>
+                                                    <div class="items">
+                                                        <div class="item">
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="division_1" name="division" checked>
+                                                                <label for="division_1">전체</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="division_2" name="division">
+                                                                <label for="division_2">티켓롤지</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="division_3" name="division">
+                                                                <label for="division_3">슬립지</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn__area">
+                                    <button type="button" class="btn primary outline large"><span>초기화</span></button>
+                                    <button type="button" class="btn primary large"><span>조회</span></button>
+                                </div>
+                                <button class="btn__close" data-action="close"><span>닫기</span></button>
+                            </div>
+
+                            <!--// 검색영역, 모바일(바텀시트) 공통 -->
+                        </div>
+                        <div class="board__wrap">
+                            <div class="board__top">
+                                <div class="total">
+                                    <div class="num__area">
+                                        <span>전체 <em>24</em>개</span>
+                                    </div>
+                                    <div class="base__date">
+                                        <span>(기준일시: 2025.05.16 15:34)</span>
+                                    </div>
+                                </div>
+                                <div class="list__select">
+                                    <button type="button" class="btn text exceldownload"><i class="svg__icon download"
+                                            aria-hidden="true"></i><span>엑셀다운로드</span></button>
+                                    <em>목록 표시 개수</em>
+                                    <span class="form__area">
+                                        <select title="목록 표시 개수" class="select__box noline">
+                                            <option value="">30개</option>
+                                            <option value="">50개</option>
+                                            <option value="">100개</option>
+                                        </select>
+                                    </span>
+                                    <button class="open__search__btn" data-call-layered="bsSearch">
+                                        <i class="svg__icon search" aria-hidden="true"></i>
+                                        <span>상세조회</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="board__list">
+                                <ul class="board__grid">
+                                    <li class="board__tr thead" aria-hidden="true">
+                                        <div class="th date">신청일</div>
+                                        <div class="th division">구분</div>
+                                        <div class="th quantity">수량</div>
+                                        <div class="th status">배송상태</div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td date">
+                                            <span class="mo__label">신청일</span>
+                                            <span>2025.05.20</span>
+                                        </div>
+                                        <div class="td division">
+                                            <span class="mo__label">구분</span>
+                                            <span>슬립지</span>
+                                        </div>
+                                        <div class="td quantity">
+                                            <span class="mo__label">수량</span>
+                                            <span class="text__right">10Box</span>
+                                        </div>
+                                        <div class="td status">
+                                            <span class="mo__label">배송상태</span>
+                                            <div class="info">
+                                                <span>배송시작</span>
+                                                <button type="button" aria-expanded='false' aria-controls="view_1"
+                                                    id="control_1" class="btn__more__view"
+                                                    data-call-more='status__list'><span>배송현황
+                                                        더보기</span></button> <!-- status__list의 id와 aria 값으로 매칭 필요 -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="status__list" id="view_1" aria-labelledby="control_1">
+                                        <div class="invoice__number">
+                                            <span class="label">송장번호</span>
+                                            <span class="number"><strong>6864079438339</strong><em>(롯데택배)</em></span>
+                                            <span class="mo__label"><em>배송업체</em> <strong>롯데택배</strong></span>
+                                        </div>
+                                        <ul class="invoice__status">
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">서용산</div>
+                                                <div class="status">배송중</div>
+                                            </li>
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">서용산</div>
+                                                <div class="status">배송출고</div>
+                                            </li>
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">이천센터</div>
+                                                <div class="status">터미널 출고</div>
+                                            </li>
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">이천센터</div>
+                                                <div class="status">터미널 출고</div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td date">
+                                            <span class="mo__label">신청일</span>
+                                            <span>2025.05.20</span>
+                                        </div>
+                                        <div class="td division">
+                                            <span class="mo__label">구분</span>
+                                            <span>슬립지</span>
+                                        </div>
+                                        <div class="td quantity">
+                                            <span class="mo__label">수량</span>
+                                            <span class="text__right">10Box</span>
+                                        </div>
+                                        <div class="td status">
+                                            <span class="mo__label">배송상태</span>
+                                            <span>배송완료</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td date">
+                                            <span class="mo__label">신청일</span>
+                                            <span>2025.05.20</span>
+                                        </div>
+                                        <div class="td division">
+                                            <span class="mo__label">구분</span>
+                                            <span>슬립지</span>
+                                        </div>
+                                        <div class="td quantity">
+                                            <span class="mo__label">수량</span>
+                                            <span class="text__right">10Box</span>
+                                        </div>
+                                        <div class="td status">
+                                            <span class="mo__label">배송상태</span>
+                                            <div class="info">
+                                                <span>배송중</span>
+                                                <button type="button" aria-expanded='false' aria-controls="view_2"
+                                                    id="control_2" class="btn__more__view"
+                                                    data-call-more='status__list'><span>배송현황
+                                                        더보기</span></button> <!-- status__list의 id와 aria 값으로 매칭 필요 -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="status__list" id="view_2" aria-labelledby="control_2">
+                                        <div class="invoice__number">
+                                            <span class="label">송장번호</span>
+                                            <span class="number"><strong>6864079438339</strong><em>(롯데택배)</em></span>
+                                            <span class="mo__label"><em>배송업체</em><strong>롯데택배</strong></span>
+                                        </div>
+                                        <ul class="invoice__status">
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">서용산</div>
+                                                <div class="status">배송중</div>
+                                            </li>
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">서용산</div>
+                                                <div class="status">배송출고</div>
+                                            </li>
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">이천센터</div>
+                                                <div class="status">터미널 출고</div>
+                                            </li>
+                                            <li>
+                                                <div class="time">2025.03.03 09:20</div>
+                                                <div class="place">이천센터</div>
+                                                <div class="status">터미널 출고</div>
+                                            </li>
+                                        </ul> 
+                                    </li>
+                                </ul>
+                            </div>
+                            @@include('@@webRoot/resources/html/_include/pagination.html')
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            // 기간설정 datepicker 
+            const today = new Date();
+            $("#startDate").datepicker({
+            dateFormat: 'yy.mm.dd',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+            dateFormat: 'yy.mm.dd',
+            });
+
+            $('.btn__more__view').on('click',function(){
+               $(this).closest('.board__tr').toggleClass('active');
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

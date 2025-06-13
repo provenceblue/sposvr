@@ -1,0 +1,145 @@
+@use "../base/variable" as v;
+
+@mixin set-inner{
+    max-width: v.$content-size;
+    margin:0 auto;
+}
+// Resize anything
+@mixin resizable($direction) {
+	overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+	resize: $direction; // Options: horizontal, vertical, both
+}
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin square($size) {
+	@include size($size, $size);
+}
+
+// ---------------------------------------------
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+}
+@mixin flex-center-all {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin flex-between {
+	display: flex;
+	justify-content: space-between;
+}
+//flex layout
+@mixin flex-layout($d: flex, $ai: flex-start, $jc: flex-start, $fd: row) {
+	display: $d;
+	align-items: $ai;
+	justify-content: $jc;
+	flex-direction: $fd;
+}
+
+@mixin ellipsis($max-width, $line: 1) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: $max-width;
+
+	@if ($line==1) {
+		display: block;
+		white-space: nowrap;
+	}
+
+	@else {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $line;
+        white-space: wrap;
+	}
+}
+
+@mixin hidden-text {
+	color: transparent;
+    text-indent: -9999px;
+    overflow: hidden;
+    user-select:none;
+}
+
+//position
+@mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
+	position: $p;
+	top: $t;
+	bottom: $b;
+	left: $l;
+	right: $r;
+}
+
+//position 중앙 정렬
+@mixin position-center($type: both) {
+
+	//좌우중앙
+	@if ($type=='x') {
+		left: 50%;
+		transform: translateX(-50%)
+	}
+
+	//상하중앙
+	@else if ($type=='y') {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	//상하좌우중앙
+	@else if ($type=='both') {
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+}
+
+//transform 기준점 중앙 정렬
+@mixin transform-origin($x: 50%, $y: 50%) {
+	transform-origin: $x $y;
+}
+// Single side border-radius
+@mixin border-top-radius($radius) {
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+	border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+@mixin clearfix() {
+
+	&:before,
+	&:after {
+		display: table; // 2
+		content: " "; // 1
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin prevent-overflow(){
+    overflow-x: auto;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}

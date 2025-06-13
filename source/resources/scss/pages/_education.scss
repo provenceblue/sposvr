@@ -1,0 +1,203 @@
+@use "../base/variable"as v;
+@use "../base/mixin"as m;
+@use "../base/breakpoints"as b;
+
+.education
+{
+    .board__wrap {
+        margin-top: v.$gap-10;
+    }
+    .board__detail{
+        .video__area{
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 비율 = 9/16 * 100 */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: v.$padding-10;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .submit__btn__area{
+            padding: v.$padding-10 0 v.$gap-11;
+            border-top: 1px solid v.$gray-color-20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .info {
+                font-size: v.$font-heading-small;
+                color: v.$gray-color-70;
+                em {
+                    color: v.$color-dager;
+                    font-weight: v.$font-weight-semi-bold;
+                }
+            }
+            .form__area{
+                margin-top: v.$padding-6;
+                label{
+                    font-size: v.$font-heading-medium;
+                    font-weight: v.$font-weight-semi-bold;
+                    color: v.$gray-color-70;
+
+                }
+            }
+            .btn{
+                margin-top: v.$gap-10;
+                width:200px;
+            }
+        }
+    }
+    
+}
+.owner{
+    .thumb__list {
+        .subject {
+            .badge__area {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+            }
+            .date__area {
+                .label {
+                    min-width: auto;
+                }
+            }
+        }
+    }
+    .thumb{
+        .new__window_w{
+            position: absolute;
+            bottom: 12px;
+            right:12px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 4px;
+        }
+    }
+}
+.data {
+
+    //자료실
+    .board__wrap {
+        .board__list {
+
+            .td,
+            .th {
+                &.num {
+                    width: 10%;
+                }
+
+                &.date {
+                    width: 16%;
+                }
+
+                &.title {
+                    width: 74%;
+                }
+
+                .flex__wrap {
+                    max-width: 733px;
+                }
+            }
+        }
+    }
+}
+
+@include b.size-mobile {
+    .education{
+        .board__detail{
+            .detail__content{
+                .board__content{
+                    //padding-top: v.$padding-8;
+                    .video__area{
+                        margin-bottom: v.$padding-8;
+                    }
+                }
+            }
+            .submit__btn__area{
+                padding: v.$padding-8 0;
+                .info{
+                    font-size: v.$font-body-medium;
+                    text-align: center;
+                    span{
+                        display: block;
+                    }
+                }
+                .form__area{
+                    label{
+                        font-size: v.$font-body-medium;
+                    }
+                }
+                .btn{
+                    margin-top: v.$padding-8;
+                }
+            }
+        }
+    }
+    // 페이지별 게시판 가로 사이즈
+    .data {
+        //자료실
+        .board__wrap {
+            .board__list {
+                .td {
+
+                    &.num,
+                    &.date,
+                    &.title {
+                        width: auto;
+                        padding: 0;
+                    }
+
+                    &.num {
+
+                        align-self: flex-end;
+                        color: v.$gray-color-60;
+                        font-size: v.$font-body-small;
+
+                    }
+
+                    &.date {
+                        color: v.$gray-color-60;
+                        font-size: v.$font-body-small;
+                    }
+
+                    &.title {
+                        padding: 20px 0;
+
+                        .badge__area {
+                            display: block;
+                            position: absolute;
+                            left: 20px;
+                            top: 20px;
+
+                        }
+
+                        .file_attach {
+                            position: absolute;
+                            right: 20px;
+                            bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .owner {
+        .thumb__list {
+            .subject {
+                .badge__area {
+                    position: absolute;
+                    top: 28px;
+                    left: 28px;
+                }
+
+                
+            }
+        }
+    }
+}

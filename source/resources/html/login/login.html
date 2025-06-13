@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "로그인"
+    })
+</head>
+
+<body>
+    <div class="wrap" id="login">
+        <div class="container">
+            <div class="login__con">
+                <div class="visual_area">
+                    <img src="/resources/img/layout/logo-dong-1.svg" alt="동행복권">
+                </div>
+                <div class="login__area">
+                    <div class="title">
+                        <span><em>판매인포탈</em> 서비스</span>
+                    </div>
+                    <div class="input__area">
+                        <div class="id__con">
+                            <span class="form__area">
+                                <input type="text" class="input__box" id="userId" placeholder="아이디 입력">
+                                <label for="userId">아이디</label>
+                            </span>
+                            <span class="form__area">
+                                <span class="select__label">이메일 주소 선택</span>
+                                <select name="email" id="email" title="이메일 선택" class="select__box">
+                                    <option selected="" disabled="" hidden=""></option>
+                                    <option value="0">직접 입력</option>
+                                    <option value="@gmail.com">@gmail.com</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="input__email">
+                            <span class="form__area">
+                                <input type="text" placeholder="이메일 주소 직접 입력" id="inputEmail" class="input__box full">
+                                <label for="inputEmail">이메일 주소 직접 입력</label>
+                            </span>
+                        </div>
+                        <div class="pw__con">
+                            <div class="form__area">
+                                <input type="password" placeholder="비밀번호 입력" id="userPw" class="input__box full">
+                                <label for="userPw">비밀번호 입력</label>
+                            </div>
+                        </div>
+                        <div class="save">
+                            <span class="form__area">
+                                <input type="checkbox" id="saveid" class="checkbox__input">
+                                <label for="saveid">아이디 저장</label>
+                            </span>
+                        </div>
+                        <div class="btn__area">
+                            <button type="button" class="btn tertiary large"><span>로그인</span></button>
+                        </div>
+                        <div class="banner">
+                            <img src="@@webRoot/resources/img/layout/login-banner-1.png"
+                                alt="사행산업통합감독위원회 사칭주의 결제금액 환급, 손실 금액 보상 등 피해자를 현혹하는 연락, 피싱 사기 가능성이 높습니다.">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            $selectEmail = $('#email');
+            $selectEmail.on('change',function(){   
+                let type = $(this).val();
+                if(type == 0){
+                    $(this).closest('.id__con').next('.input__email').show();
+                }else{
+                    $(this).closest('.id__con').next('.input__email').hide();
+                }
+
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+@use "../base/variable"as v;
+@use "../base/mixin"as m;
+@use "../base/breakpoints"as b;
+
+.wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-width: 360px;
+}
+
+.container {
+    // 메인과 공유함 (손대지 말 것)
+    margin-top: 140px;
+
+    .page__wrap {
+        @include m.set-inner();
+        padding-top: v.$padding-10;
+        padding-bottom: 120px;
+    }
+}
+
+.page__wrap {
+    display: flex;
+
+    .left__menu {
+        flex-basis: 254px;
+
+        a,
+        button {
+            display: flex;
+            padding: v.$padding-6 v.$padding-3;
+            font-weight: v.$font-weight-bold;
+            border-bottom: 1px solid v.$gray-color-20;
+            justify-content: space-between;
+            align-content: center;
+            width: 100%;
+
+            i.arrow {
+                @include m.square(20px);
+                background-size: 20px;
+                background: url(../img/common/arrow-down.svg) no-repeat right center / contain;
+            }
+        }
+
+        a {
+            span {
+                display: block;
+            }
+
+            i.arrow__right {
+                @include m.square(20px);
+                background-size: 20px;
+            }
+        }
+
+        .active {
+            i.arrow {
+                background: url(../img/common/arrow-top.svg) no-repeat right center / contain;
+            }
+
+            .sub__menu {
+                max-height: 500px;
+            }
+        }
+
+        .sub__menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.2s ease;
+
+            >ul {
+                border-bottom: 1px solid v.$gray-color-20;
+                padding: v.$padding-3 0;
+            }
+
+            a,
+            button {
+                padding: v.$padding-3 v.$padding-6;
+                border-bottom: 0;
+                font-weight: v.$font-weight-regular;
+
+                span {
+                    display: block;
+                    position: relative;
+                    padding-left: v.$padding-4;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        @include m.square(4px);
+                        border-radius: 50%;
+                        background: v.$gray-color-80;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .content {
+        flex-grow: 1;
+        padding-left: v.$gap-10;
+        max-width: 1026px;
+
+        .page__title {
+            margin-bottom: v.$gap-10;
+
+            h2 {
+                font-size: v.$font-heading-xlarge;
+            }
+
+            .sub__text {
+                font-size: v.$font-heading-small;
+                margin-top: v.$padding-8;
+            }
+        }
+    }
+}
+
+.breadcrumb__wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: v.$gap-10;
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: v.$gap-2;
+        font-size: v.$font-body-small;
+
+        .home {
+            &::before {
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                @include m.square(16px);
+                background: url(../img/layout/ico-bread-home.svg) no-repeat 0 center / 16px;
+                content: "";
+                margin-right: v.$gap-2;
+            }
+
+        }
+
+        li {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+
+            a {
+                display: inline-flex;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+                line-height: 1.3;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            &:not(:last-child)::after {
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                @include m.square(16px);
+                background: url(../img/layout/ico-bread-arr.svg) no-repeat 0 center / 16px;
+                content: "";
+                margin-left: v.$gap-2;
+            }
+
+
+        }
+
+        .dot {
+            display: none;
+        }
+    }
+}
+
+@include b.size-mobile {
+    .left__menu {
+        display: none;
+    }
+
+    .container {
+        margin-top: 0;
+        padding: v.$padding-6 v.$padding-6 64px v.$padding-6;
+
+        .page__wrap {
+            display: block;
+            max-width: 100%;
+            padding: 0;
+
+            .content {
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .page__title {
+                margin-bottom: v.$padding-9;
+
+                h2 {
+                    font-size: v.$font-heading-medium;
+                }
+
+                .sub__text {
+                    //margin-top: v.$padding-2;
+                    //font-size: v.$font-body-small;
+                    display: none;
+                }
+            }
+
+        }
+
+        .breadcrumb__wrap {
+            margin-bottom: v.$gap-8;
+
+            .breadcrumb {
+                li {
+                    display: none;
+
+                    &.home,
+                    &.dot,
+                    &:last-child {
+                        display: inline-flex;
+                    }
+
+                    &.dot {
+                        span {
+                            @include m.hidden-text();
+                            display: block;
+                            @include m.square(16px);
+                            background: url(../img/layout/ellipsis-horizontal.svg) no-repeat 0 0 /16px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+}

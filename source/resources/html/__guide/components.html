@@ -1,0 +1,89 @@
+<!--<!DOCTYPE html>-->
+<html lang="ko">
+
+<head>
+
+    <head>
+        @@include('@@webRoot/resources/html/_include/head.html',{
+        "title": "components | 관리자 | Guide "
+        })
+
+        <link rel="stylesheet" href="./resources/guide.css">
+        <link rel="stylesheet" href="./resources/jquery-ui.css">
+        <link rel="stylesheet" href="./resources/a11y-dark.min.css">
+        <script src="./resources/highlight.min.js"></script>
+        <style>
+
+        </style>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </head>
+
+<body class="guide">
+    <div class="guide-header">
+        <h1><a href="index.html">UI GUIDE</a></h1>
+        <ul class="gnb">
+            <li><a href="base.html">Base</a></li>
+            <li class="is-active"><a href="components.html">Components</a></li>
+            <li><a href="layout.html">Layout</a></li>
+            <li><a href="page.html">Page</a></li>
+        </ul>
+    </div>
+    <div class="guide-container">
+
+        <!--table-->
+        <div class="box">
+            <h2>테이블</h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre><code></code></pre>
+                </dt>
+                <dd data-description="table">
+                    <div class="table__wrap">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+
+    </div>
+    <!--Common Library-->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!--Add Library (this page only)-->
+    <script src="./resources/guide.js"></script>
+
+    <script src="/resources/js/ui.js"></script>
+
+
+</body>
+
+</html>

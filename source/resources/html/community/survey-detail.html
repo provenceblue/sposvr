@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "설문조사 상세 | 소통"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="community">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-4.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
+                    "depth1": "소통",
+                    "depth2": "설문조사",
+                    })
+                    <div class="content__inner survey">
+                        <div class="board__detail">
+                            <div class="detail__top">
+                                <div class="title">
+                                    <span>
+                                        2024년 복권판매점 서비스 제고를 위한 현황 설문 조사
+                                    </span>
+                                </div>
+                                <div class="date__area">
+                                    <div class="date">
+                                        <span class="label">등록일</span>
+                                        <span>2025.05.01</span>
+                                    </div>
+                                    <div class="period">
+                                        <span class="label">설문기간</span>
+                                        <span>2025.05.01 ~ 2025.05.31</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail__content">
+                                <div class="view">
+                                    <!-- 에디터 영역 -->
+
+                                    안녕하세요.<br /><br />
+
+                                    동행복권에서 판매인포탈 서비스 만족도 조사 및 <br />
+                                    신규 약관 변경에 따른 의견 수렴 설문조사가 진행됩니다.<br />
+                                    서비스 만족도에 응답 해주시기 바랍니다.<br /><br />
+
+                                    설문 기간 : 2025.05.01 ~ 2025.05.31<br /><br />
+
+                                    참여에 감사드립니다.
+
+                                    <!--// 에디터 영역 -->
+                                </div>
+                                <div class="survey__area">
+                                    <!-- 설문조사 영역 -->
+                                    <div class="title">
+                                        <span>판매인포탈 서비스 만족도 조사 및 약관 변경 동의 설문조사</span>
+                                    </div>
+                                    <div class="research">
+                                        <ul>
+                                            <li>
+                                                <div class="num">
+                                                    <span>1.</span>
+                                                </div>
+                                                <div class="sentence">
+                                                    <div class="question">
+                                                        <span>판매인포탈 서비스 만족도 평가를 해주세요.</span>
+                                                    </div>
+                                                    <div class="answer">
+                                                        <div class="group">
+                                                            <span class="form__area">
+                                                                <input type="radio" class="radio__input" id="survey1-1"
+                                                                    name="survey1">
+                                                                <label for="survey1-1">매우만족</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="radio" class="radio__input" id="survey1-2"
+                                                                    name="survey1">
+                                                                <label for="survey1-2">만족</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="radio" class="radio__input" id="survey1-3"
+                                                                    name="survey1">
+                                                                <label for="survey1-3">보통</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="radio" class="radio__input" id="survey1-4"
+                                                                    name="survey1">
+                                                                <label for="survey1-4">불만족</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="radio" class="radio__input" id="survey1-5"
+                                                                    name="survey1">
+                                                                <label for="survey1-5">매우 불만족</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="num">
+                                                    <span>2.</span>
+                                                </div>
+                                                <div class="sentence">
+                                                    <div class="question">
+                                                        <span>서비스 내에서 제공되는 정보 외 추가로 필요하신 정보를 선택해주세요. (복수응답 가능)</span>
+                                                    </div>
+                                                    <div class="answer">
+                                                        <div class="group">
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="survey2-1">
+                                                                <label for="survey2-1">시간별 판매정보</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="survey2-2">
+                                                                <label for="survey2-2">상세 환불 정보</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="survey2-3">
+                                                                <label for="survey2-3">시간별 판매정보</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input etc"
+                                                                    id="survey2-4">
+                                                                <label for="survey2-4">기타(직접 입력)</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer etc__field">
+                                                        <span class="form__area full">
+                                                            <textarea name="" id="survey2-etc" class="text__box"
+                                                                placeholder="직접 입력"></textarea>
+                                                            <label for="survey2-etc">기타 선택시 상세내용 입력</label>
+                                                        </span>
+                                                        <div class="byte__check">
+                                                            <span><em class="current">0</em>/<b
+                                                                    class="total">500</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="num">
+                                                    <span>3.</span>
+                                                </div>
+                                                <div class="sentence">
+                                                    <div class="question">
+                                                        <span>판매인포탈 서비스 개선점을 입력 해주세요.</span>
+                                                    </div>
+                                                    <div class="answer">
+                                                        <span class="form__area full">
+                                                            <textarea name="" id="" class="text__box"
+                                                                placeholder="설문 답변 입력"></textarea>
+                                                        </span>
+                                                        <div class="byte__check">
+                                                            <span><em class="current">0</em>/<b
+                                                                    class="total">500</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="num">
+                                                    <span>4.</span>
+                                                </div>
+                                                <div class="sentence">
+                                                    <div class="question">
+                                                        <span>변경된 약관에 동의하십니까?</span>
+                                                    </div>
+                                                    <div class="answer">
+                                                        <div class="group">
+                                                            <span class="form__area">
+                                                                <input type="radio" class="radio__input" id="survey4-1"
+                                                                    name="survey4">
+                                                                <label for="survey4-1">동의</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="radio" class="radio__input" id="survey4-2"
+                                                                    name="survey4">
+                                                                <label for="survey4-2">비동의</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="num">
+                                                    <span>5.</span>
+                                                </div>
+                                                <div class="sentence">
+                                                    <div class="question">
+                                                        <span>서비스 내에서 제공되는 정보 외 추가로 필요하신 정보를 선택해주세요. (복수응답 가능)</span>
+                                                    </div>
+                                                    <div class="answer">
+                                                        <div class="group">
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="survey5-1">
+                                                                <label for="survey5-1">시간별 판매정보</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="survey5-2">
+                                                                <label for="survey5-2">상세 환불 정보</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="survey5-3">
+                                                                <label for="survey5-3">시간별 판매정보</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input etc"
+                                                                    id="survey5-4">
+                                                                <label for="survey5-4">기타(직접 입력)</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer etc__field">
+                                                        <span class="form__area full">
+                                                            <textarea name="" id="survey5-etc" class="text__box"
+                                                                placeholder="직접 입력"></textarea>
+                                                            <label for="survey5-etc">기타 선택시 내용 입력</label>
+                                                        </span>
+                                                        <div class="byte__check">
+                                                            <span><em class="current">0</em>/<b
+                                                                    class="total">500</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="submit__btn__area">
+                                            <button type="button" class="btn primary large"><span>제출</span></button>
+                                        </div>
+                                    </div>
+                                    <!--// 설문조사 영역 -->
+                                    <!-- 결과보기 영역 -->
+                                    <div class="result__btn__area">
+                                        <button type="button" class="btn primary large"
+                                            data-call-modal="surveyResult" data-return-name="btnSurveyResult"><span>설문결과
+                                                보기</span></button>
+                                    </div>
+                                    <!--// 결과보기 영역 -->
+                                    <ul class="nextprev-list">
+                                        <li class="prev">
+                                            <strong class="tit">
+                                                <i class="svg__icon arrow__top" aria-hidden="true"></i>이전글
+                                            </strong>
+                                            <a href="#none" class="link"><span>판매인포탈 서비스 만족도 조사 설문 판매인포탈 서비스 만족도 조사
+                                                    설문</span></a><!-- 게시글이 있을 경우 -->
+
+                                        </li>
+                                        <li class="next">
+                                            <strong class="tit">
+                                                <i class="svg__icon arrow__down" aria-hidden="true"></i>다음글
+                                            </strong>
+                                            <span class="link">다음 글이 없습니다.</span> <!-- 게시글이 없을 경우 -->
+                                        </li>
+                                    </ul>
+                                    <div class="btn__area">
+                                        <a href="#none" class="btn primary outline large"><span>목록</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- 설문결과보기 팝업  -->
+    <div class="modal__popup" data-layered-name="surveyResult" tabindex="0">
+        <div class="modal__header">
+            <span class="tit">설문결과</span>
+        </div>
+        <div class="modal__inner">
+            <div class="pop__contents survey">
+                <div class="detail__top">
+                    <div class="title">
+                        <span>
+                            2024년 복권판매점 서비스 제고를 위한 현황 설문 조사
+                        </span>
+                    </div>
+                    <div class="date__area">
+                        <div class="date">
+                            <span class="label">설문제출일</span>
+                            <span>2025.05.01</span>
+                        </div>
+                        <div class="period">
+                            <span class="label">설문기간</span>
+                            <span>2025.05.01 ~ 2025.05.31</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail__content">
+                    <div class="research">
+                        <ul>
+                            <li>
+                                <div class="question">
+                                    <span>1. 판매인포탈 서비스 만족도 평가를 해주세요.</span>
+                                </div>
+                                <div class="answer">
+                                    <div class="round__box bg__gray">
+                                        매우만족
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="question">
+                                    <span>2. 서비스 내에서 제공되는 정보 외 추가로 필요하신 정보를 선택해주세요. (복수응답 가능)</span>
+                                </div>
+                                <div class="answer">
+                                    <div class="round__box bg__gray">
+                                        기타(직접 입력) <br />
+                                        (시간 별로 판매량을 비교할 수 있는 게 있었으면 좋겠어용)
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+
+                                <div class="question">
+                                    <span>3. 판매인포탈 서비스 개선점을 입력 해주세요.</span>
+                                </div>
+                                <div class="answer">
+                                    <div class="round__box bg__gray">
+                                        앞으로도 지역 매니저의 많은 도움 부탁드립니다. 앞으로도 지역 매니저의 많은 도움 부탁드립니다. 앞으로도 지역 매니저의 많은 도움
+                                        부탁드립니다.
+                                        앞으로도 지역 매니저의 많은 도움 부탁드립니다. 앞으로도 지역 매니저의 많은 도움 부탁드립니다.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="question">
+                                    <span>4. 판매인포탈 서비스 개선점을 입력 해주세요.</span>
+                                </div>
+                                <div class="answer">
+                                    <div class="round__box bg__gray">
+                                        앞으로도 지역 매니저의 많은 도움 부탁드립니다.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+
+                                <div class="question">
+                                    <span>5. 판매인포탈 서비스 개선점을 입력 해주세요.</span>
+                                </div>
+                                <div class="answer">
+                                    <div class="round__box bg__gray">
+                                        앞으로도 지역 매니저의 많은 도움 부탁드립니다.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btn__area">
+                    <button type="button" class="btn primary outline large" data-modal="close"
+                        data-return="btnSurveyResult"><span>확인</span></button>
+                </div>
+            </div>
+        </div>
+        <button class="btn__close" data-modal="close" data-return="btnSurveyResult"><span>닫기</span></button>
+    </div>
+
+    <!--// 설문결과보기 팝업 -->
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            // 기간설정 datepicker 
+            const today = new Date();
+            $("#startDate").datepicker({
+                language: "ko",
+                maxViewMode: 0,
+                format: 'yyyy.mm.dd',
+                container: '.start__date',
+                orientation: 'left',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+                language: "ko",
+                maxViewMode: 0,
+                format: 'yyyy.mm.dd',
+                container: '.end__date',
+            });
+
+            //기타 체크시 입력폼 노출
+            const inputEtcChk = $('input.etc');
+            inputEtcChk.each(function () {
+                $(this).on('click', function () {
+                    let chk = $(this).prop('checked');
+                    if (chk) {
+                        $(this).closest('.answer').next('.etc__field').show();
+                    } else {
+                        $(this).closest('.answer').next('.etc__field').hide();
+                    }
+                })
+            })
+
+            //글자수 카운팅 
+            const chkTextBox = $('.text__box');
+            chkTextBox.each(function () {
+                $(this).on('input', function () {
+                    var $textarea = $(this).closest('.answer');
+                    var max = $textarea.find('.total').text();
+                    max = max.replace(/,/g, "");
+                    gfn_fnChkByte($(this), max);
+                })
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

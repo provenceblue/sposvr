@@ -1,0 +1,216 @@
+@use "../base/variable"as v;
+@use "../base/mixin"as m;
+@use "../base/breakpoints"as b;
+
+.delivery{
+    //소모품 배송현황
+    .board__wrap {
+        .board__list {
+            .td,
+            .th {
+                
+                &.quantity {
+                    span {
+                        display: inline-block;
+                        width: 100%;
+                        text-align: right;
+                    }
+                }
+                &.status {
+                    position: relative;
+                    .btn__more__view{
+                        position: absolute;
+                        @include m.position-center($type: 'y');
+                        right: v.$gap-4;
+                        overflow:hidden;
+                        span{
+                            display: inline-block;
+                            width:0;
+                            height:0;
+                        }
+
+                    }
+
+                }
+            } 
+        }
+        .board__tr {
+            grid-template-columns: 16% 32% 32% 20%;
+        }
+    }
+}
+.status__list{
+    display: none;
+    background: v.$color-surface-box2;
+    padding: v.$padding-9;
+    color: v.$gray-color-70;
+    border-bottom: 1px solid v.$gray-color-30;
+    
+    .invoice__number{
+        padding-bottom: v.$padding-4;
+        border-bottom: 1px solid v.$gray-color-20;
+        .number{
+            color: v.$text-color-base;
+            font-weight: v.$font-weight-medium;
+            margin-left: v.$padding-5;
+        }
+        .mo__label{
+            display: none;
+        }
+    }
+    .invoice__status {
+        display: flex;
+        flex-direction: column;
+        row-gap: v.$gap-4;
+        margin-top: v.$padding-8;
+        li{
+            display: flex;
+            column-gap: v.$gap-7;
+            .time{
+                flex-basis: 160px;
+            }
+            .place{
+                flex-basis: 200px;
+            }
+            .status{
+                flex-grow: 1;
+                &.ing{
+                    color: v.$primary-color;
+                    font-weight: v.$font-weight-semi-bold;
+                }
+            }
+            &:first-child {
+                font-weight: v.$font-weight-semi-bold;
+
+                .time {
+                    font-weight: v.$font-weight-semi-bold;
+                }
+                .status {
+                    color: v.$primary-color;
+                }
+            }
+        }
+    }
+    
+}
+
+@include b.size-mobile {
+    .delivery {
+
+        //소모품 배송현황
+        .board__wrap {
+            .board__list {
+                .td,
+                .th {
+                    &.date {
+                        width: 100%;
+                    }
+
+                    &.division {
+                        width: 100%;
+                    }
+
+                    &.quantity {
+                        width: 100%;
+                        span {
+                            display: inline-block;
+                            width: auto;
+                            text-align: inherit;
+                        }
+                    }
+
+                    &.status {
+                        width: 100%;
+                        .info{
+                            display: flex;
+                            align-items: center;
+                            gap: v.$gap-3;
+                        }
+                        .btn__more__view {
+                            position: relative;
+                            top:auto;
+                            right:auto;
+                            transform: translate(0);
+                        }
+                    }
+                }
+            }
+            
+            .board__top{
+                .total{
+                    flex-direction: column;
+                    gap: v.$gap-1;
+                    .base__date{
+                        font-size: v.$font-body-small;
+                    }
+                }
+            }
+            .board__tr{
+                &.active{
+                    border-radius: 12px 12px 0 0;
+                    border-bottom:0;
+                }
+            }
+        }
+    }
+    .status__list {
+        padding: v.$padding-7;
+        font-size: v.$font-body-small;
+        margin-top: -16px;
+        z-index: 2;
+        border-left: 1px solid v.$gray-color-30;
+        border-right: 1px solid v.$gray-color-30;
+        border-radius: 0 0 12px 12px;
+        .invoice__number {
+            padding-bottom: v.$padding-6;
+            .number {
+                margin-left: v.$padding-3;
+                em{
+                    display: none;
+                }
+            }
+            .mo__label{
+                display: block;
+                margin-top: v.$padding-3;
+                strong{
+                    display: inline-block;
+                    margin-left: v.$padding-3;
+                    font-weight: v.$font-weight-medium;
+                    color: v.$text-color-base;
+                }
+            }
+        }
+        .invoice__status{
+            margin-top: v.$padding-6;
+            li{
+                display: list-item;
+                .time{
+                    display: block;
+                    width:100%;
+                    font-weight: v.$font-weight-regular;
+                    color: v.$gray-color-60;
+                }
+                .place,
+                .status{
+                    display: inline-block;
+                }
+                .status {
+                    position: relative;
+                    padding-left: 16px;
+                
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 1px;
+                        height: 12px;
+                        left: 6px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: v.$gray-color-20;
+                    }
+                }
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+@use 'variable'as v;
+@use 'mixin'as m;
+@use "breakpoints"as b;
+
+body {
+    font-size: v.$font-body-medium;
+    line-height: v.$line-height-base;
+    letter-spacing: v.$letter-spacing-base;
+    font-family: v.$font-family-base;
+    color: v.$text-color-base;
+    font-weight: v.$font-weight-regular;
+
+}
+
+.skip__navi {
+    height: 0;
+
+    .skipLink {
+        position: absolute;
+        top: -1000px;
+        left: -1000px;
+        z-index: 5000;
+        overflow: hidden;
+
+        &:focus,
+        &:active {
+            top: 0px;
+            left: 0px;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            background: rgb(30, 100, 186);
+        }
+    }
+}
+
+.blind {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+    display: block;
+    text-indent: -9999em;
+    font-size: 0px;
+    line-height: 0;
+}
+
+.h1 {
+    font-size: v.$font-heading-xlarge;
+    font-weight: v.$font-weight-bold;
+}
+
+.h2 {
+    font-size: v.$font-heading-large;
+    font-weight: v.$font-weight-bold;
+}
+
+.h3 {
+    font-size: v.$font-heading-medium;
+    font-weight: v.$font-weight-bold;
+}
+
+.dim {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 2000;
+}
+
+.layered {
+    .dim {
+        display: block;
+        visibility: visible;
+    }
+}
+
+.svg__icon {
+    display: flex;
+    @include m.square(24px);
+    align-self: center;
+    justify-self: center;
+
+    &.menu {
+        background: url(../img/common/menu.svg) no-repeat center / contain;
+    }
+
+    &.bell {
+        background: url(../img/common/ico-bell.svg) no-repeat center / contain;
+    }
+
+    &.search {
+        background: url(../img/layout/search.svg) no-repeat center / contain;
+    }
+
+    &.plus {
+        background: url(../img/common/btn-more.svg) no-repeat center center / contain;
+    }
+
+    &.arrow__right {
+        background: url(../img/common/arrow-right-g.svg) no-repeat right center / contain;
+    }
+
+    &.arrow__left {
+        background: url(../img/common/arrow-left.svg) no-repeat right center / contain;
+    }
+
+    &.arrow__top {
+        background: url(../img/common/arrow-top.svg) no-repeat right center / contain;
+    }
+
+    &.arrow__down {
+        background: url(../img/common/arrow-down.svg) no-repeat right center / contain;
+    }
+
+    &.close {
+        background: url(../img/common/close.svg) no-repeat center center / contain;
+    }
+
+    &.download {
+        background: url(../img/common/download.svg) no-repeat center center / contain;
+    }
+}
+
+.file_attach {
+    display: inline-flex;
+    @include m.square(24px);
+    background: url(../img/common/ico-attach.svg) no-repeat 0 0;
+    @include m.hidden-text();
+}
+
+.new__window {
+    display: inline-flex;
+    @include m.square(24px);
+    background: url(../img/common/open-new-window.svg) no-repeat 0 0;
+    @include m.hidden-text();
+}
+
+.new__window_w {
+    display: inline-flex;
+    @include m.square(26px);
+    background: url(../img/common/open-new-window-w.svg) no-repeat center center /18px;
+    @include m.hidden-text();
+}
+
+@include b.size-mobile {
+    .svg__icon {
+        display: flex;
+        @include m.square(20px);
+
+    }
+}

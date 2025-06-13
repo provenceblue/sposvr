@@ -1,0 +1,51 @@
+<style>
+    .table {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .row {
+        display: table-row;
+    }
+
+    .cell {
+        display: table-cell;
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+
+    .full-width-cell {
+        display: table-cell;
+        padding: 8px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+
+        /* 이게 핵심! */
+        width: 100%;
+    }
+
+    .details-row .full-width-cell {
+        /* 다른 셀들이 없도록 1개의 셀만 사용해야 전체 넓이를 덮을 수 있음 */
+        display: table-cell;
+    }
+</style>
+
+<ul class="table">
+    <!-- 일반 행 -->
+    <li class="row">
+        <div class="cell">이름</div>
+        <div class="cell">직업</div>
+    </li>
+
+    <!-- 전체 너비 셀: colspan 효과 -->
+    <li class="row details-row">
+        <div class="full-width-cell">
+            ✅ 이 셀은 두 칸을 합친 것처럼 전체 너비를 차지합니다.
+        </div>
+    </li>
+</ul>
+  
