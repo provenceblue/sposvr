@@ -62,6 +62,7 @@ $.alert = function(){
 	$('.btnAlertClose').on('click', function (e) {
 		// 모달 재사용을 위해 엘리먼트 삭제
 		$(".popup__wrap").remove();
+        $("body").removeClass('is__open');
 		typeof fnDone=='function'?fnDone.call():'';
 		
 		// 세션 타임 아웃시 로그인 페이지로
@@ -137,6 +138,7 @@ $.confirm = function(){
 	
 	$('#btnModalMsgApply').on('click', function (e) {
 		$(".popup__wrap").remove();
+        $("body").removeClass('is__open');
 		typeof fnDone=='function'?fnDone.call():'';
 		//cmmUtil.dropBackModal();
         $('#' + returnName).focus();
@@ -145,6 +147,7 @@ $.confirm = function(){
 	$('.btnModalMsgClose').on('click', function (e) {
 		// 모달 재사용을 위해 엘리먼트 삭제
 		$(".popup__wrap").remove();
+        $("body").removeClass('is__open');
 		typeof fnFail=='function'?fnFail.call():'';
 		//cmmUtil.dropBackModal();
         $('#' + returnName).focus();

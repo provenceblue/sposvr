@@ -102,7 +102,11 @@
             &.bg__gray {
                 margin-top: v.$padding-8;
             }
-
+            .info__wrap{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
             .info {
                 display: block;
                 position: relative;
@@ -127,6 +131,8 @@
         margin-top: v.$padding-9;
 
         .board__top {
+            justify-content: flex-start;
+            gap: v.$padding-8;
             h4 {
                 font-size: 20px;
             }
@@ -134,7 +140,7 @@
             .progress__area {
                 display: flex;
                 align-items: center;
-                gap: v.$padding-6;
+                gap: v.$padding-5;
 
                 .progress__bar {
                     position: relative;
@@ -158,6 +164,7 @@
                     font-size: v.$font-heading-medium;
                     font-weight: v.$font-weight-bold;
                     color: v.$text-color-sub;
+                    padding-left: v.$padding-2;
 
                     small {
                         font-size: v.$font-body-small;

@@ -197,7 +197,7 @@ $(document).ready(function () {
 
             gfn_dim.show($layer, layeredLevel, parent, returnName);
             $layer.css('z-index', layeredLevel).addClass('is__active');
-            
+            $layer.find('[data-modal="close"]', '[data-action="close"]').attr('data-return', returnName);
             if (parent !== 'body') $parent.addClass('is__active');
             gfn_body.hold(true);
             layeredLevel += 2;

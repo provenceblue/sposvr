@@ -182,6 +182,60 @@
         }
     }
 }
+.disability{
+    .search__area {
+        .input__area>ul>li .items .search__box .input__box {
+            max-width: 408px;
+        }
+    }
+    .board__wrap {
+        .board__list {
+
+            .td,
+            .th {
+                &.date {
+                    width: 18%;
+                }
+                &.num {
+                    width: 26%;
+                    button{
+                        text-decoration: underline;
+                    }
+                }
+                &.end__date {
+                    width: 20%;
+                }
+                &.name {
+                    width: 26%;
+                }
+                &.result {
+                    width: 10%;
+                }
+
+            }
+        }
+    }
+}
+.modal__popup .modal__inner .pop__contents {
+    &.disability{
+        
+        .detail__top {
+            .date__area {
+                margin-top: 0;
+            }
+        }
+        .tit {
+            padding-bottom: v.$padding-7;
+            border-bottom: 1px solid v.$gray-color-30;
+            margin-bottom: v.$padding-7;
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            gap: v.$padding-8;
+        }
+    }
+} 
 
 @include b.size-mobile {
     .delivery {
@@ -384,6 +438,56 @@
                     justify-content: space-between;
                     span:not(.mo__label){
                         text-align:right;
+                    }
+                }
+            }
+        }
+    }
+    .disability {
+        .search__area {
+            .input__area>ul>li .items .search__box .input__box {
+                max-width: 100%;
+            }
+        }
+
+        .board__wrap {
+            .board__list {
+                .board__tr {
+                    gap: v.$gap-4;
+                }
+                .td,
+                .th {
+                    &.date {
+                        width: 100%;
+                    }
+
+                    &.num {
+                        width: 100%;
+                    }
+
+                    &.end__date {
+                        width: 100%;
+                    }
+
+                    &.name {
+                        width: 100%;
+                    }
+
+                    &.result {
+                        width: 100%;
+                    }
+
+                }
+                .mo__label {
+                    width: fit-content;
+
+                }
+
+                .td {
+                    justify-content: space-between;
+
+                    span:not(.mo__label) {
+                        text-align: right;
                     }
                 }
             }

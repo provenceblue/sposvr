@@ -144,6 +144,8 @@
         height:auto;
         min-height: 200px;
         border-radius: v.$gap-4;
+        padding: v.$padding-8;
+
         .modal__header{
             border-bottom: none;
             height:24px;
@@ -178,7 +180,30 @@
         padding: 0 v.$padding-9;
         height: 100%;
         overflow-y: auto;
+        .pop__contents {
+            .detail__top {
+                padding: v.$padding-6 v.$padding-8;
+                
+                .title {
+                    font-weight: v.$font-weight-semi-bold;
+                    font-size: v.$font-heading-medium;
+                }
 
+                .date__area {
+                    font-size: v.$font-body-small;
+                    color: v.$gray-color-60;
+                    margin-top: v.$padding-5;
+
+                    .label {
+                        color: v.$text-color-sub;
+                        font-weight: v.$font-weight-semi-bold;
+                        min-width: 65px;
+                        display: inline-flex;
+                        margin-right: v.$padding-3;
+                    }
+                }
+            }
+        }
         .detail__content {
             padding: 36px 0;
             border-top: 1px solid #98ACC5;
@@ -221,7 +246,10 @@
         height: 100vh;
         max-height: 100%;
         padding: v.$padding-7 0;
-
+        &.alert {
+            width: calc(100vw - 40px);
+            max-width: 400px;
+        }
         .modal__header {
             margin: 0 v.$padding-7;
             .tit {
