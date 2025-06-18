@@ -130,13 +130,36 @@
     background-color: #fff;
     display: none;
 
-
     &.is__active {
         display: flex;
         flex-flow: column;
         justify-content: flex-start;
         &:focus{
             outline: solid 2px v.$gray-color-60;
+        }
+    }
+
+    &.alert{
+        width: 400px;
+        height:auto;
+        min-height: 200px;
+        border-radius: v.$gap-4;
+        .modal__header{
+            border-bottom: none;
+            height:24px;
+        }
+        .modal__inner {
+            padding-top: v.$padding-6;
+            text-align: center;
+        }
+        .btn__area{
+            display: flex;
+            justify-content: center;
+            gap: v.$gap-4;
+            margin-top: v.$padding-8;
+            button{
+                min-width:120px;
+            }
         }
     }
 

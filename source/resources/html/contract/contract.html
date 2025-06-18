@@ -25,25 +25,409 @@
                     "subtext": "판매점의 전자계약 현황을 확인할 수 있습니다.",
                     })
                     <div class="content__inner contract">
-                        <div class="list__wrap">
-                            <ul>
-                                <li>    
-                                    <div class="notice_box">
-                                        <div class="round__box outline bg__red">
-                                            <i aria-hidden="true"></i>
-                                            <div class="noti__text">
-                                                <span>신규 계약 건이 있습니다.</span>
-                                                <span><b><em>2025년 00월 00일</em>까지</b> 계약을 완료해주세요. (<em>14일</em>
-                                                남음)</span>
-                                            </div>
-                                        </div>
+                        <div class="contract__list">
+                            <div class="notice_box">
+                                <div class="round__box outline bg__red">
+                                    <i aria-hidden="true"></i>
+                                    <div class="noti__text">
+                                        <span>신규 계약 건이 있습니다.</span>
+                                        <span><b><em>2025년 00월 00일</em>까지</b> 계약을 완료해주세요. (<em>14일</em>
+                                            남음)</span>
                                     </div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><!-- 신규계약 -->
                                     <div class="list__wrap">
                                         <div class="round__box outline">
                                             <div class="title__area">
                                                 <div class="title">
-                                                    <span class="badge new">신규계약</span>
+                                                    <span class="badge large new">신규계약</span>
                                                     <h3 class="text">2025년 판매인 전자계약</h3>
+                                                </div>
+                                                <button type="button" class="btn__more__view on" aria-expanded='true'
+                                                    aria-controls="view_1"
+                                                    id="control_1" data-call-more='content__area'><i
+                                                        class="svg__icon arrow"
+                                                        aria-hidden="true"></i><span>신규계약 더보기</span></button>
+                                            </div>
+                                            <div class="content__area active" id="view_1" aria-labelledby="control_1">
+                                                <div class="round__box bg__gray">
+                                                    <span class="info">계약 준비 과정을 모두 완료하시면 전자계약 링크가 활성화 됩니다.</span>
+                                                </div>
+                                                <div class="board__wrap">
+                                                    <div class="board__top">
+                                                        <h4>계약 준비 과정</h4>
+                                                        <div class="progress__area">
+                                                            <div class="progress__bar"><span style="width:40%"></span>
+                                                            </div>
+                                                            <div class="text">40<small>%</small></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="board__list">
+                                                        <ul class="board__table">
+                                                            <li class="board__tr thead">
+                                                                <div class="th num">순서</div>
+                                                                <div class="th title">과정명</div>
+                                                                <div class="th status">상태</div>
+                                                                <div class="th check">완료여부</div>
+                                                                <div class="th date">완료일시</div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>1</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>전자계약
+                                                                                사전설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>100%</em>
+                                                                    <span class="mo__label finished">(완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="finished">완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>2025.05.20 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>2</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>전자계약
+                                                                                사전설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>83%</em>
+                                                                    <span class="mo__label finished">(완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="finished">완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>2025.05.20 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>3</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>전자계약
+                                                                                사전설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>0%</em>
+                                                                    <span class="mo__label unfinished">(미완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="unfinished">미완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>-</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody disabled">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>4</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>판매점 평가의
+                                                                                이해와 적용</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>0%</em>
+                                                                    <span class="mo__label unfinished">(미완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="unfinished">미완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>-</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody disabled">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>5</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>판매점 평가의
+                                                                                이해와 적용 만족도 설문조사 판매점 평가의 이해와 적용 만족도
+                                                                                설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>0%</em>
+                                                                    <span class="mo__label unfinished">(미완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="unfinished">미완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>-</em>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="board__wrap">
+                                                    <div class="board__top">
+                                                        <h4>전자계약서</h4>
+                                                        <!-- 계약서 작성완료 전 -->
+                                                        <div class="info">
+                                                            <div class="text">계약 준비 과정을 모두 완료해 주세요.</div>
+                                                        </div>
+                                                        <!--// 계약서 작성완료 전 -->
+                                                    </div>
+                                                    <div class="board__list">
+                                                        <ul class="board__table">
+                                                            <li class="board__tr thead">
+                                                                <div class="th id">계약서 템플릿 ID</div>
+                                                                <div class="th contract">계약서</div>
+                                                                <div class="th date">계약일시</div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td id">
+                                                                    <span class="mo__label">계약서 템플릿 ID</span>
+                                                                    <em>-</em>
+                                                                </div>
+                                                                <div class="td contract">
+                                                                    <span class="mo__label">계약서</span>
+                                                                    <div class="view__area">
+                                                                        <em>2025년 판매인 전자계약</em>
+                                                                        <button type="button"
+                                                                            class="btn tertiary small"
+                                                                            disabled><span>계약서 작성
+                                                                                바로가기</span></button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">계약일시</span>
+                                                                    <em>-</em>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><!-- 계약종료 -->
+                                    <div class="list__wrap">
+                                        <div class="round__box outline">
+                                            <div class="title__area">
+                                                <div class="title">
+                                                    <span class="badge complete">계약종료</span>
+                                                    <h3 class="text">2024년 판매인 전자계약</h3>
+                                                </div>
+                                                <button type="button" class="btn__more__view " aria-expanded='false'
+                                                    aria-controls="view_2" id="control_2"
+                                                    data-call-more='content__area'><i class="svg__icon arrow"
+                                                        aria-hidden="true"></i><span>종료계약 더보기</span></button>
+                                            </div>
+                                            <div class="content__area" id="view_2" aria-labelledby="control_2">
+                                                <div class="board__wrap">
+                                                    <div class="board__top">
+                                                        <h4>전자계약현황</h4>
+                                                        <div class="progress__area">
+                                                            <div class="progress__bar"><span style="width:100%"></span>
+                                                            </div>
+                                                            <div class="text">100<small>%</small></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="board__list">
+                                                        <ul class="board__table">
+                                                            <li class="board__tr thead">
+                                                                <div class="th num">순서</div>
+                                                                <div class="th title">과정명</div>
+                                                                <div class="th status">상태</div>
+                                                                <div class="th check">완료여부</div>
+                                                                <div class="th date">완료일시</div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>1</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>전자계약
+                                                                                사전설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>100%</em>
+                                                                    <span class="mo__label finished">(완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="finished">완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>2025.05.20 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>2</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>전자계약
+                                                                                사전설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>83%</em>
+                                                                    <span class="mo__label finished">(완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="finished">완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>2025.05.20 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>3</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>전자계약
+                                                                                사전설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>100%</em>
+                                                                    <span class="mo__label finished">(완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="finished">완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>2025.05.20 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>4</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>판매점 평가의
+                                                                                이해와 적용</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>95%</em>
+                                                                    <span class="mo__label finished">(완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="finished">완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>2025.05.20 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td num">
+                                                                    <span class="mo__label">순서</span>
+                                                                    <span>5</span>
+                                                                </div>
+                                                                <div class="td title">
+                                                                    <div class="flex__wrap">
+                                                                        <a href="#none" class="ellipsis"><span>판매점 평가의
+                                                                                이해와 적용 만족도 설문조사 판매점 평가의 이해와 적용 만족도
+                                                                                설문조사</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td status">
+                                                                    <span class="mo__label">상태</span>
+                                                                    <em>100%</em>
+                                                                    <span class="mo__label finished">(완료)</span><!-- 모바일용 -->
+                                                                </div>
+                                                                <div class="td check">
+                                                                    <span class="finished">완료</span>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">완료일시</span>
+                                                                    <em>2025.05.20 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="board__wrap template">
+                                                    <div class="board__top">
+                                                        <h4>전자계약서</h4>
+                                                    </div>
+                                                    <div class="board__list">
+                                                        <ul class="board__table">
+                                                            <li class="board__tr thead">
+                                                                <div class="th id">계약서 템플릿 ID</div>
+                                                                <div class="th contract">계약서</div>
+                                                                <div class="th date">계약일시</div>
+                                                            </li>
+                                                            <li class="board__tr tbody">
+                                                                <div class="td id">
+                                                                    <span class="mo__label">계약서 템플릿 ID</span>
+                                                                    <em>abcd1234</em>
+                                                                </div>
+                                                                <div class="td contract">
+                                                                    <span class="mo__label">계약서</span>
+                                                                    <div class="view__area">
+                                                                        <em>2025년 판매인 전자계약</em>
+                                                                        <a href="#none" type="button"
+                                                                            class="btn tertiary small"><span>계약서
+                                                                                보기</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="td date">
+                                                                    <span class="mo__label">계약일시</span>
+                                                                    <em>2025.04.22 15:01</em>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,7 +435,6 @@
                                 </li>
                             </ul>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -65,51 +448,7 @@
     <!-- Add Library (this page only)-->
 
     <!-- Add Script -->
-    <script>
-        $(function () {
-            const swiper = new Swiper('#slideNotice', {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                navigation: {
-                    nextEl: '#arrow-next-slide',
-                    prevEl: '#arrow-prev-slide',
-                },
-                spaceBetween: 24,
-            });
-            const swiper2 = new Swiper('#slideSpeeto', {
-                slidesPerView: 1,
-                grid: {
-                    rows: 2,
-                },
-                navigation: {
-                    nextEl: '#arrow-next-slide2',
-                    prevEl: '#arrow-prev-slide2',
-                },
-            })
-            const swiper3 = new Swiper('#slideEdu', {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                navigation: {
-                    nextEl: '#arrow-next-slide3',
-                    prevEl: '#arrow-prev-slide3',
-                },
-                spaceBetween: 32,
-            });
-
-            const today = new Date();
-            $("#mainDatepicker").datepicker({
-                language: "ko",
-                todayHighlight: true,
-                maxViewMode: 0,
-                format: 'yyyy-mm-dd',
-            });
-
-            $('#mainDatepicker').datepicker('setDate', today);
-
-
-
-        });
-    </script>
+    
 </body>
 
 </html>

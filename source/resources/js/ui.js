@@ -251,13 +251,13 @@ $(document).ready(function () {
         let $target = $('#'+$(this).attr('aria-controls'));
         let isVisible = $target.is(':visible');
         if (isVisible) {
-            $target.hide();
+            $target.hide().removeClass('active');
             $(this).attr('aria-expanded', false);
             $(this).removeClass('on');
         }else{
             $('.' + name).hide();
             $('.' + $(this).attr('class')).removeClass('on');//같은 클래스명을 가진 버튼을 비활성화 시킴 
-            $target.show();
+            $target.show().addClass('active');
             $(this).attr('aria-expanded', true);
             $(this).addClass('on');
         }

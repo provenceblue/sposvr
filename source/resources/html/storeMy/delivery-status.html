@@ -303,7 +303,14 @@
             });
 
             $('.btn__more__view').on('click',function(){
-               $(this).closest('.board__tr').toggleClass('active');
+                let chk = $(this).closest('.board__tr').hasClass('active');
+                if(chk){
+                    $(this).closest('.board__tr').removeClass('active');
+                }else{
+                    $('.board__tr').removeClass('active');
+                    $(this).closest('.board__tr').addClass('active');
+                }
+                
             })
 
 

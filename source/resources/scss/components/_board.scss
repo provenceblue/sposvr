@@ -3,7 +3,7 @@
 @use "../base/breakpoints"as b;
 
 .board__wrap {
-    margin-top: 72px;
+    margin-top: v.$gap-10;
 
     .board__top {
         display: flex;
@@ -54,7 +54,8 @@
                 height: 32px;
 
             }
-            .open__search__btn{
+
+            .open__search__btn {
                 display: none;
             }
         }
@@ -63,12 +64,14 @@
         //     display: none;
         // }
     }
-
+    .mo__label {
+        display: none;
+    }
     .board__table {
         display: table;
         border-top: 2px solid v.$gray-color-70;
         margin-top: v.$padding-6;
-        width:100%;
+        width: 100%;
 
         .board__tr {
             display: table-row;
@@ -84,11 +87,14 @@
                     border-right: none;
                 }
 
+                
+
                 .flex__wrap {
                     display: flex;
                     gap: v.$gap-3;
                     flex-wrap: nowrap;
                     align-items: center;
+                    width: fit-content;
 
                     .badge {
                         flex-shrink: 0;
@@ -105,6 +111,19 @@
                     }
                 }
             }
+
+            &.disabled {
+                .td {
+                    background: v.$gray-color-5;
+                    color: v.$gray-color-50;
+
+                    a {
+                        pointer-events: none;
+                    }
+                }
+
+            }
+
 
         }
     }
@@ -153,7 +172,7 @@
 
         .td {
             padding: v.$padding-5 v.$padding-6;
-            color: v.$gray-color-70;
+            color: v.$text-color-sub;
 
             .mo__label {
                 @include m.hidden-text();
@@ -186,7 +205,7 @@
                     display: block;
                     @include m.square(40px);
                     border-radius: 6px;
-                    color: v.$gray-color-70;
+                    color: v.$text-color-sub;
                     text-align: center;
                     line-height: 40px;
 
@@ -308,7 +327,7 @@
                     display: inline-flex;
                     min-width: 60px;
                     font-weight: v.$font-weight-semi-bold;
-                    color: v.$gray-color-70;
+                    color: v.$text-color-sub;
                 }
             }
 
@@ -451,7 +470,8 @@
         .board__top {
             .total {
                 flex-direction: column;
-                gap:0;
+                gap: 0;
+
                 .search__period {
                     display: block;
                     color: v.$gray-color-60;
@@ -461,20 +481,24 @@
             }
 
             .list__select {
-                gap:0;
+                gap: 0;
+
                 em,
-                .form__area{
-                    display:none;
+                .form__area {
+                    display: none;
                 }
+
                 .btn.text.exceldownload {
                     flex-direction: column;
-                    height:auto;
-                    gap:0;
-                    span{
+                    height: auto;
+                    gap: 0;
+
+                    span {
                         display: block;
                         font-size: v.$font-body-xsmall;
                     }
                 }
+
                 .open__search__btn {
                     font-size: v.$font-body-xsmall;
                     display: block;
@@ -490,7 +514,7 @@
             .search__btn__area {
                 display: block;
 
-                
+
             }
         }
 
@@ -506,8 +530,9 @@
                 flex-direction: column;
                 table-layout: auto;
                 border: 1px solid v.$gray-color-30;
-                padding: 20px;
+                padding: v.$padding-7;
                 border-radius: v.$gap-4;
+                
 
                 &.thead {
                     display: none;
@@ -517,6 +542,8 @@
                     border: none;
                     display: flex;
                     height: auto;
+                    padding: 0;
+                    
 
                     .flex__wrap {
                         max-width: 100%;
@@ -546,9 +573,10 @@
                 flex-direction: column;
                 table-layout: auto;
                 border: 1px solid v.$gray-color-30;
-                padding: 20px;
+                padding: v.$padding-7;
                 border-radius: v.$gap-4;
                 gap: v.$gap-4;
+
                 &.thead {
                     display: none;
                 }
@@ -565,21 +593,25 @@
         }
 
         .board__tr {
-            &.tbody:hover{
+            &.tbody:hover {
                 background: #fff;
             }
+
             .td {
+                font-size: v.$font-body-small;
                 .mo__label {
                     display: block;
                     position: relative;
                     margin-right: v.$gap-3;
-                    color: v.$gray-color-70;
+                    color: v.$text-color-sub;
                     font-weight: v.$font-weight-semi-bold;
                     user-select: auto;
                     text-indent: 0;
+                    text-align: left;
                 }
             }
         }
+
         .pagination {
             display: none;
         }
@@ -594,7 +626,7 @@
         }
     }
 
-    
+
 
     .thumb__list {
         grid-template-columns: 1fr;

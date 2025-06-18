@@ -22,11 +22,13 @@ $btn-radius: 6px;
         justify-content: space-between;
     }
 }
-button{
+
+button {
     &:focus {
         outline: solid 2px v.$gray-color-60;
     }
 }
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -38,7 +40,7 @@ button{
     font-size: v.$font-body-medium;
     border: 1px solid transparent;
     font-weight: v.$font-weight-medium;
-    
+
     &.primary {
         background-color: v.$primary-color;
         color: #fff;
@@ -88,7 +90,7 @@ button{
 
         &.outline {
             border-color: v.$gray-color-50;
-            color: v.$gray-color-70;
+            color: v.$text-color-sub;
             background-color: #fff;
 
             &:hover {

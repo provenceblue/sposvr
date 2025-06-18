@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "판매점 정보 | 판매점MY"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="storeMy">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-5.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
+                    "depth1": "판매점MY",
+                    "depth2": "판매점 정보",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "판매점 정보",
+                    "subtext": "판매점 정보입니다.",
+                    })
+                    <div class="content__inner store__info">
+                        <div class="store__wrap">
+                            <ul>
+                                <li>
+                                    <div class="round__box outline">
+                                        <div class="title">
+                                            <h3>온라인복권</h3>
+                                        </div>
+                                        <div class="con">
+                                            <ul>
+                                                <li>
+                                                    <span class="label">판매점 ID</span>
+                                                    <em>11100837</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">판매점명</span>
+                                                    <em>행복복권방</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">주소</span>
+                                                    <em>서울시 양천구 목동서로 목동 신시가지 아파트 신목로6길 41</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">개설일자</span>
+                                                    <em>2024.11.27</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">이전일자</span>
+                                                    <em>2024.11.27</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">영업일수</span>
+                                                    <em>1,234일</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">단말기 설치일자</span>
+                                                    <em>2024.12.01</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">담당 매니저</span>
+                                                    <em>김로또(010-1234-5678)</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round__box outline">
+                                        <div class="title">
+                                            <h3>인쇄복권</h3>
+                                        </div>
+                                        <div class="con">
+                                            <ul>
+                                                <li>
+                                                    <span class="label">판매점 ID</span>
+                                                    <em>11100837</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">판매점명</span>
+                                                    <em>행복복권방</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">주소</span>
+                                                    <em>서울시 양천구 목동서로 목동 신시가지 아파트</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">개설일자</span>
+                                                    <em>2024.11.27</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">이전일자</span>
+                                                    <em>2024.11.27</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">영업일수</span>
+                                                    <em>1,234일</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">단말기 설치일자</span>
+                                                    <em>2024.12.01</em>
+                                                </li>
+                                                <li>
+                                                    <span class="label">담당 매니저</span>
+                                                    <em>김로또(010-1234-5678)</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            //lnb 활성화 
+            const $lnbActive = $('.left__menu').find('>ul>li:first-child');
+            const $subActive = $lnbActive.find('.sub__menu').find('li:first-child');
+            $lnbActive.addClass('active');
+            $subActive.addClass('active');
+
+        });
+    </script>
+</body>
+
+</html>

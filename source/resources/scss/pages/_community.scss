@@ -146,7 +146,7 @@
 .pop__contents.survey {
     .detail__top {
         padding: v.$padding-6 v.$padding-8;
-        
+
 
         .title {
             font-weight: v.$font-weight-semi-bold;
@@ -159,7 +159,7 @@
             margin-top: v.$padding-5;
 
             .label {
-                color: v.$gray-color-70;
+                color: v.$text-color-sub;
                 font-weight: v.$font-weight-semi-bold;
                 min-width: 65px;
                 display: inline-flex;
@@ -216,7 +216,6 @@
 
                 .flex__wrap {
                     max-width: 733px;
-                    width: fit-content;
                 }
             }
         }
@@ -244,7 +243,7 @@
 
                     &.title {
                         .ellipsis {
-                            margin: 20px 0;
+                            margin: v.$padding-7 0;
                         }
 
                         .flex__wrap {

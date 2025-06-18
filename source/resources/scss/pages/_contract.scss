@@ -1,5 +1,6 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
+@use "../base/breakpoints"as b;
 
 .notice_box {
     .round__box {
@@ -24,9 +25,11 @@
 
         span {
             display: block;
-            b{
+
+            b {
                 font-weight: v.$font-weight-medium;
             }
+
             em {
                 font-weight: v.$font-weight-bold;
                 color: v.$color-dager-dark;
@@ -36,6 +39,197 @@
     }
 }
 
-.list__wrap {
+.contract__list {
     margin-top: v.$gap-9;
+
+    >ul {
+        margin-top: v.$gap-10;
+        display: flex;
+        flex-direction: column;
+        gap: v.$gap-7;
+
+    }
+
+    .list__wrap {
+        &>.round__box {
+            padding: v.$padding-9;
+        }
+
+    }
+
+    .title__area {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: v.$padding-5;
+
+            h3 {
+                font-size: v.$font-heading-medium;
+            }
+        }
+
+        .badge {
+            padding: v.$padding-3 v.$padding-6;
+            font-weight: v.$font-weight-medium;
+            font-size: v.$font-body-medium;
+            border-radius: 40px;
+
+            &.new {
+                background: v.$primary-color;
+                color: #fff;
+            }
+        }
+
+        .btn__more__view {
+            border-radius: 0;
+            border: none;
+            background-size: 32px;
+
+        }
+    }
+
+    .content__area {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        .round__box {
+            &.bg__gray {
+                margin-top: v.$padding-8;
+            }
+
+            .info {
+                display: block;
+                position: relative;
+                color: v.$text-color-sub;
+                padding-left: 11px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    @include m.square(3px);
+                    background: v.$text-color-sub;
+                    transform: translateY(-50%);
+
+                }
+            }
+        }
+    }
+
+    .board__wrap {
+        margin-top: v.$padding-9;
+
+        .board__top {
+            h4 {
+                font-size: 20px;
+            }
+
+            .progress__area {
+                display: flex;
+                align-items: center;
+                gap: v.$padding-6;
+
+                .progress__bar {
+                    position: relative;
+                    display: block;
+                    width: 200px;
+                    background: v.$gray-color-10;
+                    height: 20px;
+                    border-radius: 20px;
+
+                    span {
+                        display: block;
+                        position: absolute;
+                        height: 20px;
+                        background: v.$color-warning;
+                        border-radius: 20px;
+                        ;
+                    }
+                }
+
+                .text {
+                    font-size: v.$font-heading-medium;
+                    font-weight: v.$font-weight-bold;
+                    color: v.$text-color-sub;
+
+                    small {
+                        font-size: v.$font-body-small;
+                    }
+                }
+
+            }
+
+            .info {
+                .text {
+                    font-size: v.$font-heading-small;
+                    color: v.$color-dager-dark;
+                    font-weight: v.$font-weight-medium;
+                }
+            }
+        }
+
+        .board__table {
+            .board__tr {
+
+                .td,
+                .th {
+                    &.num {
+                        width: 8%;
+                    }
+
+                    &.title {
+                        width: 48%;
+
+                        .flex__wrap {
+                            max-width: 422px;
+                        }
+
+                        a {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    &.status,
+                    &.check {
+                        width: 11%;
+                    }
+
+                    &.date {
+                        width: 22%;
+                    }
+
+                    .finished {
+                        color: v.$primary-color;
+                    }
+
+                    &.id {
+                        width: 18%;
+                    }
+
+                    &.contract {
+                        width: 60%;
+                    }
+                }
+
+                &.disabled {
+                    .td {
+                        &.title {
+                            a {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
+

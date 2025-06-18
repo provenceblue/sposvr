@@ -218,7 +218,7 @@ input[type=radio] {
 
         &:disabled {
             background-color: $input-disabled-color;
-            color: v.$gray-color-70;
+            color: v.$text-color-sub;
             border-color: $input-disabled-border-color;
         }
 
@@ -276,7 +276,7 @@ input[type=radio] {
 
         &:disabled {
             background-color: $input-disabled-color;
-            color: v.$gray-color-70;
+            color: v.$text-color-sub;
             border-color: $input-disabled-border-color;
         }
 
@@ -420,31 +420,36 @@ input[type=radio] {
         position: relative;
         font-size: v.$font-heading-small;
         font-weight: v.$font-weight-bold;
-        
+
     }
+
     .ui-datepicker-prev,
-    .ui-datepicker-next{
-        position:absolute;
-        top:0;
+    .ui-datepicker-next {
+        position: absolute;
+        top: 0;
         display: block;
         @include m.square(28px);
+
         span {
             @include m.hidden-text();
             display: inline-block;
             @include m.square(0);
         }
     }
-    .ui-datepicker-prev{
-        left:0;
+
+    .ui-datepicker-prev {
+        left: 0;
         background: #fff url(../img/common/arrow-left.svg) no-repeat center center / 20px;
-        
+
 
     }
-    .ui-datepicker-next{
-        right:0;
+
+    .ui-datepicker-next {
+        right: 0;
         background: #fff url(../img/common/arrow-right-g.svg) no-repeat center center / 20px;
 
     }
+
     .prev,
     .next {
         cursor: pointer;
@@ -467,6 +472,7 @@ input[type=radio] {
                 //border-radius: 50%;
                 //background: #D6E0EB;
             }
+
             &.ui-datepicker-current-day {
                 background: v.$primary-color;
                 border-radius: 50%;
@@ -474,9 +480,9 @@ input[type=radio] {
 
             }
 
-            
 
-            
+
+
         }
     }
 
@@ -491,7 +497,7 @@ input[type=radio] {
     justify-content: flex-end;
     margin-top: v.$gap-3;
     font-size: v.$font-body-small;
-    color: v.$gray-color-70;
+    color: v.$text-color-sub;
 
     em {
         color: v.$primary-color;

@@ -52,7 +52,8 @@
                             </span>
                         </div>
                         <div class="btn__area">
-                            <button type="button" class="btn tertiary large"><span>로그인</span></button>
+                            <button type="button" class="btn tertiary large" 
+                                onclick="modalDemo1()" id="loginBtn"><span>로그인</span></button>
                         </div>
                         <div class="banner">
                             <img src="@@webRoot/resources/img/layout/login-banner-1.png"
@@ -71,16 +72,21 @@
     <script>
         $(function () {
             $selectEmail = $('#email');
-            $selectEmail.on('change',function(){   
+            $selectEmail.on('change', function () {
                 let type = $(this).val();
-                if(type == 0){
+                if (type == 0) {
                     $(this).closest('.id__con').next('.input__email').show();
-                }else{
+                } else {
                     $(this).closest('.id__con').next('.input__email').hide();
                 }
 
             })
+            
         });
+        function modalDemo1() {
+            //$.confirm("아이디를 입력해주세요.",'','','','','loginBtn'); //리턴할 엘리먼트의 id 전달
+            $.alert("아이디를 입력해주세요.",'','','','loginBtn'); //리턴할 엘리먼트의 id 전달
+        }
     </script>
 </body>
 
