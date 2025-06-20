@@ -216,6 +216,132 @@
         }
     }
 }
+.penalty{
+    .penalty__box{
+        background: v.$gray-color-10;
+        padding: v.$padding-9;
+        border-radius: 12px;
+        margin-bottom: v.$padding-7;
+        .round__box{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: v.$gap-8;
+            .tit {
+                color: v.$text-color-sub;
+                font-weight: v.$font-weight-semi-bold;
+            }
+            .cumulative{
+                border-right: 1px solid v.$gray-color-10;
+                
+                .num{
+                    margin-top: v.$padding-6;
+                    line-height: 1;
+                    b{
+                        font-size: 64px;
+                    }
+                    small{
+                        font-size: 20px;
+                    }
+                }
+            }
+            .grade{
+                &>ul{
+                    padding-right: v.$padding-9;
+                    border-right: 1px solid v.$gray-color-10;
+                }
+                &>ul>li{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: v.$gap-8;
+                    border-bottom: 1px solid v.$gray-color-10;
+                    padding: 6px 0;
+                    .type{
+                        font-weight: v.$font-weight-semi-bold;
+                        &.red{
+                            color: v.$color-dager;
+                        }
+                        &.yellow {
+                            color: v.$color-warning;
+                        }
+                        &.blue {
+                            color: v.$color-information;
+                        }
+
+                    }
+                    .num{
+                        b{
+                            font-weight: v.$font-weight-semi-bold;
+                        }
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+            .period{
+                display: flex;
+                flex-direction: column;
+                gap: v.$gap-3;
+                .num{
+                    font-size: 20px;
+                    font-weight: v.$font-weight-medium;
+                    line-height: 1.2;
+                    b{
+                        font-size: v.$font-heading-xlarge;
+                    }
+                }
+                .date {
+                    color: v.$text-color-date;
+                }
+            }
+
+        }
+    }
+    .board__list{
+        .board__top{
+            .search__period {
+               display: none;  
+            }
+        }
+        .board__table{
+            width: 1350px;
+            .td,
+            .th {
+                &.status {
+                    width: 7%;
+                }
+                &.offense {
+                    width: 24%;
+                    text-align: left;
+                }
+                &.grade {
+                    width: 7%;
+                }
+                &.division {
+                    width: 9%;
+                }
+                &.penalty {
+                    width: 11%;
+                }
+                &.period {
+                    width: 11%;
+                }
+                &.detail {
+                    width: 22%;
+                    text-align: left;
+                }
+                &.manager {
+                    width: 9%;
+                }
+
+
+
+                
+
+            }
+        }
+    }
+}
 .modal__popup .modal__inner .pop__contents {
     &.disability{
         
@@ -493,5 +619,135 @@
             }
         }
     }
-    
+    .penalty{
+        .penalty__box{
+            padding:0;
+            background: v.$color-surface-box2;
+            margin-bottom: v.$padding-9;
+            .round__box{
+                padding: 20px;
+                background: none;
+                grid-template-columns: 1fr;
+                gap: v.$gap-5;
+                .cumulative{
+                    display: flex;
+                    border-right: none;
+                    align-items: center;
+                    justify-content: space-between;
+                    .num{
+                        margin-top:0;
+                        b{
+                            font-size: v.$font-heading-medium;
+                        }
+                        small{
+                            font-size: v.$font-body-small;
+                            display: inline-flex;
+                            margin-left: v.$padding-2;
+                        }
+                    }
+                }
+                .grade{
+                    background: #fff;
+                    padding: v.$padding-6 20px;
+                    border-radius: 12px;
+                    &>ul{
+                        display: flex;
+                        gap: v.$padding-5;
+                        flex-direction: column;
+                        border-right: none;
+                        padding-right: 0; 
+                    }
+                    &>ul>li{
+                        font-size: v.$font-body-small;
+                        padding: 0 0 v.$padding-3 0;
+                        
+                        &:last-child{
+                            border-bottom: none;
+                            padding-bottom:0;
+                        }
+                    }
+                }
+                .period{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    justify-content: space-between;
+                    font-size: v.$font-body-small;
+                    gap: 0;
+                    .num{
+                        text-align: right;
+                        font-size: v.$font-body-small;
+                        b {
+                            font-size: v.$font-body-small;
+                        }
+                    }
+                    .date{
+                        grid-column: 1 / 3;
+                        text-align: right;
+                    }
+
+                }
+            }
+        }
+        .board__top {
+            .total {
+                flex-direction: column;
+                gap: v.$gap-1;
+
+                .base__date {
+                    display: none;
+                }
+                .search__period{
+                    display: block;
+                }
+            }
+        }
+        .board__list {
+            .board__table {
+                width: 100%;
+                .board__tr{
+                    gap: v.$gap-5;
+                }
+                .td,
+                .th {
+                    &.status {
+                        width: 100%;
+                    }
+
+                    &.offense {
+                        width: 100%;
+                    }
+
+                    &.grade {
+                        width: 100%;
+                    }
+
+                    &.division {
+                        width: 100%;
+                    }
+
+                    &.penalty {
+                        width: 100%;
+                    }
+
+                    &.period {
+                        width: 100%;
+                    }
+
+                    &.detail {
+                        width: 100%;
+                    }
+
+                    &.manager {
+                        width: 100%;
+                    }
+                }
+                .td{
+                    flex-direction: column;
+                    gap: v.$gap-3;
+                    text-align: left;
+                }
+                
+            }
+        }
+    }
 }

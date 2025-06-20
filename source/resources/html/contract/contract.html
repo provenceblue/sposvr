@@ -26,7 +26,8 @@
                     })
                     <div class="content__inner contract">
                         <div class="contract__list">
-                            <div class="notice_box">
+                            <!-- 알림영역 -->
+                            <div class="notice__box">
                                 <div class="round__box outline bg__red">
                                     <i aria-hidden="true"></i>
                                     <div class="noti__text">
@@ -36,6 +37,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--// 알림영역 -->
                             <ul>
                                 <li>
                                     <!-- 신규계약 -->
@@ -50,8 +52,9 @@
                                                     aria-controls="view_1" id="control_1"
                                                     data-call-more='content__area'><i class="svg__icon arrow"
                                                         aria-hidden="true"></i><span>신규계약 더보기</span></button>
+                                                        <!-- 펼침상태 class on 추가, aria-expanded='true', 하위 컨텐츠영역과 id 값 매칭 -->
                                             </div>
-                                            <div class="content__area active" id="view_1" aria-labelledby="control_1">
+                                            <div class="content__area active" id="view_1" aria-labelledby="control_1"><!-- 펼침상태 class active 추가, 아코디언 버튼 영역과 id 값 매칭 -->
                                                 <div class="round__box bg__gray">
                                                     <div class="info__wrap">
                                                         <span class="info">계약 준비 과정을 모두 완료하시면 전자계약 링크가 활성화 됩니다.</span>
@@ -59,6 +62,14 @@
                                                             disabled><span>계약서 작성 바로가기</span></button>
                                                     </div>
                                                 </div>
+                                                <!-- 준비과정 완료 -->
+                                                <div class="round__box bg__gray">
+                                                    <div class="info__wrap complete">
+                                                        <a href="#none" class="btn primary large"><span>계약서 작성
+                                                                바로가기</span></a>
+                                                    </div>
+                                                </div>
+                                                <!--// 준비과정 완료 -->
                                                 <div class="board__wrap">
                                                     <div class="board__top">
                                                         <h4>계약 준비 과정</h4>
@@ -91,8 +102,9 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>100%</em>
-                                                                    <span class="mo__label finished">(완료)</span>
+                                                                    <em>100% <span
+                                                                            class="mo__label finished">(완료)</span></em>
+                                                                    
                                                                     <!-- 모바일용 -->
                                                                 </div>
                                                                 <div class="td check">
@@ -116,9 +128,9 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>83%</em>
-                                                                    <span class="mo__label finished">(완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>83% <span class="mo__label finished">(완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -141,9 +153,11 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>0%</em>
-                                                                    <span class="mo__label unfinished">(미완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>0% <span
+                                                                            class="mo__label unfinished">(미완료)</span>
+                                                                            <!-- 모바일용 --></em>
+                                                                    
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="unfinished">미완료</span>
@@ -166,9 +180,10 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>0%</em>
-                                                                    <span class="mo__label unfinished">(미완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>0% <span
+                                                                            class="mo__label unfinished">(미완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="unfinished">미완료</span>
@@ -192,9 +207,10 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>0%</em>
-                                                                    <span class="mo__label unfinished">(미완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>0% <span
+                                                                            class="mo__label unfinished">(미완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="unfinished">미완료</span>
@@ -207,47 +223,10 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div class="board__wrap">
-                                                    <div class="board__top">
-                                                        <h4>전자계약서</h4>
-                                                        <!-- 계약서 작성완료 전 -->
-                                                        <div class="info">
-                                                            <div class="text">계약 준비 과정을 모두 완료해 주세요.</div>
-                                                        </div>
-                                                        <!--// 계약서 작성완료 전 -->
-                                                    </div>
-                                                    <div class="board__list">
-                                                        <ul class="board__table">
-                                                            <li class="board__tr thead">
-                                                                <div class="th id">계약서 템플릿 ID</div>
-                                                                <div class="th contract">계약서</div>
-                                                                <div class="th date">계약일시</div>
-                                                            </li>
-                                                            <li class="board__tr tbody">
-                                                                <div class="td id">
-                                                                    <span class="mo__label">계약서 템플릿 ID</span>
-                                                                    <em>-</em>
-                                                                </div>
-                                                                <div class="td contract">
-                                                                    <span class="mo__label">계약서</span>
-                                                                    <div class="view__area">
-                                                                        <em>2025년 판매인 전자계약</em>
-                                                                        <button type="button" class="btn tertiary small"
-                                                                            disabled><span>계약서 작성
-                                                                                바로가기</span></button>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="td date">
-                                                                    <span class="mo__label">계약일시</span>
-                                                                    <em>-</em>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--// 신규계약  -->
                                 </li>
                                 <li>
                                     <!-- 계약종료 -->
@@ -264,10 +243,17 @@
                                                         aria-hidden="true"></i><span>종료계약 더보기</span></button>
                                             </div>
                                             <div class="content__area" id="view_2" aria-labelledby="control_2">
+                                                <div class="round__box bg__gray">
+                                                    <div class="info__wrap complete">
+                                                        <a href="#none" type="button" class="btn primary large"><span>계약서 보기</span></a>
+                                                        <span class="date">(계약완료 2025.06.17 16:01)</span>
+                                                    </div>
+                                                </div>
                                                 <div class="board__wrap">
                                                     <div class="board__top">
                                                         <h4>전자계약현황</h4>
                                                         <div class="progress__area">
+                                                            <span class="label">진행률</span>
                                                             <div class="progress__bar"><span style="width:100%"></span>
                                                             </div>
                                                             <div class="text">100<small>%</small></div>
@@ -295,9 +281,10 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>100%</em>
-                                                                    <span class="mo__label finished">(완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>100% <span
+                                                                            class="mo__label finished">(완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -320,9 +307,9 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>83%</em>
-                                                                    <span class="mo__label finished">(완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>83% <span class="mo__label finished">(완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -345,9 +332,10 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>100%</em>
-                                                                    <span class="mo__label finished">(완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>100% <span
+                                                                            class="mo__label finished">(완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -370,9 +358,9 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>95%</em>
-                                                                    <span class="mo__label finished">(완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>95% <span class="mo__label finished">(완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -396,9 +384,10 @@
                                                                 </div>
                                                                 <div class="td status">
                                                                     <span class="mo__label">상태</span>
-                                                                    <em>100%</em>
-                                                                    <span class="mo__label finished">(완료)</span>
-                                                                    <!-- 모바일용 -->
+                                                                    <em>100% <span
+                                                                            class="mo__label finished">(완료)</span>
+                                                                        <!-- 모바일용 --></em>
+                                                                    
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -411,44 +400,13 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div class="board__wrap template">
-                                                    <div class="board__top">
-                                                        <h4>전자계약서</h4>
-                                                    </div>
-                                                    <div class="board__list">
-                                                        <ul class="board__table">
-                                                            <li class="board__tr thead">
-                                                                <div class="th id">계약서 템플릿 ID</div>
-                                                                <div class="th contract">계약서</div>
-                                                                <div class="th date">계약일시</div>
-                                                            </li>
-                                                            <li class="board__tr tbody">
-                                                                <div class="td id">
-                                                                    <span class="mo__label">계약서 템플릿 ID</span>
-                                                                    <em>abcd1234</em>
-                                                                </div>
-                                                                <div class="td contract">
-                                                                    <span class="mo__label">계약서</span>
-                                                                    <div class="view__area">
-                                                                        <em>2025년 판매인 전자계약</em>
-                                                                        <a href="#none" type="button"
-                                                                            class="btn tertiary small"><span>계약서
-                                                                                보기</span></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="td date">
-                                                                    <span class="mo__label">계약일시</span>
-                                                                    <em>2025.04.22 15:01</em>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--// 계약종료 -->
                                 </li>
                             </ul>
+                            @@include('@@webRoot/resources/html/_include/pagination.html')
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 @use "../base/mixin"as m;
 @use "../base/breakpoints"as b;
 
-.notice_box {
+.notice__box {
     .round__box {
         display: flex;
         border-width: 2px;
@@ -99,14 +99,41 @@
         }
 
         .round__box {
+            border-radius: 0;
+            border-top: 1px solid v.$gray-color-20;
+
             &.bg__gray {
                 margin-top: v.$padding-8;
             }
-            .info__wrap{
+
+            .info__wrap {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                &.complete {
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: v.$gap-5;
+
+                    .date {
+                        color: v.$text-color-sub;
+                    }
+                }
+
+                .btn {
+                    &.primary {
+                        width: 240px;
+
+                        &:disabled {
+                            background-color: v.$gray-color-50;
+                            color: #fff;
+                        }
+                    }
+
+                }
             }
+
             .info {
                 display: block;
                 position: relative;
@@ -133,6 +160,7 @@
         .board__top {
             justify-content: flex-start;
             gap: v.$padding-8;
+
             h4 {
                 font-size: 20px;
             }
@@ -145,7 +173,7 @@
                 .progress__bar {
                     position: relative;
                     display: block;
-                    width: 200px;
+                    width: 120px;
                     background: v.$gray-color-10;
                     height: 20px;
                     border-radius: 20px;
@@ -240,3 +268,220 @@
 
 }
 
+@include b.size-mobile {
+    .notice__box {
+        .noti__text {
+            font-size: v.$font-body-small;
+
+            span {
+                &:first-child {
+                    font-size: v.$font-body-medium;
+                }
+
+                b {
+                    display: block;
+                }
+
+            }
+
+        }
+
+        .round__box {
+            padding: v.$padding-5 v.$padding-6;
+            gap: v.$gap-5;
+
+            i {
+                @include m.square(72px);
+                flex-basis: 72px;
+            }
+        }
+    }
+
+    .contract__list {
+        margin-top: v.$padding-9;
+
+        &>ul {
+            margin-top: v.$padding-6;
+        }
+
+        .list__wrap {
+            &>.round__box {
+                padding: v.$padding-7;
+            }
+        }
+
+        .title__area {
+
+            .title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: v.$gap-3;
+
+                .text {
+                    font-size: v.$font-heading-small;
+                }
+
+                .badge {
+                    width: fit-content;
+                    font-size: v.$font-body-small;
+                    padding: v.$padding-2 v.$padding-3;
+                }
+
+            }
+        }
+
+        .content__area {
+            .round__box {
+                &.bg__gray {
+                    margin-top: v.$gap-5;
+                    padding: v.$padding-6;
+                    border-radius: 12px;
+                    border-top: 0;
+
+                    .info__wrap {
+                        flex-direction: column;
+                        gap: v.$gap-4;
+
+                        .info {
+                            font-size: v.$font-body-small;
+                            padding-left: 0;
+
+                            &::before {
+                                display: none;
+                            }
+                        }
+                        &.complete{
+                            .date{font-size: v.$font-body-small;}
+                        }
+
+                        .btn {
+                            &.primary {
+                                width: 100%;
+                                font-size: v.$font-body-medium;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .board__wrap {
+            .board__top {
+                justify-content: space-between;
+                border-bottom: 2px solid v.$gray-color-60;
+                h4{
+                    font-size: v.$font-body-small;
+                }
+                .progress__area {
+                    gap: v.$gap-3;
+                    .label{
+                        font-size: v.$font-body-xsmall;
+                    }
+                    .progress__bar {
+                        display: none;
+                    }
+                    .text{
+                        small{
+                            font-size: v.$font-body-xsmall;
+                        }
+                        
+                    }
+                }
+            }
+            .board__table{
+                position: relative;
+                overflow: hidden;
+                &::before {
+                    content: '';
+                    width: 2px;
+                    height: 100%;
+                    position: absolute;
+                    left: 25px;
+                    top: 0;
+                    background: #d9d9d9;
+                }
+                .board__tr{
+                    border: none;
+                    padding: 0;
+                    position: relative;
+                    padding-left: 68px;
+                    &:last-child{
+                        background: #fff;
+                    }
+                    .td{
+                        &.num{
+                            width:auto;
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            padding: v.$padding-2 v.$padding-4;
+                            background: v.$gray-color-60;
+                            border-radius: 52px;
+                            color: #fff;
+                            font-size: v.$font-body-xsmall;
+                            .mo__label{
+                                color: #fff;
+                                margin-right: v.$padding-2;
+                            }
+                        }
+                        &.title {
+                            width: 100%;
+                            margin-bottom: v.$padding-5;
+                        }
+                        &.status
+                        {
+                            width:100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            &>.mo__label{
+                                font-size: v.$font-body-xsmall;
+                            }
+                            em {
+                                color: v.$text-color-sub;
+                                font-weight: v.$font-weight-regular;
+
+                                .mo__label {
+                                    display: inline-flex;
+
+                                    font-weight: v.$font-weight-regular;
+                                }
+                            }
+                            
+                        }
+                        &.check{
+                            display: none;
+                        }
+                        &.date {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                        .flex__wrap{
+                            .ellipsis{
+                                font-size: v.$font-body-medium;
+                            }
+                        }
+                    }
+                    &.disabled{
+                        .td{
+                            background: #fff;
+                            color: v.$text-color-base;
+                            font-weight: v.$font-weight-semi-bold;
+                            &.num{
+                                border: 1px solid v.$gray-color-60;
+                                color: v.$text-color-sub;
+                                .mo__label{
+                                    color: v.$text-color-sub;
+                                }
+                                
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

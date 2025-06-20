@@ -157,15 +157,15 @@
             align-items: center;
             justify-content: flex-start;
 
-            a {
+            span {
                 display: inline-flex;
-                text-decoration: underline;
-                text-underline-offset: 2px;
+                // text-decoration: underline;
+                // text-underline-offset: 2px;
                 line-height: 1.3;
 
-                &:hover {
-                    text-decoration: none;
-                }
+                // &:hover {
+                //     text-decoration: none;
+                // }
             }
 
             &:not(:last-child)::after {

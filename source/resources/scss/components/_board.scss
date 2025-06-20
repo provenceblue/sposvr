@@ -4,7 +4,12 @@
 
 .board__wrap {
     margin-top: v.$gap-10;
-
+    .board__list{
+        &.scroll{
+            overflow-x: auto;
+            max-width: 978px;
+        }
+    }
     .board__top {
         display: flex;
         justify-content: space-between;
@@ -30,6 +35,7 @@
             .search__period {
                 display: none;
             }
+            
         }
 
         .list__select {
@@ -187,65 +193,9 @@
 
     }
 
-    .more__area {
-        display: none;
-    }
+    
 
-    .pagination {
-        margin-top: v.$gap-10;
-
-        ul {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: v.$gap-3;
-
-            .page__item {
-                .page__link {
-                    display: block;
-                    @include m.square(40px);
-                    border-radius: 6px;
-                    color: v.$text-color-sub;
-                    text-align: center;
-                    line-height: 40px;
-
-                    &.active {
-                        background-color: v.$primary-color;
-                        color: #fff;
-                    }
-
-                    &.prev__page {
-                        width: 62px;
-                        display: flex;
-                        align-items: center;
-
-                        i {
-                            @include m.square(20px);
-                            mask: url(../img/common/arrow-left.svg) no-repeat center / 20px;
-                            background-color: v.$gray-color-80;
-
-                        }
-
-                    }
-
-                    &.next__page {
-                        width: 62px;
-                        display: flex;
-                        align-items: center;
-
-                        i {
-                            @include m.square(20px);
-                            mask: url(../img/common/arrow-right-g.svg) no-repeat center / 20px;
-                            background-color: v.$gray-color-80;
-
-                        }
-
-                    }
-                }
-            }
-        }
-
-    }
+    
 
     &.thumbnail {
         .board__list {
@@ -344,6 +294,64 @@
             }
         }
     }
+}
+
+.pagination {
+    margin-top: v.$gap-10;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: v.$gap-3;
+
+        .page__item {
+            .page__link {
+                display: block;
+                @include m.square(40px);
+                border-radius: 6px;
+                color: v.$text-color-sub;
+                text-align: center;
+                line-height: 40px;
+
+                &.active {
+                    background-color: v.$primary-color;
+                    color: #fff;
+                }
+
+                &.prev__page {
+                    width: 62px;
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        @include m.square(20px);
+                        mask: url(../img/common/arrow-left.svg) no-repeat center / 20px;
+                        background-color: v.$gray-color-80;
+
+                    }
+
+                }
+
+                &.next__page {
+                    width: 62px;
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        @include m.square(20px);
+                        mask: url(../img/common/arrow-right-g.svg) no-repeat center / 20px;
+                        background-color: v.$gray-color-80;
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+.more__area {
+    display: none;
 }
 
 .nextprev-list {
@@ -612,18 +620,7 @@
             }
         }
 
-        .pagination {
-            display: none;
-        }
-
-        .more__area {
-            display: block;
-            margin-top: v.$padding-6;
-
-            .btn__more__page {
-                width: 100%;
-            }
-        }
+        
     }
 
 
@@ -691,7 +688,7 @@
             }
         }
     }
-
+    
     .nextprev-list {
         li {
             gap: v.$gap-3;
@@ -700,6 +697,18 @@
                 gap: v.$gap-3;
                 width: 80px;
             }
+        }
+    }
+    .pagination {
+        display: none;
+    }
+
+    .more__area {
+        display: block;
+        margin-top: v.$padding-6;
+
+        .btn__more__page {
+            width: 100%;
         }
     }
 
