@@ -33,9 +33,11 @@ $(document).ready(function () {
     const menuTrigger = $('.menu__trigger')
     mobileMenuBtn.on('click', function () {
         $('.menu__mobile, body').addClass('is__open');
+        $('.gnb__wrap').focus();
     });
     mobileMenuClose.on('click', function () {
         $('.menu__mobile, body').removeClass('is__open');
+        mobileMenuBtn.focus();
     });
     menuTrigger.on('click', function () {
         let openChk = $(this).parent('li').hasClass('active');
@@ -70,17 +72,7 @@ $(document).ready(function () {
     });
 
     
-    //mobile search bottom sheet popup 
-    let $body = $('body');
-    let gfn_body = {
-        hold: function (tf) {
-            if (tf) {
-                $body.addClass('is__open');
-            } else {
-                $body.removeClass('is__open');
-            }
-        }
-    };
+    
     //left menu(pc)
     const $leftMenuOpen = $('.left__menu').find('button');
     const $liToggle = $('.left__menu>ul>li');
@@ -111,28 +103,7 @@ $(document).ready(function () {
     //         $returnName.focus();
     //     }
     // };
-    const gfn_dim = {
-        show($target, level, parent, returnName) {
-            $('<div class="dim">')
-                .attr({
-                    'data-return': returnName,
-                    'data-parent': parent
-                })
-                .insertBefore($target)
-                .fadeIn(200)
-                .css('z-index', level - 1);
-        },
-
-        hide($dim) {
-            if (!$dim || !$dim.length) return;
-
-            const returnName = $dim.data('return');
-            $dim.fadeOut(200, function () {
-                $(this).remove();
-                $(`[data-return-name="${returnName}"]`).focus();
-            });
-        }
-    };
+    
     
     $('body').on('click', '.dim', function () {
         const layerName = $body.find('div').attr('data-layered-name');
@@ -141,7 +112,7 @@ $(document).ready(function () {
         gfn_layered.close(layerName, parentName, returnName);
         gfn_dim.hide($(this));
     });
-    let layeredLevel = 2002;
+    
     // let gfn_layered = {
     //     open: function (name, parent, returnName) {
     //         const $parent = $(parent);
@@ -188,37 +159,7 @@ $(document).ready(function () {
     //         }
     //     }
     // };
-    const gfn_layered = {
-        open(name, parent, returnName) {
-            if (!name) return;
-            const $parent = $(parent);
-            const $layer = $parent.find(`[data-layered-name="${name}"]`);
-            if (!$layer.length) return;
-
-            gfn_dim.show($layer, layeredLevel, parent, returnName);
-            $layer.css('z-index', layeredLevel).addClass('is__active');
-            $layer.find('[data-modal="close"]', '[data-action="close"]').attr('data-return', returnName);
-            if (parent !== 'body') $parent.addClass('is__active');
-            gfn_body.hold(true);
-            layeredLevel += 2;
-            $layer.focus();
-        },
-
-        close(name, parent, returnName) {
-            const $parent = $(parent);
-            const $return = $(`[data-return-name="${returnName}"]`);
-            const $layer = name ? $parent.find(`[data-layered-name="${name}"]`) : $parent.find('div[data-layered-name]');
-
-            gfn_body.hold(false);
-            if (name && !$layer.length) return;
-
-            gfn_dim.hide($layer.prev('.dim'), parent, returnName);
-            $layer.removeClass('is__active').removeAttr('style');
-            if (parent !== 'body') $parent.removeClass('is__active').removeAttr('style');
-
-            $return.focus();
-        }
-    };
+    
 
     //call search
     $('body').on('click', '[data-call-layered]', function () {
@@ -310,3 +251,69 @@ function gfn_comma3Digit(number) {
     number = number.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
     return Number(number).toLocaleString();
 }
+//mobile search bottom sheet popup 
+let $body = $('body');
+let layeredLevel = 2002;
+let gfn_body = {
+    hold: function (tf) {
+        if (tf) {
+            $body.addClass('is__open');
+        } else {
+            $body.removeClass('is__open');
+        }
+    }
+};
+const gfn_dim = {
+    show($target, level, parent, returnName) {
+        $('<div class="dim">')
+            .attr({
+                'data-return': returnName,
+                'data-parent': parent
+            })
+            .insertBefore($target)
+            .fadeIn(200)
+            .css('z-index', level - 1);
+    },
+
+    hide($dim) {
+        if (!$dim || !$dim.length) return;
+
+        const returnName = $dim.data('return');
+        $dim.fadeOut(200, function () {
+            $(this).remove();
+            $(`[data-return-name="${returnName}"]`).focus();
+        });
+    }
+};
+
+const gfn_layered = {
+    open(name, parent, returnName) {
+        if (!name) return;
+        const $parent = $(parent);
+        const $layer = $parent.find(`[data-layered-name="${name}"]`);
+        if (!$layer.length) return;
+
+        gfn_dim.show($layer, layeredLevel, parent, returnName);
+        $layer.css('z-index', layeredLevel).addClass('is__active');
+        $layer.find('[data-modal="close"]', '[data-action="close"]').attr('data-return', returnName);
+        if (parent !== 'body') $parent.addClass('is__active');
+        gfn_body.hold(true);
+        layeredLevel += 2;
+        $layer.focus();
+    },
+
+    close(name, parent, returnName) {
+        const $parent = $(parent);
+        const $return = $(`[data-return-name="${returnName}"]`);
+        const $layer = name ? $parent.find(`[data-layered-name="${name}"]`) : $parent.find('div[data-layered-name]');
+
+        gfn_body.hold(false);
+        if (name && !$layer.length) return;
+
+        gfn_dim.hide($layer.prev('.dim'), parent, returnName);
+        $layer.removeClass('is__active').removeAttr('style');
+        if (parent !== 'body') $parent.removeClass('is__active').removeAttr('style');
+
+        $return.focus();
+    }
+};

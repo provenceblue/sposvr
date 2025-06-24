@@ -12,7 +12,9 @@
                 <div class="store">
                     <ul>
                         <li class="my_store"><span>파라곤타워양천동행복권점파라곤타워양천동행복권점</span></li>
-                        <li><button class="btn-alrim"><i class="svg__icon bell"
+                        <li><button class="btn tertiary xsmall"><i class="svg__icon logout"
+                                    aria-hidden="true"></i><span>로그아웃</span></button></li>
+                        <li><button class="btn-alrim" data-call-modal="alrimDetail" data-return-name="btnAlrim"><i class="svg__icon bell"
                                     aria-hidden="true"></i><span>알림</span></button></li>
                     </ul>
                 </div>
@@ -50,7 +52,8 @@
             </div>
             <div class="actions">
                 <div class="alrim__area">
-                    <button type="button" class="btn__alrim"><i class="svg__icon bell"
+                    <button type="button" class="btn__alrim" data-call-modal="alrimDetail"
+                        data-return-name="btnAlrim"><i class="svg__icon bell"
                             aria-hidden="true"></i><span>알림</span></button>
                 </div>
                 <div class="btn__area">
@@ -181,9 +184,70 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="logout__area">
+                        <button class="btn tertiary xsmall"><i class="svg__icon logout"
+                                aria-hidden="true"></i><span>로그아웃</span></button>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 </header>
 <!-- header mobile [e] -->
+
+<!-- 알림팝업 -->
+<div class="modal__popup" data-layered-name="alrimDetail" tabindex="0">
+    <div class="modal__header">
+        <span class="tit">알림</span>
+    </div>
+    <div class="modal__inner">
+        <div class="pop__contents alrim">
+            <div class="detail__content">
+                <ul class="list">
+                    <li>
+                        <div class="round__box bg__primary">
+                            <div class="tit__wrap">
+                                <div class="date"><em>2025.03.10 15:28:44</em> <span class="is__view">읽지않음</span></div>
+                                <div class="tit">담당자 변경 알림</div>
+                            </div>
+                            <div class="text">담당 매니저가 $ 김연금$ 매니저로 변경되었습니다.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="round__box bg__primary">
+                            <div class="tit__wrap">
+                                <div class="date"><em>2025.03.10 15:28:44</em> <span class="is__view">읽지않음</span></div>
+                                <div class="tit">미정산 알림</div>
+                            </div>
+                            <div class="text">인쇄복권 미정산 내역(지연 배상금 1,000,000원)이 있습니다.</div>
+                        </div>
+                    </li>
+                    <li class="read"> <!-- 읽었을때 class read 추가 -->
+                        <div class="round__box bg__primary">
+                            <div class="tit__wrap">
+                                <div class="date"><em>2025.03.10 15:28:44</em> <span class="is__view">읽음</span></div>
+                                <div class="tit">소모품 배송 현황 알림</div>
+                            </div>
+                            <div class="text">소모품 배송 상태가 변경되었습니다.(배송완료)</div>
+                        </div>
+                    </li>
+                    <li class="read">
+                        <!-- 읽었을때 class read 추가 -->
+                        <div class="round__box bg__primary">
+                            <div class="tit__wrap">
+                                <div class="date"><em>2025.03.10 15:28:44</em> <span class="is__view">읽음</span></div>
+                                <div class="tit">위반 벌칙 알림</div>
+                            </div>
+                            <div class="text">위반 행위 벌칙 적용 안내입니다.(BLUE등급 1회/YELLOW 1회/RED 3회)</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn__area">
+                <button type="button" class="btn primary outline large" data-modal="close"><span>확인</span></button>
+            </div>
+        </div>
+    </div>
+    <button class="btn__close" data-modal="close"><span>닫기</span></button>
+</div>
+<!--// 알림팝업 -->

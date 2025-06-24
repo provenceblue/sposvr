@@ -38,6 +38,7 @@ body {
 
         div>ul {
             display: inline-flex;
+            gap: v.$gap-3;
 
             li>span {
                 line-height: 36px;
@@ -378,7 +379,13 @@ body {
                     z-index: -1;
                     content: '';
                 }
-
+                .logout__area {
+                    width: 39vw;
+                    display: flex;
+                    justify-content: center;
+                    position: absolute;
+                    bottom:24px;
+                }
                 .gnb__inner {
                     display: flex;
                     align-items: normal;
@@ -541,11 +548,16 @@ body {
 
                         }
                     }
-
                 }
 
             }
         }
 
+    }
+}
+
+@media (orientation: landscape) {
+    .mo__header .menu__mobile .gnb__wrap .logout__area{
+        position: static;
     }
 }

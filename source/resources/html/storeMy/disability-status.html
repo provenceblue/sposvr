@@ -3,7 +3,7 @@
 
 <head>
     @@include('@@webRoot/resources/html/_include/head.html',{
-    "title": "장애처리 현황 | 판매점MY"
+    "title": "장애처리 현황 | 판매점 MY"
     })
 </head>
 
@@ -17,7 +17,7 @@
 
                 <div class="content" id="content">
                     @@include('@@webRoot/resources/html/_include/breadcrumb-2.html',{
-                    "depth1": "판매점MY",
+                    "depth1": "판매점 MY",
                     "depth2": "판매점 정보",
                     "depth3": "장애처리 현황",
                     })
@@ -109,6 +109,9 @@
                                     <div class="num__area">
                                         <span>전체 <em>24</em>개</span>
                                     </div>
+                                    <div class="search__period">
+                                        <span>2025.04.20</span>~<span>2025.05.30</span>
+                                    </div>
                                 </div>
                                 <div class="list__select">
                                     <em>목록 표시 개수</em>
@@ -142,8 +145,7 @@
                                         </div>
                                         <div class="td num">
                                             <span class="mo__label">접수번호</span>
-                                            <button type="button"
-                                                data-call-modal="disabilityResult"
+                                            <button type="button" data-call-modal="disabilityResult"
                                                 data-return-name="disabilityNum_1"><span>T1747290204988BhdGe</span></button>
                                         </div>
                                         <div class="td end__date">
@@ -205,7 +207,7 @@
                                             <span>Y</span>
                                         </div>
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                             @@include('@@webRoot/resources/html/_include/pagination.html')
@@ -258,33 +260,6 @@
                                     판매점명: 보원상회<br>
                                     장비정보: DT
                                     주소 : 서울 성북구 보문로56<br>
-                                    내용:  4월 하순부터 커팅이 잘 안되서 고객센터 상담 받음<br>
-                                    /용지부분 절단 설정이 사용안함으로 되어 있어 사용으로 변경, 청소, 재부팅하면서 이용<br>
-                                    / 이제는 커팅 안되고 한계에 도달한 것 같아 확인 요청<br>
-                                    / 연락처 : 010-1234-5678<br>
-                                    <!--// 에디터 영역 -->
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="round__box bg__gray">
-                                <ul class="tit">
-                                    <li>
-                                        <span>영업사원: </span>
-                                        <em>한상태(매니저)</em>
-                                    </li>
-                                    <li>
-                                        <span>이관일시: </span>
-                                        <em>20250515 15:53:27</em>
-                                    </li>
-                                </ul>
-                                <div class="con">
-                                    <!-- 에디터 영역 -->
-                                    [장애 접수]<br>
-                                    판매점 ID : 11100688<br>
-                                    판매점명: 보원상회<br>
-                                    장비정보: DT
-                                    주소 : 서울 성북구 보문로56<br>
                                     내용: 4월 하순부터 커팅이 잘 안되서 고객센터 상담 받음<br>
                                     /용지부분 절단 설정이 사용안함으로 되어 있어 사용으로 변경, 청소, 재부팅하면서 이용<br>
                                     / 이제는 커팅 안되고 한계에 도달한 것 같아 확인 요청<br>
@@ -320,12 +295,38 @@
                                 </div>
                             </div>
                         </li>
-                        
+                        <li>
+                            <div class="round__box bg__gray">
+                                <ul class="tit">
+                                    <li>
+                                        <span>영업사원: </span>
+                                        <em>한상태(매니저)</em>
+                                    </li>
+                                    <li>
+                                        <span>이관일시: </span>
+                                        <em>20250515 15:53:27</em>
+                                    </li>
+                                </ul>
+                                <div class="con">
+                                    <!-- 에디터 영역 -->
+                                    [장애 접수]<br>
+                                    판매점 ID : 11100688<br>
+                                    판매점명: 보원상회<br>
+                                    장비정보: DT
+                                    주소 : 서울 성북구 보문로56<br>
+                                    내용: 4월 하순부터 커팅이 잘 안되서 고객센터 상담 받음<br>
+                                    /용지부분 절단 설정이 사용안함으로 되어 있어 사용으로 변경, 청소, 재부팅하면서 이용<br>
+                                    / 이제는 커팅 안되고 한계에 도달한 것 같아 확인 요청<br>
+                                    / 연락처 : 010-1234-5678<br>
+                                    <!--// 에디터 영역 -->
+                                </div>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
                 <div class="btn__area">
-                    <button type="button" class="btn primary outline large" data-modal="close"
-                        ><span>확인</span></button>
+                    <button type="button" class="btn primary outline large" data-modal="close"><span>확인</span></button>
                 </div>
             </div>
         </div>
@@ -348,14 +349,14 @@
             // 기간설정 datepicker
             const today = new Date();
             $("#startDate").datepicker({
-            dateFormat: 'yy.mm.dd',
+                dateFormat: 'yy.mm.dd',
             });
 
             $('#startDate').datepicker('setDate', today);
 
             $("#endDate").datepicker({
-            dateFormat: 'yy.mm.dd',
-            }); 
+                dateFormat: 'yy.mm.dd',
+            });
         });
     </script>
 </body>

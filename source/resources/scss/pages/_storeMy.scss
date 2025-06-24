@@ -362,6 +362,77 @@
         }
     }
 } 
+.deposit{
+    .deposit__box {
+        margin-bottom: v.$padding-7;
+        .round__box{
+            background-color: v.$color-surface-box;
+            padding: v.$padding-9;
+            .tit{
+                font-weight: v.$font-weight-bold;
+                margin-bottom: v.$padding-6;
+            }
+            .list{
+                display: flex;
+                justify-content: space-between;
+                li{
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    gap: v.$gap-3;
+                    .badge{
+                        border: 1px solid v.$gray-color-20;
+                        span{
+                            padding-left: 0;
+                            font-size: v.$font-body-medium;
+                            font-weight: v.$font-weight-regular;
+                        }
+                    }
+                    .num{
+                        font-size: v.$font-heading-medium;
+                        font-weight: v.$font-weight-semi-bold;
+                    }
+                    .name{
+                        font-size: v.$font-heading-medium;
+                        font-weight: v.$font-weight-semi-bold;
+                        color: v.$text-color-date;
+                    }
+                    
+                }
+            }
+        }
+    }
+    .search__area .input__area>ul>li .items .search__box .input__box{
+        width: 200px;
+    }
+    .board__wrap{
+        .board__table{
+            .board__tr{
+                .th,
+                .td{
+                    &.division{
+                        width: 15%
+                    }
+                    &.date {
+                        width: 25%
+                    }
+                    &.name {
+                        width: 20%;
+                    }
+                    &.bank {
+                        width: 20%;
+                    }
+                    &.amount {
+                        width: 20%;
+                        text-align: right;
+                    }
+
+                }
+            }
+        }
+    }   
+    
+}
 
 @include b.size-mobile {
     .delivery {
@@ -575,7 +646,7 @@
                 max-width: 100%;
             }
         }
-
+        
         .board__wrap {
             .board__list {
                 .board__tr {
@@ -642,7 +713,7 @@
                         small{
                             font-size: v.$font-body-small;
                             display: inline-flex;
-                            margin-left: v.$padding-2;
+                            margin-left: v.$padding-2; 
                         }
                     }
                 }
@@ -747,6 +818,91 @@
                     text-align: left;
                 }
                 
+            }
+        }
+    }
+    .deposit{
+        .deposit__box{
+            .round__box{
+                padding: v.$padding-7;
+                .tit{
+                    
+                }
+                .list{
+                    flex-direction: column;
+                    &>li{
+                        display: list-item;
+                        background-color: #fff;
+                        padding: v.$padding-5;
+                        border-radius: v.$border-radius;
+                        &+li{
+                            margin-top: v.$padding-3;
+                        }
+                        .badge__wrap{
+                            margin-bottom: v.$padding-3;
+                            .badge{
+                                padding: 0 v.$padding-3;
+                                span{
+                                    font-size: v.$font-body-xsmall;
+                                    line-height:24px;
+                                }
+                            }
+                        }
+                        .num{
+                            display: inline-flex;
+                            font-size: v.$font-body-small;
+                        }
+                        .name {
+                            display: inline-flex;
+                            font-size: v.$font-body-small;
+                            margin-left: v.$padding-2;
+                        }
+                    }
+                }
+            }
+        }
+        .search__area .input__area>ul>li .items .search__box .input__box {
+            width: 100%;
+        }
+        .board__wrap{
+            .board__top{
+                .total{
+                    .base__date{
+                        display: none;
+                    }
+                } 
+            } 
+        } 
+        .board__wrap {
+            .board__table {
+                .board__tr {
+                    gap: v.$padding-5;
+                    .th,
+                    .td {
+                        justify-content: space-between;
+                        &.division {
+                            width: 100%
+                        }
+
+                        &.date {
+                            width: 100%
+                        }
+
+                        &.name {
+                            width: 100%;
+                        }
+
+                        &.bank {
+                            width: 100%;
+                        }
+
+                        &.amount {
+                            width: 100%;
+                            text-align: right;
+                        }
+
+                    }
+                }
             }
         }
     }

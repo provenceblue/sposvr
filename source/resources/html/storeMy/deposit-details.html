@@ -3,7 +3,7 @@
 
 <head>
     @@include('@@webRoot/resources/html/_include/head.html',{
-    "title": "소모품 배송 현황 | 판매점 MY"
+    "title": "입금내역 | 판매점 MY"
     })
 </head>
 
@@ -18,13 +18,34 @@
                 <div class="content" id="content">
                     @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
                     "depth1": "판매점 MY",
-                    "depth2": "소모품 배송 현황",
+                    "depth2": "입금내역",
                     })
                     @@include('@@webRoot/resources/html/_include/title.html',{
-                    "title": "소모품 배송 현황",
-                    "subtext": "신청한 소모품의 배송 현황을 확인할 수 있습니다.",
+                    "title": "입금내역",
+                    "subtext": "판매점이 입금한 내역을 확인할 수 있습니다.",
                     })
-                    <div class="content__inner delivery">
+                    <div class="content__inner deposit">
+                        <div class="deposit__box">
+                            <div class="round__box bg__gray">
+                                <div class="tit"><span>내 가상계좌 정보</span></div>
+                                <ul class="list">
+                                    <li>
+                                        <div class="badge__wrap">
+                                            <div class="badge large"><span>온라인복권</span></div>
+                                        </div>
+                                        <div class="num">100-123-456789</div>
+                                        <div class="name">(유복권)</div>
+                                    </li>
+                                    <li>
+                                        <div class="badge__wrap">
+                                            <div class="badge large"><span>인쇄복권</span></div>
+                                        </div>
+                                        <div class="num">100-123-456789</div>
+                                        <div class="name">(유복권)</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="search__area">
                             <!-- 검색영역, 모바일(바텀시트) 공통 -->
                             <div class="bottom__sheet " data-layered-name="bsSearch" tabindex="0">
@@ -89,12 +110,24 @@
                                                             <span class="form__area">
                                                                 <input type="checkbox" class="checkbox__input"
                                                                     id="division_2" name="division">
-                                                                <label for="division_2">티켓롤지</label>
+                                                                <label for="division_2">온라인복권</label>
                                                             </span>
                                                             <span class="form__area">
                                                                 <input type="checkbox" class="checkbox__input"
                                                                     id="division_3" name="division">
-                                                                <label for="division_3">슬립지</label>
+                                                                <label for="division_3">인쇄복권</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="title"><span>입금자명</span></div>
+                                                    <div class="items">
+                                                        <div class="item">
+                                                            <span class="form__area search__box">
+                                                                <input type="text" class="input__box" id="searchWord"
+                                                                    placeholder="입금자명 입력">
+                                                                <label for="searchWord">입금자명</label>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -136,148 +169,93 @@
                                             <option value="">100개</option>
                                         </select>
                                     </span>
-                                    <button class="open__search__btn" data-call-layered="bsSearch">
+                                    <button class="open__search__btn" data-call-layered="bsSearch"
+                                        data-return-name="btnBsSearch">
                                         <i class="svg__icon search" aria-hidden="true"></i>
                                         <span>상세조회</span>
                                     </button>
                                 </div>
                             </div>
                             <div class="board__list">
-                                <ul class="board__grid">
-                                    <li class="board__tr thead" aria-hidden="true">
-                                        <div class="th date">신청일</div>
-                                        <div class="th division">구분</div>
-                                        <div class="th quantity">수량</div>
-                                        <div class="th status">배송상태</div>
+                                <ul class="board__table">
+                                    <li class="board__tr thead">
+                                        <div class="th division">판매구분</div>
+                                        <div class="th date">입금일시</div>
+                                        <div class="th name">입금자명</div>
+                                        <div class="th bank">입금은행</div>
+                                        <div class="th amount">입금액</div>
                                     </li>
                                     <li class="board__tr tbody">
-                                        <div class="td date">
-                                            <span class="mo__label">신청일</span>
-                                            <span>2025.05.20</span>
-                                        </div>
                                         <div class="td division">
-                                            <span class="mo__label">구분</span>
-                                            <span>슬립지</span>
+                                            <span class="mo__label">판매구분</span>
+                                            <span>온라인복권</span>
                                         </div>
-                                        <div class="td quantity">
-                                            <span class="mo__label">수량</span>
-                                            <span class="text__right">10Box</span>
-                                        </div>
-                                        <div class="td status">
-                                            <span class="mo__label">배송상태</span>
-                                            <div class="info">
-                                                <span>배송시작</span>
-                                                <button type="button" aria-expanded='false' aria-controls="view_1"
-                                                    id="control_1" class="btn__more__view"
-                                                    data-call-more='status__list'><span>배송현황
-                                                        더보기</span></button> <!-- status__list의 id와 aria 값으로 매칭 필요 -->
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="status__list" id="view_1" aria-labelledby="control_1">
-                                        <div class="invoice__number">
-                                            <span class="label">송장번호</span>
-                                            <span class="number"><strong>6864079438339</strong><em>(롯데택배)</em></span>
-                                            <span class="mo__label"><em>배송업체</em> <strong>롯데택배</strong></span>
-                                        </div>
-                                        <ul class="invoice__status">
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">서용산</div>
-                                                <div class="status">배송중</div>
-                                            </li>
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">서용산</div>
-                                                <div class="status">배송출고</div>
-                                            </li>
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">이천센터</div>
-                                                <div class="status">터미널 출고</div>
-                                            </li>
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">이천센터</div>
-                                                <div class="status">터미널 출고</div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="board__tr tbody">
                                         <div class="td date">
-                                            <span class="mo__label">신청일</span>
-                                            <span>2025.05.20</span>
+                                            <span class="mo__label">입금일시</span>
+                                            <span>2025.05.09(금) 23:51:12</span>
                                         </div>
-                                        <div class="td division">
-                                            <span class="mo__label">구분</span>
-                                            <span>슬립지</span>
+                                        <div class="td name">
+                                            <span class="mo__label">입금자명</span>
+                                            <span>-</span>
                                         </div>
-                                        <div class="td quantity">
-                                            <span class="mo__label">수량</span>
-                                            <span class="text__right">10Box</span>
+                                        <div class="td bank">
+                                            <span class="mo__label">입금은행</span>
+                                            <span>-</span>
                                         </div>
-                                        <div class="td status">
-                                            <span class="mo__label">배송상태</span>
-                                            <span>배송완료</span>
+                                        <div class="td amount">
+                                            <span class="mo__label">입금액</span>
+                                            <span>189,000</span>
                                         </div>
                                     </li>
                                     <li class="board__tr tbody">
-                                        <div class="td date">
-                                            <span class="mo__label">신청일</span>
-                                            <span>2025.05.20</span>
-                                        </div>
                                         <div class="td division">
-                                            <span class="mo__label">구분</span>
-                                            <span>슬립지</span>
+                                            <span class="mo__label">판매구분</span>
+                                            <span>인쇄복권</span>
                                         </div>
-                                        <div class="td quantity">
-                                            <span class="mo__label">수량</span>
-                                            <span class="text__right">10Box</span>
+                                        <div class="td date">
+                                            <span class="mo__label">입금일시</span>
+                                            <span>2025.05.09(금) 23:51:12</span>
                                         </div>
-                                        <div class="td status">
-                                            <span class="mo__label">배송상태</span>
-                                            <div class="info">
-                                                <span>배송중</span>
-                                                <button type="button" aria-expanded='false' aria-controls="view_2"
-                                                    id="control_2" class="btn__more__view"
-                                                    data-call-more='status__list'><span>배송현황
-                                                        더보기</span></button> <!-- status__list의 id와 aria 값으로 매칭 필요 -->
-                                            </div>
+                                        <div class="td name">
+                                            <span class="mo__label">입금자명</span>
+                                            <span>김복권</span>
+                                        </div>
+                                        <div class="td bank">
+                                            <span class="mo__label">입금은행</span>
+                                            <span>NH농협은행</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">입금액</span>
+                                            <span>189,000</span>
                                         </div>
                                     </li>
-                                    <li class="status__list" id="view_2" aria-labelledby="control_2">
-                                        <div class="invoice__number">
-                                            <span class="label">송장번호</span>
-                                            <span class="number"><strong>6864079438339</strong><em>(롯데택배)</em></span>
-                                            <span class="mo__label"><em>배송업체</em><strong>롯데택배</strong></span>
+                                    <li class="board__tr tbody">
+                                        <div class="td division">
+                                            <span class="mo__label">판매구분</span>
+                                            <span>온라인복권</span>
                                         </div>
-                                        <ul class="invoice__status">
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">서용산</div>
-                                                <div class="status">배송중</div>
-                                            </li>
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">서용산</div>
-                                                <div class="status">배송출고</div>
-                                            </li>
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">이천센터</div>
-                                                <div class="status">터미널 출고</div>
-                                            </li>
-                                            <li>
-                                                <div class="time">2025.03.03 09:20</div>
-                                                <div class="place">이천센터</div>
-                                                <div class="status">터미널 출고</div>
-                                            </li>
-                                        </ul>
+                                        <div class="td date">
+                                            <span class="mo__label">입금일시</span>
+                                            <span>2025.05.09(금) 23:51:12</span>
+                                        </div>
+                                        <div class="td name">
+                                            <span class="mo__label">입금자명</span>
+                                            <span>-</span>
+                                        </div>
+                                        <div class="td bank">
+                                            <span class="mo__label">입금은행</span>
+                                            <span>-</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">입금액</span>
+                                            <span>189,000</span>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                             @@include('@@webRoot/resources/html/_include/pagination.html')
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -285,7 +263,7 @@
         </div>
         @@include('@@webRoot/resources/html/_include/footer.html')
     </div>
-
+    
     <!-- Script -->
     @@include('@@webRoot/resources/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
@@ -293,7 +271,10 @@
     <!-- Add Script -->
     <script>
         $(function () {
-            // 기간설정 datepicker 
+            //lnb 활성화 
+            const $lnbActive = $('.left__menu').find('>ul>li:nth-child(3)');
+            $lnbActive.addClass('active');
+            // 기간설정 datepicker
             const today = new Date();
             $("#startDate").datepicker({
                 dateFormat: 'yy.mm.dd',
@@ -304,19 +285,6 @@
             $("#endDate").datepicker({
                 dateFormat: 'yy.mm.dd',
             });
-
-            $('.btn__more__view').on('click', function () {
-                let chk = $(this).closest('.board__tr').hasClass('active');
-                if (chk) {
-                    $(this).closest('.board__tr').removeClass('active');
-                } else {
-                    $('.board__tr').removeClass('active');
-                    $(this).closest('.board__tr').addClass('active');
-                }
-
-            })
-
-
         });
     </script>
 </body>

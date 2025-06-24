@@ -222,6 +222,8 @@
     }
 }
 
+
+
 @include b.size-mobile {
     .survey {
 
@@ -407,5 +409,23 @@
                 }
             }
         }
+    }
+    //fullcalendar
+    .fullcalendar {
+        &.fc {
+            .fc-daygrid-day-frame {
+                //min-height:60px;
+            }
+            .fc-scrollgrid-sync-table {
+                td{
+                    min-height: 100px;
+                }
+            }
+        }
+        .fc-view-harness,
+        .fc-view-harness-active {
+            //height: 398px !important;
+        }
+
     }
 }

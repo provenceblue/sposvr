@@ -15,11 +15,20 @@
                     center: 'title',
                     right: 'next'
                 },
-                initialDate: today,//'2025-06-12',
-                navLinks: true, // can click day/week names to navigate views
-                editable: true,
+                initialDate: today, //'2025-06-12',
+                //navLinks: true, // can click day/week names to navigate views
+                //editable: true,
                 dayMaxEvents: true, // allow "more" link when too many events
                 locale: 'ko',
+                longPressDelay: 1,
+                height: 780,
+                
+                eventClick: function (info) { // 이벤트 셀을 클릭할 때 모달 열기
+                    $('.fc-event').removeAttr('data-return-name');
+                    $(info.el).attr('data-return-name', 'eventClick')
+                    gfn_layered.open('calendarDetail', 'body', 'eventClick');
+
+                },
                 events: [{
                         title: 'All Day Event',
                         start: '2025-06-01'
@@ -41,13 +50,13 @@
                     },
                     {
                         title: 'Conference',
-                        start: '2025-06-11',
-                        end: '2025-06-13'
+                        start: '2025-06-30',
+                        end: '2025-07-18'
                     },
                     {
                         title: 'Meeting',
-                        start: '2025-06-12T10:30:00',
-                        end: '2025-06-12T12:30:00'
+                        start: '2025-06-12',
+                        end: '2025-06-12'
                     },
                     {
                         title: 'Lunch',
@@ -78,6 +87,21 @@
             });
 
             calendar.render();
+
+            var delay = 300;
+            var timer = null;
+            window.addEventListener('resize', function () {
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    let width = document.body.clientWidth;
+                    if(width < 768){
+                        calendar.setOption('height', 650);
+                    }else{
+                        calendar.setOption('height', 780);
+                    }
+                    
+                }, delay);
+            });
         });
     </script>
 </head>
@@ -101,17 +125,55 @@
                     })
                     <div class="content__inner schedule">
                         <div class="schedule__wrap">
-                            <div id='calendar' class="calendar"></div>
+                            <div id='calendar' class="fullcalendar"></div>
                         </div>
-                        <div id='calendar'></div>
+
                     </div>
                 </div>
             </div>
         </div>
         @@include('@@webRoot/resources/html/_include/footer.html')
     </div>
+    <!-- 일정 상세 팝업  -->
+    <div class="modal__popup" data-layered-name="calendarDetail" tabindex="0">
+        <div class="modal__header">
+            <span class="tit">일정 상세</span>
+        </div>
+        <div class="modal__inner">
+            <div class="pop__contents schedule">
+                <div class="detail__content">
+                    <ul class="list">
+                        <li>
+                            <div class="round__box bg__primary">
+                                <div class="date">2025.05.08 ~ 2025.05.10 </div>
+                                <div class="tit">정기 대면 집합 교육</div>
+                                <div class="text">서초 동행복권 본사에서 진행됩니다.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="round__box bg__primary">
+                                <div class="date">2025.05.08</div>
+                                <div class="tit">인쇄복권 판매 일시 정지</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="round__box bg__primary">
+                                <div class="date">2025.05.08</div>
+                                <div class="tit">연금복권 720+ 추첨일</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn__area">
+                    <button type="button" class="btn primary outline large" data-modal="close"><span>확인</span></button>
+                </div>
+            </div>
+        </div>
+        <button class="btn__close" data-modal="close"><span>닫기</span></button>
+    </div>
 
-    
+    <!--// 일정 상세 팝업 -->
+
     <!-- Script -->
     @@include('@@webRoot/resources/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
@@ -122,7 +184,7 @@
             //lnb 활성화 
             const $lnbActive = $('.left__menu').find('>ul>li:nth-child(3)');
             $lnbActive.addClass('active');
-            
+
         });
     </script>
 </body>
