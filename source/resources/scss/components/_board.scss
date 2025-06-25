@@ -479,7 +479,9 @@
             .total {
                 flex-direction: column;
                 gap: 0;
-
+                .base__date {
+                    display: none;
+                }
                 .search__period {
                     display: block;
                     color: v.$gray-color-60;

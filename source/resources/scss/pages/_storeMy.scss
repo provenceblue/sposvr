@@ -424,9 +424,13 @@
                     }
                     &.amount {
                         width: 20%;
-                        text-align: right;
                     }
 
+                }
+                .td {
+                    &.amount {
+                        text-align: right;
+                    }
                 }
             }
         }

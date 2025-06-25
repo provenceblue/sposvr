@@ -1,0 +1,108 @@
+@use "../base/variable"as v;
+@use "../base/mixin"as m;
+@use "../base/breakpoints"as b;
+
+.sales__board {
+    .search__area .input__area>ul>li .items .search__box .input__box {
+        width: 200px;
+    }
+    .board__wrap {
+        .board__table {
+            .board__tr {
+                gap: v.$padding-5;
+
+                .th,
+                .td {
+                    &.date {
+                        width: 14%
+                    }
+
+                    &.type {
+                        width: 22%
+                    }
+
+                    &.round__num {
+                        width: 22%;
+                    }
+
+                    &.sales__num {
+                        width: 22%;
+                    }
+
+                    &.amount {
+                        width: 22%;
+                    }
+                }
+                .td{
+                    &.round__num,
+                    &.sales__num,
+                    &.amount {
+                        text-align: right;
+                    }
+                    &.amount {
+                        background-color: v.$primary-color-lighter;
+                        font-weight: v.$font-weight-semi-bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include b.size-mobile {
+    .sales__board {
+        .board__wrap {
+            .board__table {
+                .board__tr {
+
+                    .td {
+                        justify-content: space-between;
+                    
+                        &.date {
+                            width: 100%
+                        }
+
+                        &.type {
+                            width: 100%
+                        }
+
+                        &.round__num {
+                            width: 100%;
+                        }
+
+                        &.sales__num {
+                            width: 100%;
+                        }
+
+                        &.amount {
+                            width: 100%;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .search__area {
+            .input__area {
+                &>ul>li {
+                    .items {
+                        .search__box .input__box {
+                            width: 100%;
+                        }
+
+                        &.lottery__type {
+                            .item {
+                                flex-wrap: wrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+
+    }
+
+}

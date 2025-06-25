@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "복권별 매출 조회 | 영업현황"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="storeMy">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-2.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
+                    "depth1": "영업현황",
+                    "depth2": "복권별 매출 조회",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "복권별 매출 조회",
+                    "subtext": "판매점의 복권별 매출 조회입니다.",
+                    })
+                    <div class="content__inner sales__board">
+                        <div class="search__area">
+                            <!-- 검색영역, 모바일(바텀시트) 공통 -->
+                            <div class="bottom__sheet " data-layered-name="bsSearch" tabindex="0">
+                                <div class="bottom__header">
+                                    <span class="tit">상세검색</span>
+                                </div>
+                                <div class="bottom__inner">
+                                    <div class="contents">
+                                        <div class="input__area">
+                                            <ul>
+                                                <li>
+                                                    <div class="title"><span>기간</span></div>
+                                                    <div class="items">
+                                                        <div class="item date__area">
+                                                            <span class="form__area start__date">
+                                                                <input type="text" id="startDate"
+                                                                    placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker form-control"
+                                                                    title="숫자만입력가능">
+                                                                <label for="startDate">시작일자</label>
+                                                            </span>
+                                                            <em class="dash">-</em>
+                                                            <span class="form__area end__date">
+                                                                <input type="text" id="endDate" placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker" title="숫자만입력가능">
+                                                                <label for="endDate">종료일자</label>
+                                                            </span>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="title"><span>구분</span></div>
+                                                    <div class="items lottery__type">
+                                                        <div class="item">
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="type_1" name="type" checked value="0">
+                                                                <label for="type_1">전체</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="type_2" name="type">
+                                                                <label for="type_2">로또</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="type_3" name="type">
+                                                                <label for="type_3">연금</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="type_4" name="type">
+                                                                <label for="type_4">스피또2000</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="type_5" name="type">
+                                                                <label for="type_5">스피또1000</label>
+                                                            </span>
+                                                            <span class="form__area">
+                                                                <input type="checkbox" class="checkbox__input"
+                                                                    id="type_6" name="type">
+                                                                <label for="type_6">스피또500</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="title"><span>회차</span></div>
+                                                    <div class="items">
+                                                        <div class="item">
+                                                            <span class="form__area search__box">
+                                                                <input type="text" class="input__box" id="roundNum"
+                                                                    placeholder="숫자입력" disabled>
+                                                                <label for="roundNum">회차</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn__area">
+                                    <button type="button" class="btn primary outline large"><span>초기화</span></button>
+                                    <button type="button" class="btn primary large"><span>조회</span></button>
+                                </div>
+                                <button class="btn__close" data-action="close"><span>닫기</span></button>
+                            </div>
+
+                            <!--// 검색영역, 모바일(바텀시트) 공통 -->
+                        </div>
+                        <div class="board__wrap">
+                            <div class="board__top">
+                                <div class="total">
+                                    <div class="num__area">
+                                        <span>전체 <em>24</em>개</span>
+                                    </div>
+                                    <div class="base__date">
+                                        <span>(기준일시: 2025.05.16 15:34)</span>
+                                    </div>
+                                    <div class="search__period">
+                                        <span>2025.04.20</span>~<span>2025.05.30</span>
+                                    </div>
+                                </div>
+                                <div class="list__select">
+                                    <button type="button" class="btn text exceldownload"><i class="svg__icon download"
+                                            aria-hidden="true"></i><span>엑셀다운로드</span></button>
+                                    <em>목록 표시 개수</em>
+                                    <span class="form__area">
+                                        <select title="목록 표시 개수" class="select__box noline">
+                                            <option value="">30개</option>
+                                            <option value="">50개</option>
+                                            <option value="">100개</option>
+                                        </select>
+                                    </span>
+                                    <button class="open__search__btn" data-call-layered="bsSearch"
+                                        data-return-name="btnBsSearch">
+                                        <i class="svg__icon search" aria-hidden="true"></i>
+                                        <span>상세조회</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="board__list">
+                                <ul class="board__table">
+                                    <li class="board__tr thead">
+                                        <div class="th date">일자</div>
+                                        <div class="th type">복권 종류</div>
+                                        <div class="th round__num">회차</div>
+                                        <div class="th sales__num">판매건수</div>
+                                        <div class="th amount">순매출액</div>
+                                    </li>
+                                    <li class="board__tr tbody date__start">
+                                        <div class="td date">
+                                            <span class="mo__label">일자</span>
+                                            <span>2025.05.20(목)</span>
+                                        </div>
+                                        <div class="td type">
+                                            <span class="mo__label">복권 종류</span>
+                                            <span>로또</span>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>1,405 회</span>
+                                        </div>
+                                        <div class="td sales__num">
+                                            <span class="mo__label">판매건수</span>
+                                            <span>1,405 건</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">순매출액</span>
+                                            <span>1,500,000 원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td date">
+                                            <span class="mo__label">일자</span>
+                                            <span>2025.05.20(목)</span>
+                                        </div>
+                                        <div class="td type">
+                                            <span class="mo__label">복권 종류</span>
+                                            <span>연금복권</span>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>1,405 회</span>
+                                        </div>
+                                        <div class="td sales__num">
+                                            <span class="mo__label">판매건수</span>
+                                            <span>1,405 건</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">순매출액</span>
+                                            <span>1,500,000 원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td date">
+                                            <span class="mo__label">일자</span>
+                                            <span>2025.05.20(목)</span>
+                                        </div>
+                                        <div class="td type">
+                                            <span class="mo__label">복권 종류</span>
+                                            <span>스피또1000</span>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>1,405 회</span>
+                                        </div>
+                                        <div class="td sales__num">
+                                            <span class="mo__label">판매건수</span>
+                                            <span>1,405 건</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">순매출액</span>
+                                            <span>1,500,000 원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td date">
+                                            <span class="mo__label">일자</span>
+                                            <span>2025.05.26(월)</span>
+                                        </div>
+                                        <div class="td type">
+                                            <span class="mo__label">복권 종류</span>
+                                            <span>스피또1000</span>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>1,405 회</span>
+                                        </div>
+                                        <div class="td sales__num">
+                                            <span class="mo__label">판매건수</span>
+                                            <span>1,405 건</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">순매출액</span>
+                                            <span>1,500,000 원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody date__start">
+                                        <div class="td date">
+                                            <span class="mo__label">일자</span>
+                                            <span>2025.05.26(월)</span>
+                                        </div>
+                                        <div class="td type">
+                                            <span class="mo__label">복권 종류</span>
+                                            <span>로또</span>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>1,405 회</span>
+                                        </div>
+                                        <div class="td sales__num">
+                                            <span class="mo__label">판매건수</span>
+                                            <span>1,405 건</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">순매출액</span>
+                                            <span>1,500,000 원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td date">
+                                            <span class="mo__label">일자</span>
+                                            <span>2025.05.26(월)</span>
+                                        </div>
+                                        <div class="td type">
+                                            <span class="mo__label">복권 종류</span>
+                                            <span>연금복권</span>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>1,405 회</span>
+                                        </div>
+                                        <div class="td sales__num">
+                                            <span class="mo__label">판매건수</span>
+                                            <span>1,405 건</span>
+                                        </div>
+                                        <div class="td amount">
+                                            <span class="mo__label">순매출액</span>
+                                            <span>1,500,000 원</span>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            @@include('@@webRoot/resources/html/_include/pagination.html')
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            //lnb 활성화 
+            const $lnbActive = $('.left__menu').find('>ul>li:nth-child(2)');
+            $lnbActive.addClass('active');
+            // 기간설정 datepicker
+            const today = new Date();
+            $("#startDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+
+            $('input[name="type"]').on('change', function(){
+                let len = $('input[name="type"]:checked').length;
+                var allChk = $(this).val();
+                if(len==1 && allChk !== 0){
+                    $('#roundNum').removeAttr('disabled');
+                }else{
+                    $('#roundNum').attr('disabled','disabled');
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -31,7 +31,7 @@
             .items {
                 display: flex;
                 align-items: center;
-                gap: 16px;
+                gap: v.$gap-5;
                 flex: 1 0 0;
                 justify-content: flex-start;
 
@@ -189,7 +189,6 @@
                     .item {
                         flex-basis: auto;
                         width: 100%;
-
                         &.date__area {
                             .form__area {
                                 width: 100%;

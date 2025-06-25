@@ -60,6 +60,7 @@ input[type=radio] {
 
         &+label {
             @include input-wrap();
+            margin-right: v.$padding-4;
         }
 
         &+label::before {
