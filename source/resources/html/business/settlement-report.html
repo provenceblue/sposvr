@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "정산보고서 | 영업현황 "
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="storeMy">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-2.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-2.html',{
+                    "depth1": "영업현황",
+                    "depth2": "정산보고서",
+                    "depth3": "정산보고서",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "정산보고서",
+                    "subtext": "판매점의 정산보고서를 확인할 수 있습니다.",
+                    })
+                    <div class="content__inner settlement">
+                        <div class="settlement__box">
+                            <div class="round__box bg__gray">
+                                <ul>
+                                    <li>
+                                        <div class="round__box">
+                                            <div class="tit"><span>온라인복권</span></div>
+                                            <ul>
+                                                <li>
+                                                    <div class="label">합계액</div>
+                                                    <div class="text">
+                                                        <em class="total">350,754,800원</em>
+                                                        <span class="info">미정산 300,000,000원<br>
+                                                            + 지연배상금 30,754,800원 </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">입금계좌</div>
+                                                    <div class="text">
+                                                        <em class="account">100-123-456789 (유복권)</em>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="round__box">
+                                            <div class="tit"><span>인쇄복권</span></div>
+                                            <ul>
+                                                <li>
+                                                    <div class="label">합계액</div>
+                                                    <div class="text">
+                                                        <em class="total">350,754,800원</em>
+                                                        <span class="info">미정산 300,000,000원<br>
+                                                            + 지연배상금 30,754,800원 </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="label">입금계좌</div>
+                                                    <div class="text">
+                                                        <em class="account">100-123-456789 (유복권)</em>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search__area">
+                            <!-- 검색영역, 모바일(바텀시트) 공통 -->
+                            <div class="bottom__sheet " data-layered-name="bsSearch" tabindex="0">
+                                <div class="bottom__header">
+                                    <span class="tit">상세검색</span>
+                                </div>
+                                <div class="bottom__inner">
+                                    <div class="contents">
+                                        <div class="input__area">
+                                            <ul>
+                                                <li>
+                                                    <div class="title"><span>기간</span></div>
+                                                    <div class="items">
+                                                        <div class="item date__area">
+                                                            <span class="form__area start__date">
+                                                                <input type="text" id="startDate"
+                                                                    placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker form-control"
+                                                                    title="숫자만입력가능">
+                                                                <label for="startDate">시작일자</label>
+                                                            </span>
+                                                            <em class="dash">-</em>
+                                                            <span class="form__area end__date">
+                                                                <input type="text" id="endDate" placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker" title="숫자만입력가능">
+                                                                <label for="endDate">종료일자</label>
+                                                            </span>
+                                                        </div>
+                                                        <div class="item period__set">
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_1" checked>
+                                                                <label for="period_1">이번주</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_2">
+                                                                <label for="period_2">지난주</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_3">
+                                                                <label for="period_3">1개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_4">
+                                                                <label for="period_4">3개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_5">
+                                                                <label for="period_5">6개월</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn__area">
+                                    <button type="button" class="btn primary outline large"><span>초기화</span></button>
+                                    <button type="button" class="btn primary large"><span>조회</span></button>
+                                </div>
+                                <button class="btn__close" data-action="close"><span>닫기</span></button>
+                            </div>
+
+                            <!--// 검색영역, 모바일(바텀시트) 공통 -->
+                        </div>
+                        <div class="tab__area">
+                            <ul>
+                                <li class="active"><!-- 활성상태 class active 추가 -->
+                                    <button type="button" aria-expanded='true' aria-controls="view_1" id="control_1"
+                                        data-call-tab='board__wrap'><span>온라인</span></button>
+                                </li>
+                                <li>
+                                    <button type="button" aria-expanded='false' aria-controls="view_2" id="control_2"
+                                        data-call-tab='board__wrap'><span>인쇄</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 온라인복권 -->
+                        <ul class="tab__content">
+                            <li class="board__wrap" id="view_1" aria-labelledby="control_1">
+                                <div class="board__top">
+                                    <div class="total">
+                                        <div class="num__area">
+                                            <span>전체 <em>24</em>개</span>
+                                        </div>
+                                        <div class="search__period">
+                                            <!-- 검색된 날짜 보여주기 -->
+                                            <span>2025.04.20</span>~<span>2025.05.30</span>
+                                        </div>
+                                        <div class="base__date">
+                                            <span>(기준일시: 2025.05.16 15:34)</span>
+                                        </div>
+                                    </div>
+                                    <div class="list__select">
+                                        <em>목록 표시 개수</em>
+                                        <span class="form__area">
+                                            <select title="목록 표시 개수" class="select__box noline">
+                                                <option value="">30개</option>
+                                                <option value="">50개</option>
+                                                <option value="">100개</option>
+                                            </select>
+                                        </span>
+                                        <button class="open__search__btn" data-call-layered="bsSearch"
+                                            data-return-name="btnBsSearch">
+                                            <i class="svg__icon search" aria-hidden="true"></i>
+                                            <span>상세조회</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="board__list scroll" tanindex="0">
+                                    <ul class="board__table">
+                                        <li class="board__tr thead">
+                                            <div class="th week">정산주차</div>
+                                            <div class="th sale">판매금액<br>(A)</div>
+                                            <div class="th return">취소/반납금액<br>(B)</div>
+                                            <div class="th payment">당첨금 지급금액<br>(C)</div>
+                                            <div class="th charge">판매수수료<br>(D)</div>
+                                            <div class="th modify">조정금액<br>(E)</div>
+                                            <div class="th deposit">선입금액<br>(F)</div>
+                                            <div class="th adjust">정산 대상금액<br> (A-B-C-D-E-F)</div>
+                                            <div class="th date">정산기한</div>
+                                            <div class="th check">정산여부</div>
+                                        </li>
+                                        <li class="board__tr tbody">
+                                            <div class="td week">
+                                                <span class="mo__label">정산주차</span>
+                                                <span>2025년 5월 3주차</span>
+                                            </div>
+                                            <div class="td sale">
+                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span>8,888,850,000원 </span>
+                                            </div>
+                                            <div class="td return">
+                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td payment">
+                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td charge">
+                                                <span class="mo__label">판매수수료<br>(D)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td modify">
+                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td deposit">
+                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td adjust">
+                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td date">
+                                                <span class="mo__label">정산기한</span>
+                                                <span>2025.05.09(금)</span>
+                                            </div>
+                                            <div class="td check">
+                                                <span class="mo__label">정산여부</span>
+                                                <span>정산완료</span>
+                                            </div>
+                                        </li>
+                                        <li class="board__tr tbody">
+                                            <div class="td week">
+                                                <span class="mo__label">정산주차</span>
+                                                <span>2025년 5월 3주차</span>
+                                            </div>
+                                            <div class="td sale">
+                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span>8,888,850,000원 </span>
+                                            </div>
+                                            <div class="td return">
+                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td payment">
+                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td charge">
+                                                <span class="mo__label">판매수수료<br>(D)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td modify">
+                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td deposit">
+                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td adjust">
+                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td date">
+                                                <span class="mo__label">정산기한</span>
+                                                <span>2025.05.09(금)</span>
+                                            </div>
+                                            <div class="td check">
+                                                <span class="mo__label">정산여부</span>
+                                                <span>미정산</span>
+                                            </div>
+                                        </li>
+                                        <li class="board__tr tbody">
+                                            <div class="td week">
+                                                <span class="mo__label">정산주차</span>
+                                                <span>2025년 5월 3주차</span>
+                                            </div>
+                                            <div class="td sale">
+                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span>8,888,850,000원 </span>
+                                            </div>
+                                            <div class="td return">
+                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td payment">
+                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td charge">
+                                                <span class="mo__label">판매수수료<br>(D)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td modify">
+                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td deposit">
+                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td adjust">
+                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td date">
+                                                <span class="mo__label">정산기한</span>
+                                                <span>2025.05.09(금)</span>
+                                            </div>
+                                            <div class="td check">
+                                                <span class="mo__label">정산여부</span>
+                                                <span>미정산</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @@include('@@webRoot/resources/html/_include/pagination.html')
+                            </li>
+                            <!--// 온라인복권 -->
+                            <!-- 인쇄복권 -->
+                            <li class="board__wrap" id="view_2" aria-labelledby="control_2">
+                                <div class="board__top">
+                                    <div class="total">
+                                        <div class="num__area">
+                                            <span>전체 <em>100</em>개</span>
+                                        </div>
+                                        <div class="search__period">
+                                            <!-- 검색된 날짜 보여주기 -->
+                                            <span>2025.04.20</span>~<span>2025.05.30</span>
+                                        </div>
+                                        <div class="base__date">
+                                            <span>(기준일시: 2025.05.16 15:34)</span>
+                                        </div>
+                                    </div>
+                                    <div class="list__select">
+                                        <em>목록 표시 개수</em>
+                                        <span class="form__area">
+                                            <select title="목록 표시 개수" class="select__box noline">
+                                                <option value="">30개</option>
+                                                <option value="">50개</option>
+                                                <option value="">100개</option>
+                                            </select>
+                                        </span>
+                                        <button class="open__search__btn" data-call-layered="bsSearch"
+                                            data-return-name="btnBsSearch">
+                                            <i class="svg__icon search" aria-hidden="true"></i>
+                                            <span>상세조회</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="board__list scroll" tanindex="0">
+                                    <ul class="board__table">
+                                        <li class="board__tr thead">
+                                            <div class="th week">정산주차</div>
+                                            <div class="th sale">판매금액<br>(A)</div>
+                                            <div class="th return">취소/반납금액<br>(B)</div>
+                                            <div class="th payment">당첨금 지급금액<br>(C)</div>
+                                            <div class="th charge">판매수수료<br>(D)</div>
+                                            <div class="th modify">조정금액<br>(E)</div>
+                                            <div class="th deposit">선입금액<br>(F)</div>
+                                            <div class="th adjust">정산 대상금액<br> (A-B-C-D-E-F)</div>
+                                            <div class="th date">정산기한</div>
+                                            <div class="th check">정산여부</div>
+                                        </li>
+                                        <li class="board__tr tbody">
+                                            <div class="td week">
+                                                <span class="mo__label">정산주차</span>
+                                                <span>2025년 5월 3주차</span>
+                                            </div>
+                                            <div class="td sale">
+                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span>400,000원 </span>
+                                            </div>
+                                            <div class="td return">
+                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span>400,000원</span>
+                                            </div>
+                                            <div class="td payment">
+                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td charge">
+                                                <span class="mo__label">판매수수료<br>(D)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td modify">
+                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td deposit">
+                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td adjust">
+                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td date">
+                                                <span class="mo__label">정산기한</span>
+                                                <span>2025.05.09(금)</span>
+                                            </div>
+                                            <div class="td check">
+                                                <span class="mo__label">정산여부</span>
+                                                <span>정산완료</span>
+                                            </div>
+                                        </li>
+                                        <li class="board__tr tbody">
+                                            <div class="td week">
+                                                <span class="mo__label">정산주차</span>
+                                                <span>2025년 5월 3주차</span>
+                                            </div>
+                                            <div class="td sale">
+                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span>400,000원 </span>
+                                            </div>
+                                            <div class="td return">
+                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span>400,000원</span>
+                                            </div>
+                                            <div class="td payment">
+                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td charge">
+                                                <span class="mo__label">판매수수료<br>(D)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td modify">
+                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td deposit">
+                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td adjust">
+                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td date">
+                                                <span class="mo__label">정산기한</span>
+                                                <span>2025.05.09(금)</span>
+                                            </div>
+                                            <div class="td check">
+                                                <span class="mo__label">정산여부</span>
+                                                <span>미정산</span>
+                                            </div>
+                                        </li>
+                                        <li class="board__tr tbody">
+                                            <div class="td week">
+                                                <span class="mo__label">정산주차</span>
+                                                <span>2025년 5월 3주차</span>
+                                            </div>
+                                            <div class="td sale">
+                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span>400,000원 </span>
+                                            </div>
+                                            <div class="td return">
+                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span>400,000원</span>
+                                            </div>
+                                            <div class="td payment">
+                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td charge">
+                                                <span class="mo__label">판매수수료<br>(D)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td modify">
+                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td deposit">
+                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td adjust">
+                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td date">
+                                                <span class="mo__label">정산기한</span>
+                                                <span>2025.05.09(금)</span>
+                                            </div>
+                                            <div class="td check">
+                                                <span class="mo__label">정산여부</span>
+                                                <span>미정산</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @@include('@@webRoot/resources/html/_include/pagination.html')
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            //lnb 활성화 
+            const $lnbActive = $('.left__menu').find('>ul>li:nth-child(4)');
+            const $subActive = $lnbActive.find('.sub__menu').find('li:nth-child(1)');
+            $lnbActive.addClass('active');
+            $subActive.addClass('active');
+            // 기간설정 datepicker
+            const today = new Date();
+            $("#startDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+        });
+    </script>
+</body>
+
+</html>

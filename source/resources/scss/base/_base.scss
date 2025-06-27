@@ -167,11 +167,21 @@ body {
     background: url(../img/common/open-new-window-w.svg) no-repeat center center /18px;
     @include m.hidden-text();
 }
-
+.type__mo{
+    display: none;
+}
+.type__pc {
+    display: block;
+}
 @include b.size-mobile {
     .svg__icon {
         display: flex;
         @include m.square(20px);
     }
-    
+    .type__pc {
+        display: none;
+    }
+    .type__mo {
+        display: block;
+    }
 }

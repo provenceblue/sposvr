@@ -131,6 +131,10 @@ body {
                     color: v.$text-color-sub;
                     height: $gnb-height;
                     line-height: $gnb-height;
+                    &:hover{
+                        color: v.$primary-color-dark;
+                        border-bottom: 4px solid v.$primary-color;
+                    }
                 }
             }
 
@@ -193,6 +197,9 @@ body {
                                 border-bottom: 1px solid v.$gray-color-20;
                                 font-size: v.$font-heading-small;
                                 font-weight: v.$font-weight-bold;
+                                &:hover{
+                                    text-decoration: underline;
+                                }
                             }
 
                             .depth__2 {
@@ -221,6 +228,11 @@ body {
                                             display: inline-flex;
                                             padding-left: v.$padding-4;
 
+                                        }
+                                        &:hover {
+                                            span{
+                                                text-decoration: underline;
+                                            }
                                         }
                                     }
                                 }

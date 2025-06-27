@@ -34,7 +34,7 @@
                 gap: v.$gap-5;
                 flex: 1 0 0;
                 justify-content: flex-start;
-
+                
                 .item {
                     display: flex;
                     gap: v.$gap-3;
@@ -63,6 +63,16 @@
                         width: 100%;
                     }
                 }
+                &.has__select {
+                    gap: v.$gap-3;
+
+                    .item:first-child {
+                        flex-basis: 200px;
+                        flex: 0;
+                    }
+
+                }
+                
             }
         }
     }
@@ -206,12 +216,28 @@
 
                             }
                         }
+                        &.has__checkbox {
+                            flex-wrap: wrap;
+                        }
                     }
 
                     .date__area .dash {
                         display: block;
                         line-height: 48px;
                     }
+                    &.has__select {
+
+                        .item:first-child {
+                            flex-basis: 100%;
+                            
+                            .form__area,
+                            .select__box{
+                                width:100%;
+                            }
+                        }
+
+                    }
+                    
                 }
             }
         }

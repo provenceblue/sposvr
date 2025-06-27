@@ -125,7 +125,7 @@
                                                 <li>
                                                     <div class="title"><span>벌칙</span></div>
                                                     <div class="items">
-                                                        <div class="item">
+                                                        <div class="item has__checkbox">
                                                             <span class="form__area">
                                                                 <input type="checkbox" class="checkbox__input"
                                                                     id="penalty_1" name="penalty" checked>
@@ -149,6 +149,31 @@
                                                         </div>
                                                     </div>
                                                 </li>
+                                                <li>
+                                                    <div class="title"><span>상세검색</span></div>
+                                                    <div class="items has__select">
+                                                        <div class="item">
+                                                            <span class="form__area">
+                                                                <select class="select__box">
+                                                                    <option value="" selected>전체</option>
+                                                                    <option value="">현재상태</option>
+                                                                    <option value="">위반 사항</option>
+                                                                    <option value="">벌칙 구분</option>
+                                                                    <option value="">벌칙 내용</option>
+                                                                    <option value="">상세 내용</option>
+                                                                    <option value="">담당매니저</option>
+                                                                </select>
+                                                            </span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <span class="form__area search__box">
+                                                                <input type="text" class="input__box" id="searchWord"
+                                                                    placeholder="검색어 입력">
+                                                                <label for="searchWord">검색어</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -168,12 +193,12 @@
                                     <div class="num__area">
                                         <span>전체 <em>24</em>개</span>
                                     </div>
-                                    <div class="base__date">
-                                        <span>(기준일시: 2025.05.16 15:34)</span>
-                                    </div>
                                     <div class="search__period">
                                         <!-- 검색된 날짜 보여주기 -->
                                         <span>2025.04.20</span>~<span>2025.05.30</span>
+                                    </div>
+                                    <div class="base__date">
+                                        <span>(기준일시: 2025.05.16 15:34)</span>
                                     </div>
                                 </div>
                                 <div class="list__select">
@@ -239,6 +264,7 @@
                                         <div class="td manager">
                                             <span class="mo__label">담당 매니저</span>
                                             <span>전복권</span>
+                                        </div>
                                     </li>
                                     <li class="board__tr tbody">
                                         <div class="td status">
@@ -273,6 +299,7 @@
                                         <div class="td manager">
                                             <span class="mo__label">담당 매니저</span>
                                             <span>전복권</span>
+                                        </div>
                                     </li>
                                     <li class="board__tr tbody">
                                         <div class="td status">
@@ -307,6 +334,7 @@
                                         <div class="td manager">
                                             <span class="mo__label">담당 매니저</span>
                                             <span>전복권</span>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>

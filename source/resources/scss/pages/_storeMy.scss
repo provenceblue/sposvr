@@ -764,13 +764,12 @@
             }
         }
         .board__top {
+            
             .total {
                 flex-direction: column;
                 gap: v.$gap-1;
 
-                .base__date {
-                    display: none;
-                }
+                
                 .search__period{
                     display: block;
                 }
@@ -868,15 +867,7 @@
         .search__area .input__area>ul>li .items .search__box .input__box {
             width: 100%;
         }
-        .board__wrap{
-            .board__top{
-                .total{
-                    .base__date{
-                        display: none;
-                    }
-                } 
-            } 
-        } 
+        
         .board__wrap {
             .board__table {
                 .board__tr {

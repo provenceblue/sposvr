@@ -206,7 +206,20 @@ $(document).ready(function () {
     $('body').on('change', '.select__box', function () {
         //console.log($(this).find('option').index($(this).find('option:selected')));
         $(this).prev('.select__label').hide();
-    })
+    });
+    //tab
+    $('body').on('click', 'button[data-call-tab]', function () {
+        let name = $(this).data('call-tab');
+        let $target = $('#' + $(this).attr('aria-controls'));
+        let $parent = $(this).parent();
+        $parent.siblings().removeClass('active');
+        $parent.addClass('active');
+        $('.' + name).hide().removeClass('active');
+        $target.show().addClass('active');
+        $('.' + $(this).attr('aria-expanded', false));
+        $(this).attr('aria-expanded', true);
+    });
+    
     
 })
  

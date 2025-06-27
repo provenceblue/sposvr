@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "당첨 배출 조회 | 영업현황"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="business">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-2.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
+                    "depth1": "영업현황",
+                    "depth2": "당첨 배출 조회",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "당첨 배출 조회",
+                    "subtext": "200만원 이상 복권 당첨 현황입니다.",
+                    })
+                    <div class="content__inner winner__board">
+                        <div class="search__area">
+                            <!-- 검색영역, 모바일(바텀시트) 공통 -->
+                            <div class="bottom__sheet " data-layered-name="bsSearch" tabindex="0">
+                                <div class="bottom__header">
+                                    <span class="tit">상세검색</span>
+                                </div>
+                                <div class="bottom__inner">
+                                    <div class="contents">
+                                        <div class="input__area">
+                                            <ul>
+                                                <li>
+                                                    <div class="title"><span>기간</span></div>
+                                                    <div class="items">
+                                                        <div class="item date__area">
+                                                            <span class="form__area start__date">
+                                                                <input type="text" id="startDate"
+                                                                    placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker form-control"
+                                                                    title="숫자만입력가능">
+                                                                <label for="startDate">시작일자</label>
+                                                            </span>
+                                                            <em class="dash">-</em>
+                                                            <span class="form__area end__date">
+                                                                <input type="text" id="endDate" placeholder="YYYY.MM.DD"
+                                                                    class="input__box date__picker" title="숫자만입력가능">
+                                                                <label for="endDate">종료일자</label>
+                                                            </span>
+                                                        </div>
+                                                        <div class="item period__set">
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_1" checked>
+                                                                <label for="period_1">이번주</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_2">
+                                                                <label for="period_2">지난주</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_3">
+                                                                <label for="period_3">1개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_4">
+                                                                <label for="period_4">3개월</label>
+                                                            </span>
+                                                            <span>
+                                                                <input type="radio" name="period" id="period_5">
+                                                                <label for="period_5">6개월</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn__area">
+                                    <button type="button" class="btn primary outline large"><span>초기화</span></button>
+                                    <button type="button" class="btn primary large"><span>조회</span></button>
+                                </div>
+                                <button class="btn__close" data-action="close"><span>닫기</span></button>
+                            </div>
+
+                            <!--// 검색영역, 모바일(바텀시트) 공통 -->
+                        </div>
+                        <div class="board__wrap">
+                            <div class="board__top">
+                                <div class="total">
+                                    <div class="num__area">
+                                        <span>전체 <em>24</em>개</span>
+                                    </div>
+                                    <div class="search__period">
+                                        <span>2025.04.20</span>~<span>2025.05.30</span>
+                                    </div>
+                                    <div class="base__date">
+                                        <span>(기준일시: 2025.05.16 15:34)</span>
+                                    </div>
+                                </div>
+                                <div class="list__select">
+                                    <button type="button" class="btn text exceldownload"><i class="svg__icon download"
+                                            aria-hidden="true"></i><span>엑셀다운로드</span></button>
+                                    <button class="open__search__btn" data-call-layered="bsSearch"
+                                        data-return-name="btnBsSearch">
+                                        <i class="svg__icon search" aria-hidden="true"></i>
+                                        <span>상세조회</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 로또 6/45 -->
+                            <div class="board__list">
+                                <div class="board__tit">
+                                    <div class="tit"><span>로또 6/45</span></div>
+                                </div>
+                                <ul class="board__grid">
+                                    <li class="board__tr thead">
+                                        <div class="th round__num"><span>회차</span></div>
+                                        <div class="th date"><span>추첨일자</span></div>
+                                        <div class="th first"><span>1등</span></div>
+                                        <div class="th first__case"><span>배출건수</span></div>
+                                        <div class="th first__amount"><span>총 당첨금액</span></div>
+                                        <div class="th second"><span>2등</span></div>
+                                        <div class="th second__case"><span>배출건수</span></div>
+                                        <div class="th second__amount"><span>총 당첨금액</span></div>
+                                        <div class="th third"><span>3등</span></div>
+                                        <div class="th third__case"><span>배출건수</span></div>
+                                        <div class="th third__amount"><span>총 당첨금액</span></div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">추첨일자</span>
+                                            <span>2025.05.20(목)</span>
+                                        </div>
+                                        <div class="td first__case">
+                                            <span class="mo__label">1등 배출건수</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td first__amount">
+                                            <span class="mo__label">1등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td second__case">
+                                            <span class="mo__label">2등 배출건수</span>
+                                            <span>8,405회</span>
+                                        </div>
+                                        <div class="td second__amount">
+                                            <span class="mo__label">2등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td third__case">
+                                            <span class="mo__label">3등 배출건수</span>
+                                            <span>348건</span>
+                                        </div>
+                                        <div class="td third__amount">
+                                            <span class="mo__label">3등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">추첨일자</span>
+                                            <span>2025.05.20(목)</span>
+                                        </div>
+                                        <div class="td first__case">
+                                            <span class="mo__label">1등 배출건수</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td first__amount">
+                                            <span class="mo__label">1등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td second__case">
+                                            <span class="mo__label">2등 배출건수</span>
+                                            <span>8,405회</span>
+                                        </div>
+                                        <div class="td second__amount">
+                                            <span class="mo__label">2등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td third__case">
+                                            <span class="mo__label">3등 배출건수</span>
+                                            <span>348건</span>
+                                        </div>
+                                        <div class="td third__amount">
+                                            <span class="mo__label">3등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 연금복권720+ -->
+                            <div class="board__list">
+                                <div class="board__tit">
+                                    <div class="tit"><span>연금복권720+</span></div>
+                                </div>
+                                <ul class="board__grid">
+                                    <li class="board__tr thead">
+                                        <div class="th round__num"><span>회차</span></div>
+                                        <div class="th date"><span>추첨일자</span></div>
+                                        <div class="th first"><span>1등</span></div>
+                                        <div class="th first__case"><span>배출건수</span></div>
+                                        <div class="th first__amount"><span>총 당첨금액</span></div>
+                                        <div class="th second"><span>2등</span></div>
+                                        <div class="th second__case"><span>배출건수</span></div>
+                                        <div class="th second__amount"><span>총 당첨금액</span></div>
+                                        <div class="th third"><span>3등</span></div>
+                                        <div class="th third__case"><span>배출건수</span></div>
+                                        <div class="th third__amount"><span>총 당첨금액</span></div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">추첨일자</span>
+                                            <span>2025.05.20(목)</span>
+                                        </div>
+                                        <div class="td first__case">
+                                            <span class="mo__label">1등 배출건수</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td first__amount">
+                                            <span class="mo__label">1등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td second__case">
+                                            <span class="mo__label">2등 배출건수</span>
+                                            <span>8,405회</span>
+                                        </div>
+                                        <div class="td second__amount">
+                                            <span class="mo__label">2등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td third__case">
+                                            <span class="mo__label">3등 배출건수</span>
+                                            <span>348건</span>
+                                        </div>
+                                        <div class="td third__amount">
+                                            <span class="mo__label">3등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">추첨일자</span>
+                                            <span>2025.05.20(목)</span>
+                                        </div>
+                                        <div class="td first__case">
+                                            <span class="mo__label">1등 배출건수</span>
+                                            <span>3,488건</span>
+                                        </div>
+                                        <div class="td first__amount">
+                                            <span class="mo__label">1등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td second__case">
+                                            <span class="mo__label">2등 배출건수</span>
+                                            <span>8,405회</span>
+                                        </div>
+                                        <div class="td second__amount">
+                                            <span class="mo__label">2등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                        <div class="td third__case">
+                                            <span class="mo__label">3등 배출건수</span>
+                                            <span>348건</span>
+                                        </div>
+                                        <div class="td third__amount">
+                                            <span class="mo__label">3등 총 당첨금액</span>
+                                            <span>8,384,026,094원</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 스피또 -->
+                            <div class="board__list speeto">
+                                <div class="board__tit type__pc">
+                                    <div class="tit"><span>스피또</span></div>
+                                </div>
+                                <ul class="board__grid">
+                                    <li class="board__tr thead">
+                                        <div class="th speeto2000"><span>스피또2000</span></div>
+                                        <div class="th speeto2000__num"><span>회차</span></div>
+                                        <div class="th speeto2000__first"><span>1등</span></div>
+                                        <div class="th speeto2000__second"><span>2등</span></div>
+                                        <div class="th speeto1000"><span>스피또1000</span></div>
+                                        <div class="th speeto1000__num"><span>회차</span></div>
+                                        <div class="th speeto1000__first"><span>1등</span></div>
+                                        <div class="th speeto1000__second"><span>2등</span></div>
+                                        <div class="th speeto500"><span>스피또500</span></div>
+                                        <div class="th speeto500__num"><span>회차</span></div>
+                                        <div class="th speeto500__first"><span>1등</span></div>
+                                        <div class="th speeto500__second"><span>2등</span></div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="board__tit type__mo">
+                                            <div class="tit"><span>스피또2000</span></div>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>841회</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">1등</span>
+                                            <span>13건</span>
+                                        </div>
+                                        <div class="td first__case">
+                                            <span class="mo__label">2등</span>
+                                            <span>523건</span>
+                                        </div>
+                                        <div class="board__tit type__mo">
+                                            <div class="tit"><span>스피또1000</span></div>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>841회</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">1등</span>
+                                            <span>13건</span>
+                                        </div>
+                                        <div class="td first__case">
+                                            <span class="mo__label">2등</span>
+                                            <span>13건</span>
+                                        </div>
+                                        <div class="board__tit type__mo">
+                                            <div class="tit"><span>스피또500</span></div>
+                                        </div>
+                                        <div class="td round__num">
+                                            <span class="mo__label">회차</span>
+                                            <span>841회</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">1등</span>
+                                            <span>13건</span>
+                                        </div>
+                                        <div class="td first__case">
+                                            <span class="mo__label">2등</span>
+                                            <span>13건</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            //lnb 활성화 
+            const $lnbActive = $('.left__menu').find('>ul>li:nth-child(3)');
+            $lnbActive.addClass('active');
+            // 기간설정 datepicker
+            const today = new Date();
+            $("#startDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+            
+        });
+    </script>
+</body>
+
+</html>

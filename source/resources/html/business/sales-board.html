@@ -9,7 +9,7 @@
 
 <body>
     @@include('@@webRoot/resources/html/_include/a11y.html')
-    <div class="wrap" id="storeMy">
+    <div class="wrap" id="business">
         @@include('@@webRoot/resources/html/_include/header.html')
         <div class="container">
             <div class="page__wrap">
@@ -124,11 +124,11 @@
                                     <div class="num__area">
                                         <span>전체 <em>24</em>개</span>
                                     </div>
-                                    <div class="base__date">
-                                        <span>(기준일시: 2025.05.16 15:34)</span>
-                                    </div>
                                     <div class="search__period">
                                         <span>2025.04.20</span>~<span>2025.05.30</span>
+                                    </div>
+                                    <div class="base__date">
+                                        <span>(기준일시: 2025.05.16 15:34)</span>
                                     </div>
                                 </div>
                                 <div class="list__select">
@@ -149,8 +149,10 @@
                                     </button>
                                 </div>
                             </div>
+                            
                             <div class="board__list">
-                                <ul class="board__table">
+                                <!-- pc -->
+                                <ul class="board__table type__pc">
                                     <li class="board__tr thead">
                                         <div class="th date">일자</div>
                                         <div class="th type">복권 종류</div>
@@ -158,7 +160,7 @@
                                         <div class="th sales__num">판매건수</div>
                                         <div class="th amount">순매출액</div>
                                     </li>
-                                    <li class="board__tr tbody date__start">
+                                    <li class="board__tr tbody">
                                         <div class="td date">
                                             <span class="mo__label">일자</span>
                                             <span>2025.05.20(목)</span>
@@ -290,8 +292,134 @@
                                             <span>1,500,000 원</span>
                                         </div>
                                     </li>
-                                    
                                 </ul>
+                                <!--// pc -->
+                                <!-- mobile -->
+                                <ul class="board__table type__mo"> 
+                                    <li class="board__tr tbody">
+                                        <div class="inner__tit">
+                                            <span>2025.05.26(월)</span>
+                                        </div>
+                                        <ul class="inner__list">
+                                            <li>
+                                                <div class="td type">
+                                                    <span class="mo__label">복권 종류</span>
+                                                    <span>로또</span>
+                                                </div>
+                                                <div class="td round__num">
+                                                    <span class="mo__label">회차</span>
+                                                    <span>1,405 회</span>
+                                                </div>
+                                                <div class="td sales__num">
+                                                    <span class="mo__label">판매건수</span>
+                                                    <span>1,405 건</span>
+                                                </div>
+                                                <div class="td amount">
+                                                    <span class="mo__label">순매출액</span>
+                                                    <span>1,500,000 원</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="td type">
+                                                    <span class="mo__label">복권 종류</span>
+                                                    <span>연금복권</span>
+                                                </div>
+                                                <div class="td round__num">
+                                                    <span class="mo__label">회차</span>
+                                                    <span>1,405 회</span>
+                                                </div>
+                                                <div class="td sales__num">
+                                                    <span class="mo__label">판매건수</span>
+                                                    <span>1,405 건</span>
+                                                </div>
+                                                <div class="td amount">
+                                                    <span class="mo__label">순매출액</span>
+                                                    <span>1,500,000 원</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="td type">
+                                                    <span class="mo__label">복권 종류</span>
+                                                    <span>스피또1000</span>
+                                                </div>
+                                                <div class="td round__num">
+                                                    <span class="mo__label">회차</span>
+                                                    <span>1,405 회</span>
+                                                </div>
+                                                <div class="td sales__num">
+                                                    <span class="mo__label">판매건수</span>
+                                                    <span>1,405 건</span>
+                                                </div>
+                                                <div class="td amount">
+                                                    <span class="mo__label">순매출액</span>
+                                                    <span>1,500,000 원</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="inner__tit">
+                                            <span>2025.05.20(화)</span>
+                                        </div>
+                                        <ul class="inner__list">
+                                            <li>
+                                                <div class="td type">
+                                                    <span class="mo__label">복권 종류</span>
+                                                    <span>로또</span>
+                                                </div>
+                                                <div class="td round__num">
+                                                    <span class="mo__label">회차</span>
+                                                    <span>1,405 회</span>
+                                                </div>
+                                                <div class="td sales__num">
+                                                    <span class="mo__label">판매건수</span>
+                                                    <span>1,405 건</span>
+                                                </div>
+                                                <div class="td amount">
+                                                    <span class="mo__label">순매출액</span>
+                                                    <span>1,500,000 원</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="td type">
+                                                    <span class="mo__label">복권 종류</span>
+                                                    <span>연금복권</span>
+                                                </div>
+                                                <div class="td round__num">
+                                                    <span class="mo__label">회차</span>
+                                                    <span>1,405 회</span>
+                                                </div>
+                                                <div class="td sales__num">
+                                                    <span class="mo__label">판매건수</span>
+                                                    <span>1,405 건</span>
+                                                </div>
+                                                <div class="td amount">
+                                                    <span class="mo__label">순매출액</span>
+                                                    <span>1,500,000 원</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="td type">
+                                                    <span class="mo__label">복권 종류</span>
+                                                    <span>스피또1000</span>
+                                                </div>
+                                                <div class="td round__num">
+                                                    <span class="mo__label">회차</span>
+                                                    <span>1,405 회</span>
+                                                </div>
+                                                <div class="td sales__num">
+                                                    <span class="mo__label">판매건수</span>
+                                                    <span>1,405 건</span>
+                                                </div>
+                                                <div class="td amount">
+                                                    <span class="mo__label">순매출액</span>
+                                                    <span>1,500,000 원</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                 </ul>
+                                <!--// mobile -->
                             </div>
                             @@include('@@webRoot/resources/html/_include/pagination.html')
                         </div>

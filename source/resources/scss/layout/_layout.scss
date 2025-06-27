@@ -25,7 +25,14 @@
 
     .left__menu {
         flex-basis: 254px;
-
+        &>ul>li{
+            &.active{
+               &>a,
+               &>button{
+                color: v.$primary-color-dark;
+               } 
+            }
+        }
         a,
         button {
             display: flex;
@@ -41,6 +48,9 @@
                 background-size: 20px;
                 background: url(../img/common/arrow-down.svg) no-repeat right center / contain;
             }
+            &:hover{
+                text-decoration: underline;
+            }
         }
 
         a {
@@ -52,9 +62,11 @@
                 @include m.square(20px);
                 background-size: 20px;
             }
+            
         }
 
         .active {
+            
             i.arrow {
                 background: url(../img/common/arrow-top.svg) no-repeat right center / contain;
             }
@@ -72,6 +84,12 @@
             >ul {
                 border-bottom: 1px solid v.$gray-color-20;
                 padding: v.$padding-3 0;
+                &>.active{
+                    a,
+                    button{
+                        text-decoration: underline;
+                    }
+                }
             }
 
             a,
@@ -187,7 +205,29 @@
         }
     }
 }
-
+.tab__area{
+    margin-top: v.$gap-11;
+    &>ul{
+        display: flex;
+        &>li{
+            flex: 1 1 40%;
+            button{
+                width:100%;
+                border-bottom: 2px solid v.$border-gray;
+                height:56px;
+                line-height:56px;
+                font-size: v.$font-heading-small;
+            }
+            &.active{
+                button{
+                  border-bottom: 4px solid  v.$primary-color;  
+                  font-weight: v.$font-weight-bold;
+                  color: v.$primary-color;
+                }
+            }
+        }
+    }
+}
 @include b.size-mobile {
     .left__menu {
         display: none;
@@ -249,6 +289,40 @@
             }
         }
 
+    }
+    .tab__area {
+        margin-top: 36px;
+        margin-bottom: v.$gap-7;
+        ul{
+           border-radius: 8px;
+           overflow: hidden;
+            
+            li{
+                border: 1px solid v.$border-gray;
+                margin-left: -1px;
+                &:first-child{
+                    border-radius: 8px 0 0 8px;
+                    margin-left: 0;
+                }
+                &:last-child {
+                    border-radius: 0 8px 8px 0;
+                }
+                button{
+                    border:none;
+                    font-size: v.$font-body-medium;
+                    height: 48px;
+                    line-height: 48px;
+                }
+                &.active{
+                    border-color: v.$primary-color;
+                    button{
+                        border:none;
+                        color: #fff;
+                        background-color: v.$primary-color;
+                    }
+                }
+            }
+        }
     }
 
 }
