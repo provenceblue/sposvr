@@ -1,15 +1,17 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
 @use "../base/breakpoints"as b;
-
+/* board.scss */
 .board__wrap {
     margin-top: v.$gap-10;
-    .board__list{
-        &.scroll{
+
+    .board__list {
+        &.scroll {
             overflow-x: auto;
             max-width: 978px;
         }
     }
+
     .board__top {
         display: flex;
         justify-content: space-between;
@@ -35,7 +37,7 @@
             .search__period {
                 display: none;
             }
-            
+
         }
 
         .list__select {
@@ -70,18 +72,22 @@
         //     display: none;
         // }
     }
+
     .mo__label {
         display: none;
     }
+
     .board__table {
         display: table;
         border-top: 2px solid v.$gray-color-70;
         margin-top: v.$padding-6;
         width: 100%;
-        &.type__mo{
-            display:none;
+
+        &.type__mo {
+            display: none;
         }
-        &.type__pc{
+
+        &.type__pc {
             display: table;
         }
 
@@ -99,7 +105,7 @@
                     border-right: none;
                 }
 
-                
+
 
                 .flex__wrap {
                     display: flex;
@@ -135,35 +141,39 @@
                 }
 
             }
+
             .inner__tit {
                 font-weight: v.$font-weight-semi-bold;
                 border-bottom: 1px solid v.$border-default;
                 padding-bottom: v.$padding-3;
             }
 
-            .inner__list{
+            .inner__list {
                 display: flex;
                 flex-direction: column;
                 gap: v.$gap-5;
                 margin-top: v.$padding-2;
-               &>li{
-                display: flex;
-                flex-direction: column;
-                gap: v.$gap-3;
-                padding-bottom: v.$padding-6;
-                border-bottom: 1px solid v.$gray-color-20;
-                &:last-child{
-                    border-bottom: none;
-                    padding-bottom: 0;
-                }
-                .td{
-                    display: flex;
-                    justify-content: space-between;
-                    gap: v.$gap-3;
-                }
-               }
-            }
 
+                &>li {
+                    display: flex;
+                    flex-direction: column;
+                    gap: v.$gap-3;
+                    padding-bottom: v.$padding-6;
+                    border-bottom: 1px solid v.$gray-color-20;
+
+                    &:last-child {
+                        border-bottom: none;
+                        padding-bottom: 0;
+                    }
+
+                    .td {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: v.$gap-3;
+                    }
+                }
+            }
+            
 
         }
     }
@@ -224,12 +234,28 @@
         .td.title {
             text-align: left;
         }
+        &.no__list {
+            display: flex;
+            justify-content: center; 
+            table-layout: auto;
+            padding: 64px 0;
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid v.$border-gray-light;
+
+            .svg__icon {
+                @include m.square(48px);
+                background-size: 33px;
+                margin-bottom: v.$padding-4;
+            }
+
+        }
 
     }
 
-    
 
-    
+
+
 
     &.thumbnail {
         .board__list {
@@ -330,6 +356,16 @@
     }
 }
 
+li.board__wrap {
+
+    display: none;
+
+    &.active {
+        display: list-item;
+
+    }
+}
+
 .pagination {
     margin-top: v.$gap-10;
 
@@ -384,6 +420,7 @@
         }
     }
 }
+
 .more__area {
     display: none;
 }
@@ -458,10 +495,6 @@
             padding: v.$padding-10 0;
         }
 
-        .board__content {
-            //padding-top: v.$padding-10;
-        }
-
         .file__area {
             display: flex;
             flex-direction: column;
@@ -513,10 +546,12 @@
             .total {
                 flex-direction: column;
                 gap: 0;
+
                 .base__date {
                     font-size: v.$font-body-xsmall;
                     color: v.$text-color-date;
                 }
+
                 .search__period {
                     display: block;
                     color: v.$gray-color-60;
@@ -568,12 +603,15 @@
             flex-direction: column;
             border: none;
             gap: 16px;
-            &.type__mo{
-                display:flex;
+
+            &.type__mo {
+                display: flex;
             }
-            &.type__pc{
+
+            &.type__pc {
                 display: none;
             }
+
             .board__tr {
                 position: relative;
                 display: flex;
@@ -582,7 +620,7 @@
                 border: 1px solid v.$gray-color-30;
                 padding: v.$padding-7;
                 border-radius: v.$gap-4;
-                
+
 
                 &.thead {
                     display: none;
@@ -593,7 +631,7 @@
                     display: flex;
                     height: auto;
                     padding: 0;
-                    
+
 
                     .flex__wrap {
                         max-width: 100%;
@@ -649,6 +687,7 @@
 
             .td {
                 font-size: v.$font-body-small;
+
                 .mo__label {
                     display: block;
                     position: relative;
@@ -660,9 +699,17 @@
                     text-align: left;
                 }
             }
+            &.no__list{
+                border-right: none;
+                border-left:none;
+                border-bottom: none;
+                border-radius: 0;
+                border-top: 2px solid v.$border-default;
+                padding: v.$padding-10 0;
+            }
         }
 
-        
+
     }
 
 
@@ -730,7 +777,7 @@
             }
         }
     }
-    
+
     .nextprev-list {
         li {
             gap: v.$gap-3;
@@ -741,6 +788,7 @@
             }
         }
     }
+
     .pagination {
         display: none;
     }

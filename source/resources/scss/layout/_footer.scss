@@ -1,7 +1,7 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
 @use "../base/breakpoints"as b;
-
+/* footer.scss */
 footer{
     background-color: v.$color-surface-footer;
     .footer__wrap{

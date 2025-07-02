@@ -1,7 +1,7 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
 @use "../base/breakpoints"as b;
-
+/* input.scss */
 //input variable
 $input-size-base: v.$icon-size-3;
 $input-size-large: v.$icon-size-4;
@@ -469,21 +469,31 @@ input[type=radio] {
             height: 38px;
             line-height: 38px;
 
+            .ui-state-default {
+                pointer-events: none;
+            }
+
             &.ui-datepicker-today {
-                //border-radius: 50%;
-                //background: #D6E0EB;
-            }
-
-            &.ui-datepicker-current-day {
-                background: v.$primary-color;
-                border-radius: 50%;
+                position: relative;
                 color: #fff;
-
+                &::after{
+                    content: '';
+                    background: v.$primary-color;
+                    border-radius: 50%;
+                    width:38px;
+                    height:38px;
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left:50%;
+                    transform: translate(-50%, -50%);
+                }
+                a {
+                    position: relative;
+                    display: block;
+                    z-index: 10;
+                }
             }
-
-
-
-
         }
     }
 

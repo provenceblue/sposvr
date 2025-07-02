@@ -1,7 +1,7 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
 @use "../base/breakpoints"as b;
-
+/* content.scss */
 .round__box {
     display: block;
     background-color: #fff;
@@ -115,7 +115,7 @@
 
         span {
             background-size: 16px;
-            padding-left: v.$padding-7;
+            
         }
     }
 }
@@ -332,7 +332,20 @@
                 margin-top: v.$padding-2;
             }
 
-            .text {}
+            .no__list{
+                padding: v.$padding-10 0;
+                display: flex;
+                justify-content: center;
+                table-layout: auto;
+                text-align: center;
+                width: 100%;
+                border: none;
+                .svg__icon{
+                    @include m.square(48px);
+                    background-size: 33px;
+                    margin-bottom: v.$padding-4;
+                }
+            }
 
         }
     }
@@ -389,5 +402,16 @@
     .btn__more__view {
         @include m.square(24px);
         background-size: 16px;
+    }
+    .badge {
+        &.large{
+            padding: 0 v.$padding-3;
+            border-radius: 4px;
+            font-weight: v.$font-weight-regular;
+            min-height: 23px;
+            span{
+                background-size: 12px;
+            }
+        }
     }
 }

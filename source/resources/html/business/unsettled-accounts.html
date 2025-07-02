@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "미정산내역 | 영업현황 "
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="business">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-2.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-2.html',{
+                    "depth1": "영업현황",
+                    "depth2": "정산보고서",
+                    "depth3": "미정산내역",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "미정산내역",
+                    "subtext": "판매점의 미정산내역을 확인할 수 있습니다.",
+                    })
+                    <div class="content__inner unsettled">
+                        <div class="unsettled__box">
+                            <div class="round__box bg__gray">
+                                <ul>
+                                    <li>
+                                        <div class="round__box">
+                                            <div class="label"><span>누적 온라인 미정산금액</span></div>
+                                            <div class="text">
+                                                <em class="total"><b>350,754,800</b>원</em>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="round__box">
+                                            <div class="label"><span>누적 인쇄 미정산금액</span></div>
+                                            <div class="text">
+                                                <em class="total"><b>350,754,800</b>원</em>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="board__wrap">
+                            <div class="board__top">
+                                <div class="total">
+                                    <div class="num__area">
+                                        <span>전체 <em>24</em>개</span>
+                                    </div>
+                                    <div class="base__date">
+                                        <span>(기준일시: 2025.05.16 15:34)</span>
+                                    </div>
+                                </div>
+                                <div class="list__select">
+                                    <em>목록 표시 개수</em>
+                                    <span class="form__area">
+                                        <select title="목록 표시 개수" class="select__box noline">
+                                            <option value="">30개</option>
+                                            <option value="">50개</option>
+                                            <option value="">100개</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="board__list">
+                                <ul class="board__table online">
+                                    <li class="board__tr thead">
+                                        <div class="th division">구분</div>
+                                        <div class="th date">정산일자</div>
+                                        <div class="th period">정산기간</div>
+                                        <div class="th week">정산 주차</div>
+                                        <div class="th account">미정산금액</div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td division">
+                                            <span class="mo__label">구분</span>
+                                            <span>온라인복권</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">정산일자</span>
+                                            <span>2025.05.09(금)</span>
+                                        </div>
+                                        <div class="td period">
+                                            <span class="mo__label">정산기간</span>
+                                            <span>2025.05.02(금)~2025.05.08(목)</span>
+                                        </div>
+                                        <div class="td week">
+                                            <span class="mo__label">정산 주차</span>
+                                            <span>2025년 5월 2주차</span>
+                                        </div>
+                                        <div class="td account">
+                                            <span class="mo__label">미정산금액</span>
+                                            <span>189,000원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td division">
+                                            <span class="mo__label">구분</span>
+                                            <span>인쇄복권</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">정산일자</span>
+                                            <span>2025.05.09(금)</span>
+                                        </div>
+                                        <div class="td period">
+                                            <span class="mo__label">정산기간</span>
+                                            <span>2025.05.02(금)~2025.05.08(목)</span>
+                                        </div>
+                                        <div class="td week">
+                                            <span class="mo__label">정산 주차</span>
+                                            <span>2025년 5월 2주차</span>
+                                        </div>
+                                        <div class="td account">
+                                            <span class="mo__label">미정산금액</span>
+                                            <span>189,000원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td division">
+                                            <span class="mo__label">구분</span>
+                                            <span>온라인복권</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">정산일자</span>
+                                            <span>2025.05.09(금)</span>
+                                        </div>
+                                        <div class="td period">
+                                            <span class="mo__label">정산기간</span>
+                                            <span>2025.05.02(금)~2025.05.08(목)</span>
+                                        </div>
+                                        <div class="td week">
+                                            <span class="mo__label">정산 주차</span>
+                                            <span>2025년 5월 2주차</span>
+                                        </div>
+                                        <div class="td account">
+                                            <span class="mo__label">미정산금액</span>
+                                            <span>189,000원</span>
+                                        </div>
+                                    </li>
+                                    <li class="board__tr tbody">
+                                        <div class="td division">
+                                            <span class="mo__label">구분</span>
+                                            <span>인쇄복권</span>
+                                        </div>
+                                        <div class="td date">
+                                            <span class="mo__label">정산일자</span>
+                                            <span>2025.05.09(금)</span>
+                                        </div>
+                                        <div class="td period">
+                                            <span class="mo__label">정산기간</span>
+                                            <span>2025.05.02(금)~2025.05.08(목)</span>
+                                        </div>
+                                        <div class="td week">
+                                            <span class="mo__label">정산 주차</span>
+                                            <span>2025년 5월 2주차</span>
+                                        </div>
+                                        <div class="td account">
+                                            <span class="mo__label">미정산금액</span>
+                                            <span>189,000원</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            @@include('@@webRoot/resources/html/_include/pagination.html')
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            //lnb 활성화 
+            const $lnbActive = $('.left__menu').find('>ul>li:nth-child(4)');
+            const $subActive = $lnbActive.find('.sub__menu').find('li:nth-child(2)');
+            $lnbActive.addClass('active');
+            $subActive.addClass('active');
+            // 기간설정 datepicker
+            const today = new Date();
+            $("#startDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+        });
+    </script>
+</body>
+
+</html>

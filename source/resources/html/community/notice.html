@@ -117,8 +117,8 @@
                                             <option value="">100개</option>
                                         </select>
                                     </span>
-                               
-                                    <button class="open__search__btn" data-call-layered="bsSearch" 
+
+                                    <button class="open__search__btn" data-call-layered="bsSearch"
                                         data-return-name="btnBsSearch">
                                         <i class="svg__icon search" aria-hidden="true"></i>
                                         <span>상세조회</span>
@@ -143,7 +143,8 @@
                                                     <em class="badge emergency"><span>긴급공지</span></em>
                                                     <em class="badge new"><span>New</span></em>
                                                 </div>
-                                                <a href="#none" class="ellipsis"><span>2025년 상반기 운영 관련 공지사항 안내 </span></a>
+                                                <a href="#none" class="ellipsis"><span>2025년 상반기 운영 관련 공지사항 안내
+                                                    </span></a>
                                                 <i class="file_attach"><span>첨부파일 있음</span></i>
                                             </div>
                                         </div>
@@ -172,6 +173,19 @@
                                 </ul>
                             </div>
                             @@include('@@webRoot/resources/html/_include/pagination.html')
+                            
+                            <div class="board__list">
+                                <ul class="board__table">
+                                    
+                                    <!-- 조회된 내역이 없을 때 -->
+                                    <li class="board__tr tbody no__list">
+                                        <span><i class="svg__icon no__list" aria-hidden="true"></i>조회된 내역이
+                                            없습니다.</span>
+                                    </li>
+                                    <!--// 조회된 내역이 없을 때 -->
+                                </ul>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

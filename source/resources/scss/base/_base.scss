@@ -1,7 +1,7 @@
 @use 'variable'as v;
 @use 'mixin'as m;
 @use "breakpoints"as b;
-
+/* base.scss */
 body {
     font-size: v.$font-body-medium;
     line-height: v.$line-height-base;
@@ -143,6 +143,14 @@ body {
     }
     &.logout{
         background: url(../img/common/logout.svg) no-repeat center center / contain;
+        @include m.square(16px);
+    }
+    &.no__list {
+        background: url(../img/layout/no-list.svg) no-repeat center center / contain;
+        @include m.square(16px);
+    }
+    &.no__alrim {
+        background: url(../img/layout/no-alrim.svg) no-repeat center center / contain;
         @include m.square(16px);
     }
 }

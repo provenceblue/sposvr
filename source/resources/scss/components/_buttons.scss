@@ -1,7 +1,7 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
 @use "../base/breakpoints"as b;
-
+/* button.scss */
 $btn-radius: 6px;
 
 .btn-group {
@@ -221,6 +221,9 @@ button {
                 width: 100%;
             }
         }
+    }
+    .btn__swiper{
+        
     }
 
 }

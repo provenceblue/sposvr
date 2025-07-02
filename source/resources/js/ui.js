@@ -71,23 +71,23 @@ $(document).ready(function () {
         });
     });
 
-    
-    
+
+
     //left menu(pc)
     const $leftMenuOpen = $('.left__menu').find('button');
     const $liToggle = $('.left__menu>ul>li');
-    
-    $leftMenuOpen.on('click',function(){
+
+    $leftMenuOpen.on('click', function () {
         const $target = $(this).parent('li');
         let isVisible = $target.hasClass('active');
         if (isVisible) {
-           $target.removeClass('active');
-        }else{
+            $target.removeClass('active');
+        } else {
             $liToggle.removeClass('active');
             $target.addClass('active');
         }
     })
-    
+
     // let gfn_dim = {
     //     show: function ($target, level, parent, returnName) {
     //         $('<div class="dim" data-return=' + returnName + ' data-parent=' + parent + ' />').insertBefore($target);
@@ -103,8 +103,8 @@ $(document).ready(function () {
     //         $returnName.focus();
     //     }
     // };
-    
-    
+
+
     $('body').on('click', '.dim', function () {
         const layerName = $body.find('div').attr('data-layered-name');
         const parentName = $(this).data('parent');
@@ -112,7 +112,7 @@ $(document).ready(function () {
         gfn_layered.close(layerName, parentName, returnName);
         gfn_dim.hide($(this));
     });
-    
+
     // let gfn_layered = {
     //     open: function (name, parent, returnName) {
     //         const $parent = $(parent);
@@ -145,7 +145,7 @@ $(document).ready(function () {
     //                 $parent.removeClass('is__active').removeAttr('style');
     //                 $selectedLayer.removeAttr('style');
     //             }
-                
+
     //             $return.focus();
     //         } else {
     //             gfn_body.hold(false);
@@ -159,7 +159,7 @@ $(document).ready(function () {
     //         }
     //     }
     // };
-    
+
 
     //call search
     $('body').on('click', '[data-call-layered]', function () {
@@ -189,15 +189,15 @@ $(document).ready(function () {
     //accordion
     $('body').on('click', 'button[data-call-more]', function () {
         let name = $(this).data('call-more');
-        let $target = $('#'+$(this).attr('aria-controls'));
+        let $target = $('#' + $(this).attr('aria-controls'));
         let isVisible = $target.is(':visible');
         if (isVisible) {
             $target.hide().removeClass('active');
             $(this).attr('aria-expanded', false);
             $(this).removeClass('on');
-        }else{
+        } else {
             $('.' + name).hide();
-            $('.' + $(this).attr('class')).removeClass('on');//같은 클래스명을 가진 버튼을 비활성화 시킴 
+            $('.' + $(this).attr('class')).removeClass('on'); //같은 클래스명을 가진 버튼을 비활성화 시킴 
             $target.show().addClass('active');
             $(this).attr('aria-expanded', true);
             $(this).addClass('on');
@@ -219,10 +219,10 @@ $(document).ready(function () {
         $('.' + $(this).attr('aria-expanded', false));
         $(this).attr('aria-expanded', true);
     });
-    
-    
+
+
 })
- 
+
 //byte check
 function gfn_fnChkByte($target, maxByte) {
     maxByte = maxByte.replace(/[\D\s\._\-]+/g, "");
@@ -239,7 +239,7 @@ function gfn_fnChkByte($target, maxByte) {
         // if (encodeURIComponent(one_char).length > 4) {
         //     rbyte += 2; //한글2Byte
         // } else {
-            rbyte++; //영문 등 나머지 1Byte
+        rbyte++; //영문 등 나머지 1Byte
         //}
 
         if (rbyte <= maxByte) {
@@ -254,8 +254,8 @@ function gfn_fnChkByte($target, maxByte) {
         gfn_fnChkByte($target, maxByte);
     } else {
         $target.closest('.answer').find('.current').text(gfn_comma3Digit(rbyte));
-    }  
-    
+    }
+
 }
 //세자리수 콤마
 function gfn_comma3Digit(number) {
@@ -266,7 +266,7 @@ function gfn_comma3Digit(number) {
 }
 //mobile search bottom sheet popup 
 let $body = $('body');
-let layeredLevel = 2002;
+let layeredLevel = 10000;
 let gfn_body = {
     hold: function (tf) {
         if (tf) {

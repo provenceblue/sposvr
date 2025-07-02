@@ -1,7 +1,7 @@
 @use "../base/variable"as v;
 @use "../base/mixin"as m;
 @use "../base/breakpoints"as b;
-
+/* business.scss */
 .sales__board {
     .search__area .input__area>ul>li .items .search__box .input__box {
         width: 200px;
@@ -302,7 +302,13 @@
         .board__list {
             &.scroll {
                 .board__table {
-                    width: 1720px;
+                    &.online{
+                        width: 1720px;
+                    }
+                    &.print{
+                        width: 1892px;
+                    }
+                    
 
                     .board__tr {
 
@@ -324,6 +330,121 @@
                                 background-color: v.$primary-color-lighter;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+.unsettled{
+    .unsettled__box {
+        margin-bottom: v.$padding-8;
+
+        &>.round__box {
+            background-color: v.$color-surface-box;
+
+            &>ul {
+                display: flex;
+                gap: v.$gap-7;
+
+                &>li {
+                    flex: 1 1 40%;
+                    .label{
+                        font-weight: v.$font-weight-semi-bold;
+                        color: v.$text-color-sub;
+                    }
+                    .text{
+                        font-weight: v.$font-weight-medium;
+                        font-size: 20px;
+                        b{
+                            font-size: v.$font-heading-xlarge;
+                            margin-right: v.$padding-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .board__wrap {
+        .board__list {
+            .board__table {
+                .board__tr {
+                    .th,
+                    .td {
+                        &.division{
+                            width: 11%;
+                        }
+                        &.date {
+                            width:15%;
+                        }
+                        &.period {
+                            width: 27%;
+                        }
+                        &.week {
+                            width:17%;
+                        }
+                        &.account {
+                            width: 30%
+                        }
+                    }
+                    .td {
+                        &.account{
+                            text-align:right;
+                            background-color: v.$primary-color-lighter;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.tax__invoice{
+    .board__wrap {
+        .board__list {
+            .board__table {
+                .board__tr {
+
+                    .th,
+                    .td {
+                        &.yaer {
+                            width: 9%;
+                        }
+
+                        &.division {
+                            width: 19%;
+                        }
+
+                        &.date {
+                            width: 15%;
+                        }
+
+                        &.supply {
+                            width: 16%;
+                        }
+
+                        &.tax {
+                            width: 16%;
+                        }
+
+                        &.total {
+                            width: 16%
+                        }
+                        &.status {
+                            width: 9%;
+                            .error{
+                                color: v.$color-dager;
+                            }
+                        }
+                    }
+
+                    .td {
+                        &.supply,
+                        &.tax,
+                        &.total {
+                            text-align:right;
+                        }
+
+
                     }
                 }
             }
@@ -557,6 +678,119 @@
                 }
             }
         }
+    }
+    .unsettled {
+        .unsettled__box {
+            margin-bottom: v.$padding-8;
 
+            &>.round__box {
+                background-color: v.$color-surface-box;
+                padding: v.$padding-7;
+                &>ul {
+                    display: flex;
+                    gap: v.$gap-4;
+                    flex-direction: column;
+
+                    &>li {
+                        flex: 0;
+                        .round__box{
+                            padding: v.$padding-5 v.$padding-7;
+                        }
+                        .label{
+                            font-size: v.$font-body-small;
+                        }
+                        .text{
+                            font-size: v.$font-body-small;
+                            b{
+                                font-size: v.$font-heading-medium;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .board__wrap {
+            .board__list {
+                .board__table {
+                    .board__tr {
+                        gap: v.$gap-5;
+                        
+                        .th,
+                        .td {
+                            &.division {
+                                width: 100%;
+                            }
+
+                            &.date {
+                                width: 100%;
+                            }
+
+                            &.period {
+                                width: 100%;
+                            }
+
+                            &.week {
+                                width: 100%;
+                            }
+
+                            &.account {
+                                width: 100%
+                            }
+                        }
+
+                        .td {
+                            justify-content: space-between;
+                            &.account {
+                                background-color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tax__invoice {
+        .board__wrap {
+            .board__list {
+                .board__table {
+                    .board__tr {
+                        gap: v.$gap-5;
+                        .td {
+                            justify-content: space-between;
+                            &.yaer {
+                                width: 100%;
+                            }
+
+                            &.division {
+                                width: 100%;
+                            }
+
+                            &.date {
+                                width: 100%;
+                            }
+
+                            &.supply {
+                                width: 100%;
+                            }
+
+                            &.tax {
+                                width: 100%;
+                            }
+
+                            &.total {
+                                width: 100%
+                            }
+
+                            &.status {
+                                width: 100%;
+                            }
+                        }
+
+                        
+                    }
+                }
+            }
+        }
     }
 }

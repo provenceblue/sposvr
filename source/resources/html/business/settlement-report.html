@@ -9,7 +9,7 @@
 
 <body>
     @@include('@@webRoot/resources/html/_include/a11y.html')
-    <div class="wrap" id="storeMy">
+    <div class="wrap" id="business">
         @@include('@@webRoot/resources/html/_include/header.html')
         <div class="container">
             <div class="page__wrap">
@@ -184,7 +184,7 @@
                                     </div>
                                 </div>
                                 <div class="board__list scroll" tanindex="0">
-                                    <ul class="board__table">
+                                    <ul class="board__table online">
                                         <li class="board__tr thead">
                                             <div class="th week">정산주차</div>
                                             <div class="th sale">판매금액<br>(A)</div>
@@ -360,16 +360,17 @@
                                     </div>
                                 </div>
                                 <div class="board__list scroll" tanindex="0">
-                                    <ul class="board__table">
+                                    <ul class="board__table print">
                                         <li class="board__tr thead">
                                             <div class="th week">정산주차</div>
-                                            <div class="th sale">판매금액<br>(A)</div>
-                                            <div class="th return">취소/반납금액<br>(B)</div>
-                                            <div class="th payment">당첨금 지급금액<br>(C)</div>
+                                            <div class="th sale">활성화금액<br>(A)</div>
+                                            <div class="th return">정상반납<br>(B)</div>
+                                            <div class="th payment">부분반납<br>(C)</div>
                                             <div class="th charge">판매수수료<br>(D)</div>
-                                            <div class="th modify">조정금액<br>(E)</div>
-                                            <div class="th deposit">선입금액<br>(F)</div>
-                                            <div class="th adjust">정산 대상금액<br> (A-B-C-D-E-F)</div>
+                                            <div class="th modify">당첨지급금<br>(E)</div>
+                                            <div class="th deposit">시스템이용료<br>(F)</div>
+                                            <div class="th deposit">전주정산잔액<br>(G)</div>
+                                            <div class="th adjust">금주 정산 총액<br>(A-B-C-D-E+F+G)</div>
                                             <div class="th date">정산기한</div>
                                             <div class="th check">정산여부</div>
                                         </li>
@@ -379,15 +380,15 @@
                                                 <span>2025년 5월 3주차</span>
                                             </div>
                                             <div class="td sale">
-                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span class="mo__label">활성화금액<br>(A)</span>
                                                 <span>400,000원 </span>
                                             </div>
                                             <div class="td return">
-                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span class="mo__label">정상반납<br>(B)</span>
                                                 <span>400,000원</span>
                                             </div>
                                             <div class="td payment">
-                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span class="mo__label">부분반납<br>(C)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td charge">
@@ -395,15 +396,19 @@
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td modify">
-                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span class="mo__label">당첨지급금<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td system">
+                                                <span class="mo__label">시스템이용료<br>(F)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td deposit">
-                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span class="mo__label">전주정산잔액<br>(G)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td adjust">
-                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span class="mo__label">금주 정산 총액<br>(A-B-C-D-E+F+G)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td date">
@@ -421,15 +426,15 @@
                                                 <span>2025년 5월 3주차</span>
                                             </div>
                                             <div class="td sale">
-                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span class="mo__label">활성화금액<br>(A)</span>
                                                 <span>400,000원 </span>
                                             </div>
                                             <div class="td return">
-                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span class="mo__label">정상반납<br>(B)</span>
                                                 <span>400,000원</span>
                                             </div>
                                             <div class="td payment">
-                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span class="mo__label">부분반납<br>(C)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td charge">
@@ -437,15 +442,19 @@
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td modify">
-                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span class="mo__label">당첨지급금<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td system">
+                                                <span class="mo__label">시스템이용료<br>(F)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td deposit">
-                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span class="mo__label">전주정산잔액<br>(G)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td adjust">
-                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span class="mo__label">금주 정산 총액<br>(A-B-C-D-E+F+G)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td date">
@@ -454,7 +463,7 @@
                                             </div>
                                             <div class="td check">
                                                 <span class="mo__label">정산여부</span>
-                                                <span>미정산</span>
+                                                <span>정산완료</span>
                                             </div>
                                         </li>
                                         <li class="board__tr tbody">
@@ -463,15 +472,15 @@
                                                 <span>2025년 5월 3주차</span>
                                             </div>
                                             <div class="td sale">
-                                                <span class="mo__label">판매금액<br>(A)</span>
+                                                <span class="mo__label">활성화금액<br>(A)</span>
                                                 <span>400,000원 </span>
                                             </div>
                                             <div class="td return">
-                                                <span class="mo__label">취소/반납금액<br>(B)</span>
+                                                <span class="mo__label">정상반납<br>(B)</span>
                                                 <span>400,000원</span>
                                             </div>
                                             <div class="td payment">
-                                                <span class="mo__label">당첨금 지급금액<br>(C)</span>
+                                                <span class="mo__label">부분반납<br>(C)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td charge">
@@ -479,15 +488,19 @@
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td modify">
-                                                <span class="mo__label">조정금액<br>(E)</span>
+                                                <span class="mo__label">당첨지급금<br>(E)</span>
+                                                <span>8,888,850,000원</span>
+                                            </div>
+                                            <div class="td system">
+                                                <span class="mo__label">시스템이용료<br>(F)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td deposit">
-                                                <span class="mo__label">선입금액<br>(F)</span>
+                                                <span class="mo__label">전주정산잔액<br>(G)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td adjust">
-                                                <span class="mo__label">정산 대상금액<br> (A-B-C-D-E-F)</span>
+                                                <span class="mo__label">금주 정산 총액<br>(A-B-C-D-E+F+G)</span>
                                                 <span>8,888,850,000원</span>
                                             </div>
                                             <div class="td date">
@@ -496,7 +509,7 @@
                                             </div>
                                             <div class="td check">
                                                 <span class="mo__label">정산여부</span>
-                                                <span>미정산</span>
+                                                <span>정산완료</span>
                                             </div>
                                         </li>
                                     </ul>

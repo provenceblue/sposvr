@@ -17,6 +17,7 @@
                     <div class="key__inner">
                         <h2 class="blind">메인 비주얼 영역</h2>
                         <div class="top__area">
+                            <div class="status type__mo"><span>(온라인, 인쇄 일시중지)</span></div>
                             <div class="title">
                                 <em>목동신시가지 5단지 양천 파라곤 타워 양천트 목동신시가지 5단지 양천 파라곤 타워 양천트</em>님 환영합니다.
                             </div>
@@ -26,7 +27,7 @@
                                     <em>000000000(온라인)</em> / <em>000000000(인쇄)</em>
                                 </div>
                                 <div class="status__area">
-                                    <div class="status"><span>온라인, 인쇄 일시중지</span></div>
+                                    <div class="status type__pc"><span>온라인, 인쇄 일시중지</span></div>
                                     <a href="#none" class="btn_go_page">
                                         <span>영업현황 보러가기</span>
                                         <i class="arrow-right"></i>
@@ -41,33 +42,50 @@
                                         <div class="title">
                                             <span>올해 초부터 어제까지</span>
                                             <em>
-                                                <span>747,000천</span> 원 판매, 작년보다 <b>25<i
-                                                        aria-hidden="true">%</i>증가</b>했어요.
+                                                <span>747,000천</span> 원 판매,<br class="type__mo"> <em>작년보다
+                                                    <b>25<i>%</i>증가</b>했어요.</em>
                                             </em>
                                         </div>
-                                        <ul>
-                                            <li>
-                                                <div class="round__box">
-                                                    <span>판매수수료</span>
-                                                    <em>934,386천원</em>
-                                                    <b class="up">10<span class="percent">%</span></b>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="round__box">
-                                                    <span>로또 판매액</span>
-                                                    <em>934,386천원</em>
-                                                    <b class="up">12<span class="percent">%</span></b>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="round__box">
-                                                    <span>인쇄복권 판매액</span>
-                                                    <em>934,386천원</em>
-                                                    <b class="down">5<span class="percent">%</span></b>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        <div class="swiper" id="slideInfo">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <div class="round__box">
+                                                        <div class="tit">
+                                                            <span>판매수수료</span>
+                                                            <em>934,386천원</em>
+                                                        </div>
+                                                        <div class="level"><b class="up">10<span
+                                                                    class="percent">%</span></b></div>
+                                                    </div>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <div class="round__box">
+                                                        <div class="tit">
+                                                            <span>로또 판매액</span>
+                                                            <em>934,386천원</em>
+                                                        </div>
+                                                        <div class="level"><b class="up">12<span
+                                                                    class="percent">%</span></b></div>
+                                                    </div>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <div class="round__box">
+                                                        <div class="tit">
+                                                            <span>인쇄복권 판매액</span>
+                                                            <em>934,386천원</em>
+                                                        </div>
+                                                        <div class="level"><b class="down">5<span
+                                                                    class="percent">%</span></b></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn__area type__mo">
+                                            <button class="btn_swiper prev"
+                                                id="arrow-prev-slide4"><span>prev</span></button>
+                                            <button class="btn_swiper next"
+                                                id="arrow-next-slide4"><span>next</span></button>
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="sub__content">
@@ -94,7 +112,7 @@
                                         <div class="list">
                                             <!-- nodata -->
                                             <!-- <div class="nodata">
-                                                <span>진행중인</span>필수 교육이 없습니다.
+                                                <span>진행중인</span> 필수 교육이 없습니다.
                                             </div> -->
                                             <!--// nodata  -->
                                             <ul>
@@ -332,8 +350,7 @@
                                                         <div class="text">
                                                             <span>판매종료 12월 24일</span>
                                                             <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i
-                                                                        aria-hidden="true"><span>자세히
+                                                                    class="btn_view_detail"><i><span>자세히
                                                                             보기</span></i></button></span>
                                                         </div>
                                                     </li>
@@ -345,8 +362,7 @@
                                                         <div class="text">
                                                             <span>판매종료 12월 24일</span>
                                                             <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i
-                                                                        aria-hidden="true"><span>자세히
+                                                                    class="btn_view_detail"><i><span>자세히
                                                                             보기</span></i></button></span>
                                                         </div>
                                                     </li>
@@ -358,8 +374,7 @@
                                                         <div class="text">
                                                             <span>판매종료 12월 24일</span>
                                                             <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i
-                                                                        aria-hidden="true"><span>자세히
+                                                                    class="btn_view_detail"><i><span>자세히
                                                                             보기</span></i></button></span>
                                                         </div>
                                                     </li>
@@ -371,8 +386,7 @@
                                                         <div class="text">
                                                             <span>판매종료 12월 24일</span>
                                                             <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i
-                                                                        aria-hidden="true"><span>자세히
+                                                                    class="btn_view_detail"><i><span>자세히
                                                                             보기</span></i></button></span>
                                                         </div>
                                                     </li>
@@ -384,8 +398,7 @@
                                                         <div class="text">
                                                             <span>판매종료 12월 24일</span>
                                                             <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i
-                                                                        aria-hidden="true"><span>자세히
+                                                                    class="btn_view_detail"><i><span>자세히
                                                                             보기</span></i></button></span>
                                                         </div>
                                                     </li>
@@ -397,12 +410,18 @@
                                                         <div class="text">
                                                             <span>판매종료 12월 24일</span>
                                                             <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i
-                                                                        aria-hidden="true"><span>자세히
+                                                                    class="btn_view_detail"><i><span>자세히
                                                                             보기</span></i></button></span>
                                                         </div>
                                                     </li>
                                                 </ul>
+                                            </div>
+                                            <div class="tooltip__wrap">
+                                                <div class="tooltip">
+                                                    <span>
+                                                        스피또 반품기한은 판매종료일<br>로부터 1개월까지 입니다.
+                                                    </span>
+                                                </div>
                                             </div>
                                             <div class="btn__area">
                                                 <button class="btn_swiper prev small"
@@ -419,7 +438,7 @@
                     <div class="con__wrap">
                         <div class="online__edu">
                             <div class="title">
-                                <h2>소상공인 온라인 교육자료</h2>
+                                <h2>소상공인 교육</h2>
                                 <div class="btn__area">
                                     <button class="btn_swiper prev" id="arrow-prev-slide3"><span>prev</span></button>
                                     <button class="btn_swiper next" id="arrow-next-slide3"><span>next</span></button>
@@ -492,20 +511,33 @@
                             <div class="content">
                                 <div class="round__box bg__gray">
                                     <a href="#none" target="_blank" title="새창">
-                                        <span><i class="logo"></i>동행복권 홈페이지
-                                            바로가기</span>
+                                        <div>
+                                            <i class="logo"></i>
+                                            <span class="type__pc">동행복권 홈페이지 바로가기</span>
+                                            <span class="type__mo">홈페이지</span>
+                                        </div>
                                     </a>
                                     <a href="#none" target="_blank" title="새창">
-                                        <span><i class="blog"></i>동행복권 공식 블로그
-                                            바로가기</span>
+                                        <div>
+                                            <i class="blog"></i>
+                                            <span class="type__pc">동행복권 공식 블로그 바로가기</span>
+                                            <span class="type__mo">블로그</span>
+                                        </div>
                                     </a>
                                     <a href="#none" target="_blank" title="새창">
-                                        <span><i class="youtube"></i>동행복권 공식 유튜브
-                                            바로가기</span>
+                                        <div>
+                                            <i class="youtube"></i>
+                                            <span class="type__pc">동행복권 공식 유튜브 바로가기</span>
+                                            <span class="type__mo">유튜브</span>
+
+                                        </div>
                                     </a>
                                     <a href="#none" target="_blank" title="새창">
-                                        <span><i class="order"></i>소모품 주문 사이트
-                                            바로가기</span>
+                                        <div>
+                                            <i class="order"></i>
+                                            <span class="type__pc">소모품 주문 사이트 바로가기</span>
+                                            <span class="type__mo">소모품 주문</span>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -519,14 +551,14 @@
                             <button type="button" class="btn__more"><span>전체보기</span><i
                                     class="svg__icon plus"></i></button>
                         </div>
-                        <div class="list">
-                            <ul>
-                                <li>
+                        <div class="list swiper" id="slideCalendar">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
                                     <div class="round__box outline calendar">
                                         <div id="mainDatepicker"></div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="swiper-slide">
                                     <div class="round__box outline">
                                         <div class="top sun"><em>03</em> / <span>일</span></div>
                                         <div class="content">
@@ -552,7 +584,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="swiper-slide">
                                     <div class="round__box outline">
                                         <div class="top"><em>04</em> / <span>월</span></div>
                                         <div class="content">
@@ -578,7 +610,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="swiper-slide">
                                     <div class="round__box outline">
                                         <div class="top"><em>05</em> / <span>화</span></div>
                                         <div class="content">
@@ -604,7 +636,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="swiper-slide">
                                     <div class="round__box outline">
                                         <div class="top"><em>06</em> / <span>수</span></div>
                                         <div class="content">
@@ -630,7 +662,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="swiper-slide">
                                     <div class="round__box outline">
                                         <div class="top"><em>07</em> / <span>목</span></div>
                                         <div class="content">
@@ -656,7 +688,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="swiper-slide">
                                     <div class="round__box outline">
                                         <div class="top"><em>08</em> / <span>금</span></div>
                                         <div class="content">
@@ -682,7 +714,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="swiper-slide">
                                     <div class="round__box outline">
                                         <div class="top"><em>09</em> / <span>토</span></div>
                                         <div class="content">
@@ -709,6 +741,10 @@
                                     </div>
                                 </li>
                             </ul>
+                            <div class="btn__area type__mo">
+                                <button class="btn_swiper prev" id="arrow-prev-slide5"><span>prev</span></button>
+                                <button class="btn_swiper next" id="arrow-next-slide5"><span>next</span></button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -724,35 +760,6 @@
     <!-- Add Script -->
     <script>
         $(function () {
-            const swiper = new Swiper('#slideNotice', {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                navigation: {
-                    nextEl: '#arrow-next-slide',
-                    prevEl: '#arrow-prev-slide',
-                },
-                spaceBetween: 24,
-            });
-            const swiper2 = new Swiper('#slideSpeeto', {
-                slidesPerView: 1,
-                grid: {
-                    rows: 2,
-                },
-                navigation: {
-                    nextEl: '#arrow-next-slide2',
-                    prevEl: '#arrow-prev-slide2',
-                },
-            })
-            const swiper3 = new Swiper('#slideEdu', {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                navigation: {
-                    nextEl: '#arrow-next-slide3',
-                    prevEl: '#arrow-prev-slide3',
-                },
-                spaceBetween: 32,
-            });
-
             const today = new Date();
             $("#mainDatepicker").datepicker({
                 language: "ko",
@@ -762,8 +769,124 @@
             });
 
             $('#mainDatepicker').datepicker('setDate', today);
+            const swiper = new Swiper('#slideNotice', {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                navigation: {
+                    nextEl: '#arrow-next-slide',
+                    prevEl: '#arrow-prev-slide',
+                },
+                spaceBetween: 24,
+                breakpoints: {
+                    1279: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+
+                    }
+                },
+            });
+            const swiper2 = new Swiper('#slideSpeeto', {
+                slidesPerView: 1,
+                grid: {
+                    rows: 1,
+                },
+                navigation: {
+                    nextEl: '#arrow-next-slide2',
+                    prevEl: '#arrow-prev-slide2',
+                },
+                breakpoints: {
+                    1279: {
+                        slidesPerView: 1,
+                        grid: {
+                            rows: 2,
+                        },
+
+                    }
+                },
+            })
+            const swiper3 = new Swiper('#slideEdu', {
+                slidesPerView: 'auto',
+                navigation: {
+                    nextEl: '#arrow-next-slide3',
+                    prevEl: '#arrow-prev-slide3',
+                },
+                spaceBetween: 16,
+                breakpoints: {
+                    1279: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 2,
+                        spaceBetween: 32,
+
+                    }
+                },
+            });
+            const swiper4 = new Swiper('#slideInfo', {
+                slidesPerView: 1,
+                breakpoints: {
+                    1279: {
+                        slidesPerView: 3,
+                        spaceBetween: 12,
+
+                    }
+                },
+                navigation: {
+                    nextEl: '#arrow-next-slide4',
+                    prevEl: '#arrow-prev-slide4',
+                },
+            });
+
+            var contaierW = $(window).width();
+            var swiper5 = undefined;
+
+            function initSwiper() {
+
+                if (contaierW < 1280 && swiper5 == undefined) {
+                    swiper5 = new Swiper("#slideCalendar", {
+                        slidesPerView: 1,
+                        slidesPerGroup: 1,
+                        spaceBetween: 24,
+                        observer: true,
+                        observeParents: true,
+                        simulateTouch: true,
+                        navigation: {
+                        nextEl: '#arrow-next-slide5',
+                        prevEl: '#arrow-prev-slide5',
+                        },
+                        
+                    });
+                } else if (contaierW >= 1280 && swiper5 != undefined) {
+                    swiper5.destroy();
+                    swiper5 = undefined;
+                }
+            }
+
+            initSwiper();
+
+            $(window).on('resize', function () {
+                contaierW = $(window).width();
+                initSwiper();
+            });
 
 
+            $(".btn_view_detail").on('click',function(){
+                var setLeft = parseInt($(this).position().left) - 65;
+                $('.tooltip__wrap').toggleClass('active');
+                var idx = $(this).closest('li').index();
+                if(idx%2 > 0 && contaierW >= 1280){
+                    $('.tooltip__wrap').addClass('odd');
+                }else{
+                    $('.tooltip__wrap').removeClass('odd');
+                }
+                if(contaierW <= 1280){
+                    $('.tooltip__wrap').css('left',setLeft+"px");
+                }else{
+                    $('.tooltip__wrap').removeAttr('style');
+                }
+            });
+            $(".btn_view_detail").on('mouseleave',function(){
+                $('.tooltip__wrap').removeClass('active');
+                $('.tooltip__wrap').removeClass('odd');
+            });
 
         });
     </script>
