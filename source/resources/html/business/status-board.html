@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "영업 현황 한 눈에 | 영업현황"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/resources/html/_include/a11y.html')
+    <div class="wrap" id="business">
+        @@include('@@webRoot/resources/html/_include/header.html')
+        <div class="container">
+            <div class="page__wrap">
+                @@include('@@webRoot/resources/html/_include/left-menu-2.html')
+
+                <div class="content" id="content">
+                    @@include('@@webRoot/resources/html/_include/breadcrumb-1.html',{
+                    "depth1": "영업현황",
+                    "depth2": "영업 현황 한 눈에",
+                    })
+                    @@include('@@webRoot/resources/html/_include/title.html',{
+                    "title": "영업 현황 한 눈에",
+                    "subtext": "판매점의 연간 영업 통계입니다.",
+                    })
+                    <div class="content__inner status__board">
+                        <div class="select__area">
+                            <button class="btn_swiper prev"><span>prev</span></button>
+                            <span class="form__area">
+                                <select title="년도 선택" class="select__box large">
+                                    <option value="">2020년</option>
+                                    <option value="">2021년</option>
+                                    <option value="">2022년</option>
+                                    <option value="">2023년</option>
+                                    <option value="">2024년</option>
+                                    <option value="" selected>2025년</option>
+                                </select>
+                            </span>
+                            <button class="btn_swiper next"><span>next</span></button>
+                        </div>
+                        <div class="order__area">
+                            <div class="sales__date">
+                                <div class="round__box outline">
+                                    <ul>
+                                        <li>
+                                            <span class="label">온라인 영업일수</span>
+                                            <span class="date"><em>10,234</em><small> 일</small></span>
+                                        </li>
+                                        <li>
+                                            <span class="label">인쇄 영업일수</span>
+                                            <span class="date"><em>5,234</em><small> 일</small></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="order__quantity">
+                                <ul>
+                                    <li class="up"><!-- 증가시 up class 추가 -->
+                                        <div class="round__box outline">
+                                            <span class="label">티켓롤지 누적 주문량</span>
+                                            <span class="quantity"><em>7,385</em><small> 매</small></span>
+                                            <span class="compare"><em>전년 대비</em><b>+200박스(+52%)</b></span>
+                                        </div>
+                                    </li>
+                                    <li class="down"><!-- 감소시 down class 추가 -->
+                                        <div class="round__box outline">
+                                            <span class="label">티켓롤지 누적 주문량</span>
+                                            <span class="quantity"><em>7,385</em><small> 매</small></span>
+                                            <span class="compare"><em>전년 대비</em><b>-300박스(-52%)</b></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="compare__area">
+                            <div class="round__box bg__gray">
+                                <ul>
+                                    <li class="compare">
+                                        <div class="round__box">
+                                            <ul>
+                                                <li class="text up">
+                                                    <!-- 증가시 up class 추가 -->
+                                                    <!-- 감소시 down class 추가 -->
+                                                    <span class="label">연간 누적 판매</span>
+                                                    <span class="quantity"><em>86,900</em><small> 천원</small></span>
+                                                    <span class="compare"><em>전년대비</em><span>000,000 천원 증가</span><b>+13%</b></span>
+                                                </li>
+                                                <li class="graph">
+                                                    <div class="last__year">
+                                                        <span class="label"><em>작년</em><b>총 0,000 천원</b></span>
+                                                        <div class="progress__bar">
+                                                            <span style="width:100%"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="current__year">
+                                                        <span class="label"><em>올해</em><b>총 0,000 천원</b></span>
+                                                        <div class="progress__bar">
+                                                            <span style="width:60%"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="income up">
+                                        <!-- 증가시 up class 추가 -->
+                                        <!-- 감소시 down class 추가 -->
+                                        <div class="round__box">
+                                            <span class="label">판매수익</span>
+                                            <span class="quantity"><em>86,900</em><small> 천원</small></span>
+                                            <span class="compare"><em>전년대비</em><span>000,000 천원 증가</span><b>+13%</b></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="piechart__area">
+                            <ul>
+                                <li>
+                                    <div class="round__box outline">
+                                        <div id="pie1"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round__box outline">
+                                        <div id="pie2"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round__box outline">
+                                        <div id="pie3"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @@include('@@webRoot/resources/html/_include/footer.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/resources/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="/resources/common/lib/highcharts/highcharts.js"></script>
+    <!-- 차트관련 스크립트 - 개발시 참조 -->
+    <script src="/resources/js/ui-chart.js"></script>
+    <!-- Add Script -->
+    <script>
+        $(function () {
+            //lnb 활성화 
+            const $lnbActive = $('.left__menu').find('>ul>li:nth-child(1)');
+            $lnbActive.addClass('active');
+            // 기간설정 datepicker
+            const today = new Date();
+            $("#startDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+
+            $('#startDate').datepicker('setDate', today);
+
+            $("#endDate").datepicker({
+                dateFormat: 'yy.mm.dd',
+            });
+            
+        });
+    </script>
+</body>
+
+</html>

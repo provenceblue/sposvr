@@ -756,7 +756,7 @@
     <!-- Script -->
     @@include('@@webRoot/resources/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-
+    <script src="/resources/common/lib/moment.min.js"></script>
     <!-- Add Script -->
     <script>
         $(function () {
@@ -838,6 +838,9 @@
             var contaierW = $(window).width();
             var swiper5 = undefined;
 
+            //swiper 오늘 요일로 셋팅
+            var idxDay = moment().day();
+
             function initSwiper() {
 
                 if (contaierW < 1280 && swiper5 == undefined) {
@@ -848,11 +851,12 @@
                         observer: true,
                         observeParents: true,
                         simulateTouch: true,
+                        initialSlide: idxDay,
                         navigation: {
-                        nextEl: '#arrow-next-slide5',
-                        prevEl: '#arrow-prev-slide5',
+                            nextEl: '#arrow-next-slide5',
+                            prevEl: '#arrow-prev-slide5',
                         },
-                        
+
                     });
                 } else if (contaierW >= 1280 && swiper5 != undefined) {
                     swiper5.destroy();
@@ -868,25 +872,27 @@
             });
 
 
-            $(".btn_view_detail").on('click',function(){
+            $(".btn_view_detail").on('click', function () {
                 var setLeft = parseInt($(this).position().left) - 65;
                 $('.tooltip__wrap').toggleClass('active');
                 var idx = $(this).closest('li').index();
-                if(idx%2 > 0 && contaierW >= 1280){
+                if (idx % 2 > 0 && contaierW >= 1280) {
                     $('.tooltip__wrap').addClass('odd');
-                }else{
+                } else {
                     $('.tooltip__wrap').removeClass('odd');
                 }
-                if(contaierW <= 1280){
-                    $('.tooltip__wrap').css('left',setLeft+"px");
-                }else{
+                if (contaierW <= 1280) {
+                    $('.tooltip__wrap').css('left', setLeft + "px");
+                } else {
                     $('.tooltip__wrap').removeAttr('style');
                 }
             });
-            $(".btn_view_detail").on('mouseleave',function(){
+            $(".btn_view_detail").on('mouseleave', function () {
                 $('.tooltip__wrap').removeClass('active');
                 $('.tooltip__wrap').removeClass('odd');
             });
+
+            //$('.ui-datepicker-today').closest('tr').addClass('current__week');
 
         });
     </script>

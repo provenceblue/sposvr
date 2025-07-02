@@ -465,9 +465,24 @@ input[type=radio] {
     }
 
     tbody {
+        tr{
+            &.current__week {
+                td{
+                    background: v.$color-success-lighter;
+                    &:first-child{
+                        border-radius: 38px 0 0 38px;
+                    }
+                    &:last-child {
+                        border-radius: 0 38px 38px 0;
+                    }
+                }
+            }
+        }
         td {
+            position: relative;
             height: 38px;
             line-height: 38px;
+            z-index:2;
 
             .ui-state-default {
                 pointer-events: none;
