@@ -357,19 +357,96 @@
                 overflow:hidden;
             }
             .round__box{
-                &>div{
-                    max-height:240px;
-
-                }
-                .highcharts-title{
+                .tit {
+                    text-align: center;
                     font-size: v.$font-heading-small;
+                    font-weight: v.$font-weight-semi-bold;
+                    margin-bottom:8px;
                 }
-                .highcharts-credits {
+                .chart__wrap{
+                    position: relative;
+                    .pie {
+                        height: 195px;
+                        position: relative;
+                        &>div{
+                            z-index:10;
+                        }
+                        
+                    }
+                    .text{
+                        position: absolute;
+                        text-align: center;
+                        @include m.position-center();
+                        z-index: 1;
+                        .label{
+                            display: block;
+                            line-height: 1;
+                            font-weight: v.$font-weight-regular;
+                        }
+                        .percent{
+                            font-size: v.$font-heading-medium;
+                            font-weight: v.$font-weight-semi-bold;
+                        }
+                    }
+                }
+                .compare__area{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    padding-top: v.$padding-8;
+                    border-top: 1px solid v.$border-gray-lighter;
+                    .quantity{
+                        em{
+                            font-size: v.$font-heading-medium;
+                            font-weight: v.$font-weight-semi-bold;
+                        }
+                        small{
+                            font-weight: v.$font-weight-medium;
+                        }
+                        
+                    }
+                    .compare{
+                        font-size: v.$font-heading-small;
+                        b{
+                            font-weight: v.$font-weight-medium;
+                        }
+                        &.up{
+                            color: v.$color-dager-dark;
+                        }
+                        &.down {
+                            color: v.$color-information;
+                        }
+                    }
+                }
+
+                .highcharts-title,
+                .highcharts-subtitle,
+                .highcharts-credits
+                {
                     display:none;
                 }
             }
         }
     }
+    .week__chart__area{
+        margin-top: v.$padding-9;
+        .chart__wrap{
+            overflow-x: auto;
+            .barchart{
+                width: 2000px;
+            }
+        }
+    }
+    .month__chart__area {
+        margin-top: v.$padding-9;
+    }
+    .quarter__chart__area {
+        margin-top: v.$padding-9;
+        .highcharts-title{
+            padding-bottom: v.$padding-4;
+        }
+    }
+    
 }
 
 .sales__board {
@@ -1195,9 +1272,17 @@
     .status__board{
         .piechart__area {
             margin-top: v.$padding-10;
-
+            
             &>ul {
                 grid-template-columns: 1fr 1fr;
+                .round__box {
+                    .chart__wrap {
+                        .pie {
+                            height: 108px;
+
+                        }
+                    }
+                }
             }
         }
     }
