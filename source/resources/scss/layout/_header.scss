@@ -85,6 +85,12 @@ body {
                     height: 0;
                     width: 0;
                 }
+                &.no__list{
+                    .svg__icon{
+                        background-image: url(../img/common/ico-bell.svg);
+                    }
+                    
+                }
             }
         }
     }

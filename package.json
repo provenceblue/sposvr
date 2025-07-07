@@ -1,40 +1,39 @@
 {
-  "name": "my-project",
-  "version": "1.0.0",
-  "main": "gulpfile.babel.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp",
-    "build": "gulp build",
-    "deploy": "gulp deploy"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@babel/core": "^7.27.1",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/register": "^7.27.1",
-    "browser-sync": "^3.0.4",
-    "del": "^6.1.1",
-    "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-beautify": "^3.0.0",
-    "gulp-changed": "^4.0.3",
-    "gulp-file-include": "^2.3.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-hash-src": "^0.1.6",
-    "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^6.0.1",
-    "gulp-sourcemaps": "^3.0.0",
-    "path": "^0.12.7",
-    "sass": "^1.87.0"
-  },
-  "dependencies": {
-    "gulp-clean": "^0.4.0",
-    "moment": "^2.30.1",
-    "swiper": "^11.2.6"
-  }
+    "name": "my-project",
+    "version": "1.0.0",
+    "main": "gulpfile.babel.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "gulp",
+        "build": "gulp build",
+        "deploy": "gulp deploy"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@babel/core": "^7.27.1",
+        "@babel/preset-env": "^7.27.2",
+        "@babel/register": "^7.27.1",
+        "browser-sync": "^3.0.4",
+        "del": "^6.1.1",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-babel": "^8.0.0",
+        "gulp-beautify": "^3.0.0",
+        "gulp-changed": "^4.0.3",
+        "gulp-file-include": "^2.3.0",
+        "gulp-gh-pages": "^0.5.4",
+        "gulp-hash-src": "^0.1.6",
+        "gulp-plumber": "^1.2.1",
+        "gulp-sass": "^6.0.1",
+        "gulp-sourcemaps": "^3.0.0",
+        "path": "^0.12.7",
+        "sass": "^1.87.0"
+    },
+    "dependencies": {
+        "gulp-clean": "^0.4.0",
+        "moment": "^2.30.1",
+        "swiper": "^11.2.6"
+    }
 }

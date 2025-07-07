@@ -52,8 +52,8 @@
                             </span>
                         </div>
                         <div class="btn__area">
-                            <button type="button" class="btn tertiary large" 
-                                onclick="modalDemo1()" id="loginBtn"><span>로그인</span></button>
+                            <button type="button" class="btn tertiary large" onclick="modalDemo1()"
+                                id="loginBtn"><span>로그인</span></button>
                         </div>
                         <div class="banner">
                             <img src="@@webRoot/resources/img/layout/login-banner-1.png"
@@ -81,13 +81,113 @@
                 }
 
             })
-            
+            // 쿠키 가져오기
+            function getCookie(name) {
+                var nameOfCookie = name + "=";
+                var x = 0;
+                while (x <= document.cookie.length) {
+                    var y = (x + nameOfCookie.length);
+                    if (document.cookie.substring(x,
+                            y) == nameOfCookie) {
+                        if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                            endOfCookie = document.cookie.length;
+                        return unescape(document.cookie.substring(y, endOfCookie));
+                    }
+                    x = document.cookie.indexOf(" ", x) + 1;
+
+                    if (x == 0) break;
+                }
+
+                return "";
+            }
+            //하루 안보기 쿠키 설정 
+            function setCookie00(name, value, expiredays) {
+                var todayDate = new Date();
+                todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 +
+                    54000000);
+
+                if (todayDate > new Date()) {
+                    expiredays = expiredays - 1;
+                }
+
+                todayDate.setDate(todayDate.getDate() + expiredays);
+
+                document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+            }
+
+            //call modal
+            $(window).on('load', function () {
+                let name = 'loginWarning';
+                let returnName = '';
+                var popup1 = getCookie('popup1');
+                if (!popup1) {
+                    gfn_layered.open(name, 'body', returnName);
+                }
+            });
+
+            $('body').on('click', '[data-modal=close]', function () {
+                let chk = $('#todayClose').prop('checked');
+                if (chk) {
+                    setCookie00('popup1', "done", 1);
+                }
+            });
+
         });
+
         function modalDemo1() {
-            //$.confirm("아이디를 입력해주세요.",'','','','','loginBtn'); //리턴할 엘리먼트의 id 전달
-            $.alert("아이디를 입력해주세요.",'','','','loginBtn'); //리턴할 엘리먼트의 id 전달
+            //$.confirm("소중한 개인정보 보호를 위해<br />비밀번호 변경을 하시겠습니까?", '', '', '변경 할게요', '다음에 할게요', 'loginBtn'); //리턴할 엘리먼트의 id 전달
+            $.alert("아이디를 입력해주세요.", '', '', '', 'loginBtn'); //리턴할 엘리먼트의 id 전달
         }
     </script>
+    <!-- 비밀번호 변경 안내 팝업-->
+    <div class="popup__wrap">
+        <div class="dim__bg"></div>
+        <div class="modal__popup medium" tabindex="0" data-layered-name="modifyPw">
+            <div class="pop__con">
+                <div class="modal__header">
+                    <span class="tit">비밀번호 변경 안내</span>
+                </div>
+                <div class="modal__inner"><span>소중한 개인정보 보호를 위해<br>
+                        비밀번호 변경을 하시겠습니까?
+                    </span></div>
+                <div class="modal__bottom">
+                    <div class="btn__area">
+                        <button class="btn primary medium" data-modal="close" type="button"><span>변경 할게요</span></button>
+                        <button type="button" class="btn primary medium outline" data-modal="close"><span>다음에
+                                할게요</span></button>
+                    </div>
+                </div>
+            </div><button class="btn__close" data-modal="close"><span>닫기</span></button>
+        </div>
+    </div>
+    <!--// 비밀번호 변경 안내 팝업-->
+    <!-- 비밀번호 미변경 시 로그인 불가 안내 팝업-->
+    <div class="popup__wrap">
+        <div class="dim__bg"></div>
+        <div class="modal__popup medium" tabindex="0" data-layered-name="loginWarning">
+            <div class="pop__con">
+                <div class="modal__header">
+                    <span class="tit">로그인 불가 안내</span>
+                </div>
+                <div class="modal__inner">
+                    <span>N일 내로 비밀번호 변경이 필요합니다.<br>
+                        비밀번호를 변경하지 않으면<br>
+                        NN월 NN일 부터는 로그인을 할 수 없습니다.<br>
+                        담당 매니저를 통해 비밀번호를 변경해 주세요.
+                    </span>
+                    <div class="form__area">
+                        <input type="checkbox" class="checkbox__input" id="todayClose">
+                        <label for="todayClose">오늘 하루 보지 않기</label>
+                    </div>
+                </div>
+                <div class="modal__bottom">
+                    <div class="btn__area"><button class="btn primary medium" data-modal="close"
+                            type="button"><span>확인</span></button></div>
+                </div>
+            </div><button class="btn__close" data-modal="close"><span>닫기</span></button>
+        </div>
+    </div>
+    <!--// 비밀번호 미변경 시 로그인 불가 안내 팝업-->
 </body>
 
 </html>

@@ -95,8 +95,8 @@ $.confirm = function(){
 
 	//txtBtnDone = cmmUtil.isEmpty(txtBtnDone) ? '확인' : txtBtnDone;
 	//txtBtnFail = cmmUtil.isEmpty(txtBtnFail) ? '취소' : txtBtnFail;
-    txtBtnDone = '확인';
-    txtBtnFail = '취소';
+    txtBtnDone = txtBtnDone ? txtBtnDone : '확인' ;
+    txtBtnFail = txtBtnFail ? txtBtnFail : '취소' ;
 
 	msg = msg.replace(/\n/gi, "<br>");
 	msg = msg.replaceAll("&lt;br/&gt;","<br/>");
