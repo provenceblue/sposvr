@@ -926,7 +926,14 @@
                         justify-content: space-between;
 
                         &.date {
-                            width: 100%
+                            width: 100%;
+                            font-size: v.$font-body-medium;
+                            font-weight: v.$font-weight-semi-bold;
+                            border-bottom: 1px solid v.$border-default;
+                            padding-bottom: v.$padding-3;
+                            .mo__label{
+                                display:none;
+                            }
                         }
 
                         &.type {

@@ -808,7 +808,39 @@ $content__padding: 64px;
 
         .list {
             margin-top: v.$padding-8;
+            .ui-state-default {
+                pointer-events: none;
+            }
+            .ui-datepicker-today {
+                position: relative;
+                color: #fff;
 
+                &::after {
+                    content: '';
+                    background: v.$primary-color;
+                    border-radius: 50%;
+                    width: 38px;
+                    height: 38px;
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                a {
+                    position: relative;
+                    display: block;
+                    z-index: 10;
+                }
+            }
+            .ui-datepicker-current-day {
+                color: v.$text-color-base;
+
+                &::after {
+                    display:none;
+                }
+            }
             &>ul {
                 display: grid;
                 gap: v.$gap-7;

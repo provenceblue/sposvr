@@ -484,11 +484,9 @@ input[type=radio] {
             line-height: 38px;
             z-index:2;
 
-            .ui-state-default {
-                pointer-events: none;
-            }
+            
 
-            &.ui-datepicker-today {
+            &.ui-datepicker-current-day {
                 position: relative;
                 color: #fff;
                 &::after{
