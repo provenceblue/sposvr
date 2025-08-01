@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/resources/html/_include/head.html',{
+    "title": "에러 페이지 | 소통"
+    })
+
+  <style>
+    #error {
+      display: flex;
+      height: 100vh;
+      background: #F5F7FA;
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+      margin-top: 0;
+      position: relative;
+    }
+    .logo-area{
+      position: absolute;
+      top: 32px;
+      left: 32px;
+    }
+    .code{
+      font-size: 112px;
+      font-weight: 700;
+      color: #33363D;
+      line-height:120%
+    }
+    .txt{
+      color: #58616A;
+      text-align: center;
+      font-size: 18px;
+
+    }
+    .btn-area{
+      text-align: center;
+      margin-top: 60%;
+    }
+    .btn.primary{
+      border-radius: 48px;
+      min-width:180px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap" id="error">
+    <div class="logo-area">
+        <img src="/resources/img/layout/logo-login.svg" alt="사랑을 함께하는 동행 동행복권">
+      </div>
+    <div class="container">
+      
+      <div class="code">
+        404
+      </div>
+      <div class="txt">
+        페이지를 찾을 수 없습니다.
+      </div>
+      <div class="btn-area">
+        <button type="button" class="btn primary small"><span>홈으로</span></button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

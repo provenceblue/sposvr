@@ -24,6 +24,7 @@ $btn-radius: 6px;
 }
 
 button {
+  color: inherit;
     &:focus {
         outline: solid 2px v.$gray-color-60;
     }

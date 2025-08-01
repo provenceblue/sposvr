@@ -101,7 +101,11 @@ body {
         background-color: #fff;
         height: $gnb-height;
         align-items: center;
+        .logo{
+            position: relative;
+            z-index: 10;
 
+        }
         a {
             display: flex;
             align-items: center;
@@ -342,15 +346,24 @@ body {
                         i.bell {
                             background-size: 16px;
                         }
+                        &.no__list {
+                            .svg__icon {
+                                background-image: url(../img/common/ico-bell.svg);
+                            }
+
+                        }
                     }
                 }
 
                 .btn__area {
                     .btn__navi {
                         display: block;
-
+                        text-align:center;
                         span {
                             display: block;
+                        }
+                        i{
+                          margin: 0 auto;
                         }
 
                     }

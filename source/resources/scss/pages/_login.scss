@@ -3,160 +3,180 @@
 @use "../base/breakpoints"as b;
 
 #login {
+  display: flex;
+  height: 100vh;
+  background: #197BAC;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    max-width: 1040px;
+    border-radius: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.50);
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .login__con {
     display: flex;
-    height: 100vh;
-    background: #197BAC;
-    justify-content: center;
-    align-items: center;
 
-    .container {
-        max-width: 1040px;
-        border-radius: 24px;
-        border: 3px solid rgba(255, 255, 255, 0.50);
-        overflow: hidden;
-        margin-top: 0;
+    .visual_area {
+      width: 480px;
+      background: #2193BE url(../img/layout/login-visual.svg) no-repeat left bottom;
+      flex-shrink: 0;
+      position: relative;
+
+      img {
+        display: block;
+        position: absolute;
+        top: v.$gap-10;
+        left: v.$gap-10;
+      }
     }
 
-    .login__con {
+    .login__area {
+      background: #fff;
+      padding: 48px;
+      width: 560px;
+
+      .title {
+        font-size: v.$font-heading-large;
+        color: v.$gray-color-60;
+        font-weight: v.$font-weight-bold;
+
+        em {
+          color: v.$text-color-base;
+        }
+      }
+
+      .input__area {
         display: flex;
+        flex-direction: column;
+        gap: v.$gap-7;
+        margin-top: v.$padding-6;
 
-        .visual_area {
-            width: 480px;
-            background: #2193BE url(../img/layout/login-visual.svg) no-repeat left bottom;
+        .form__area {
+          display: flex;
+        }
+
+        .id__con {
+          display: flex;
+          align-items: center;
+          gap: v.$gap-3;
+
+          .form__area {
+            gap: 0;
+
+            .input__box {
+              width: 240px;
+            }
+
+            .select__box {
+              width: 100%;
+            }
+          }
+
+          .form__area:first-child {
+            flex-basis: 240px;
             flex-shrink: 0;
-            position:relative;
+          }
+
+          .form__area:nth-child(2) {
+            flex-grow: 1;
+          }
+        }
+
+        .input__email {
+          display: none;
+        }
+
+        .btn__area {
+          .btn {
+            width: 100%;
+            background: #000;
+          }
+        }
+        .banner {
+            border-radius: 12px;
+            overflow: hidden;
             img{
-                display:block;
-                position:absolute;
-                top: v.$gap-10;
-                left: v.$gap-10;
+              width:100%;
             }
-        }
-
-        .login__area {
-            background: #fff;
-            padding: v.$padding-10;
-            width: 560px;
-
-            .title {
-                font-size: v.$font-heading-large;
-                color: v.$gray-color-60;
-                font-weight: v.$font-weight-bold;
-
-                em {
-                    color: v.$text-color-base;
-                }
-            }
-
-            .input__area {
-                display: flex;
-                flex-direction: column;
-                gap: v.$gap-7;
-                margin-top: v.$padding-6;
-
-                .form__area {
-                    display: flex;
-                }
-
-                .id__con {
-                    display: flex;
-                    align-items: center;
-                    gap: v.$gap-3;
-
-                    .form__area {
-                        gap: 0;
-
-                        .input__box {
-                            width: 240px;
-                        }
-
-                        .select__box {
-                            width: 100%;
-                        }
-                    }
-
-                    .form__area:first-child {
-                        flex-basis: 240px;
-                        flex-shrink: 0;
-                    }
-
-                    .form__area:nth-child(2) {
-                        flex-grow: 1;
-                    }
-                }
-                .input__email{
-                    display: none;
-                }
-
-                .btn__area {
-                    .btn {
-                        width: 100%;
-                        background: #000;
-                    }
-                }
-            }
-        }
+          }
+      }
     }
+  }
 }
 
 
 @include b.size-mobile {
-    #login {
-        .container {
-            max-width: auto;
-            min-width:360px;
-            border: none;
+  #login {
+    .container {
+      max-width: auto;
+      min-width: 360px;
+      border: none;
 
-        }
-        .login__con{
-            flex-direction: column;
-            width:auto;
-            
-            .visual_area{
-                background:none;
-                img{
-                    position: relative;
-                    top:auto;
-                    left:auto;
-                    height: 24px;
-                }
-            }
-            .login__area {
-                border-radius: 12px;
-                width:auto;
-                margin-top: v.$padding-8;
-                padding: v.$padding-8;
-                
-                .title{
-                    font-size: v.$font-heading-medium;
-                }
-                .input__area{
-                    gap: v.$gap-4;
-                    .id__con {
-                        flex-direction: column;
-                        align-items: stretch;
-                        gap: v.$gap-4;
-
-                        .form__area:first-child {
-                            flex-basis: auto;
-                        }
-                        .form__area:nth-child(2){
-                           
-                        }
-                        .form__area{
-                            .input__box{
-                                width:100%;
-                            }
-                        }
-
-                    }
-                    .btn__area{
-                        padding: 4px 0 12px 0;
-                    }
-                }
-                
-            }
-        }
     }
-        
+
+    .login__con {
+      flex-direction: column;
+      width: auto;
+
+      .visual_area {
+        background: none;
+
+        img {
+          position: relative;
+          top: auto;
+          left: auto;
+          height: 24px;
+        }
+      }
+
+      .login__area {
+        border-radius: 12px;
+        width: auto;
+        margin-top: v.$padding-8;
+        padding: v.$padding-8;
+
+        .title {
+          font-size: v.$font-heading-medium;
+        }
+
+        .input__area {
+          gap: v.$gap-4;
+
+          .id__con {
+            flex-direction: column;
+            align-items: stretch;
+            gap: v.$gap-4;
+
+            .form__area:first-child {
+              flex-basis: auto;
+            }
+
+            .form__area:nth-child(2) {}
+
+            .form__area {
+              .input__box {
+                width: 100%;
+              }
+            }
+
+          }
+
+          .btn__area {
+            padding: 4px 0 12px 0;
+          }
+
+          
+
+        }
+
+
+
+      }
+    }
+  }
+
 }

@@ -1,756 +1,934 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    @@include('@@webRoot/resources/html/_include/head.html',{ "title": "동행복권
+    판매일 포탈" })
+  </head>
 
-<head>
-    @@include('@@webRoot/resources/html/_include/head.html',{
-    "title": "동행복권 판매일 포탈"
-    })
-</head>
-
-<body>
+  <body>
     @@include('@@webRoot/resources/html/_include/a11y.html')
     <div class="wrap" id="main">
-        @@include('@@webRoot/resources/html/_include/header.html', {pageTit:'메인'})
-        <div class="container">
-            <main class="content" id="content">
-                <section class="key__visual">
-                    <div class="key__inner">
-                        <h2 class="blind">메인 비주얼 영역</h2>
-                        <div class="top__area">
-                            <div class="status type__mo"><span>(온라인, 인쇄 일시중지)</span></div>
-                            <div class="title">
-                                <em>목동신시가지 5단지 양천 파라곤 타워 양천트 목동신시가지 5단지 양천 파라곤 타워 양천트</em>님 환영합니다.
+      @@include('@@webRoot/resources/html/_include/header.html',
+      {pageTit:'메인'})
+      <div class="container">
+        <main class="content" id="content">
+          <section class="key__visual">
+            <div class="key__inner">
+              <h2 class="blind">메인 비주얼 영역</h2>
+              <div class="top__area">
+                <div class="status type__mo">
+                  <span>(온라인, 인쇄 일시중지)</span>
+                </div>
+                <div class="title">
+                  <em
+                    >목동신시가지 5단지 양천 파라곤 타워 양천트 목동신시가지
+                    5단지 양천 파라곤 타워 양천트</em
+                  >님 환영합니다.
+                </div>
+                <div class="content">
+                  <div class="store">
+                    <span>판매점 ID :</span>
+                    <em>000000000(온라인)</em> / <em>000000000(인쇄)</em>
+                  </div>
+                  <div class="status__area">
+                    <div class="status type__pc">
+                      <span>온라인, 인쇄 일시중지</span>
+                    </div>
+                    <a href="#none" class="btn_go_page">
+                      <span>영업현황 보러가기</span>
+                      <i class="arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="info__area">
+                <ul>
+                  <li class="year">
+                    <div class="round__box">
+                      <div class="title">
+                        <span>올해 초부터 어제까지</span>
+                        <em>
+                          <span>747,000천</span> 원 판매,<br class="type__mo" />
+                          <em>작년보다 <b>25<i>%</i>증가</b>했어요.</em>
+                        </em>
+                      </div>
+                      <div class="swiper" id="slideInfo">
+                        <ul class="swiper-wrapper">
+                          <li class="swiper-slide">
+                            <div class="round__box">
+                              <div class="tit">
+                                <span>판매수수료</span>
+                                <em>934,386천원</em>
+                              </div>
+                              <div class="level">
+                                <b class="up"
+                                  >10<span class="percent">%</span></b
+                                >
+                              </div>
                             </div>
-                            <div class="content">
-                                <div class="store">
-                                    <span>판매점 ID :</span>
-                                    <em>000000000(온라인)</em> / <em>000000000(인쇄)</em>
-                                </div>
-                                <div class="status__area">
-                                    <div class="status type__pc"><span>온라인, 인쇄 일시중지</span></div>
-                                    <a href="#none" class="btn_go_page">
-                                        <span>영업현황 보러가기</span>
-                                        <i class="arrow-right"></i>
-                                    </a>
-                                </div>
+                          </li>
+                          <li class="swiper-slide">
+                            <div class="round__box">
+                              <div class="tit">
+                                <span>로또 판매액</span>
+                                <em>934,386천원</em>
+                              </div>
+                              <div class="level">
+                                <b class="up"
+                                  >12<span class="percent">%</span></b
+                                >
+                              </div>
                             </div>
-                        </div>
-                        <div class="info__area">
-                            <ul>
-                                <li class="year">
-                                    <div class="round__box">
-                                        <div class="title">
-                                            <span>올해 초부터 어제까지</span>
-                                            <em>
-                                                <span>747,000천</span> 원 판매,<br class="type__mo"> <em>작년보다
-                                                    <b>25<i>%</i>증가</b>했어요.</em>
-                                            </em>
-                                        </div>
-                                        <div class="swiper" id="slideInfo">
-                                            <ul class="swiper-wrapper">
-                                                <li class="swiper-slide">
-                                                    <div class="round__box">
-                                                        <div class="tit">
-                                                            <span>판매수수료</span>
-                                                            <em>934,386천원</em>
-                                                        </div>
-                                                        <div class="level"><b class="up">10<span
-                                                                    class="percent">%</span></b></div>
-                                                    </div>
-                                                </li>
-                                                <li class="swiper-slide">
-                                                    <div class="round__box">
-                                                        <div class="tit">
-                                                            <span>로또 판매액</span>
-                                                            <em>934,386천원</em>
-                                                        </div>
-                                                        <div class="level"><b class="up">12<span
-                                                                    class="percent">%</span></b></div>
-                                                    </div>
-                                                </li>
-                                                <li class="swiper-slide">
-                                                    <div class="round__box">
-                                                        <div class="tit">
-                                                            <span>인쇄복권 판매액</span>
-                                                            <em>934,386천원</em>
-                                                        </div>
-                                                        <div class="level"><b class="down">5<span
-                                                                    class="percent">%</span></b></div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="btn__area type__mo">
-                                            <button class="btn_swiper prev"
-                                                id="arrow-prev-slide4"><span>prev</span></button>
-                                            <button class="btn_swiper next"
-                                                id="arrow-next-slide4"><span>next</span></button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="sub__content">
-                                    <div class="lastweek round__box">
-                                        <ul>
-                                            <li>
-                                                <div>
-                                                    <span>이번주 온라인복권</span>
-                                                    <em>934,386천원</em>
-                                                    <b class="up">+10<span class="percent">%</span></b>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <span>이번주 인쇄복권</span>
-                                                    <em>934,386천원</em>
-                                                    <b class="down">-10<span class="percent">%</span></b>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="education round__box">
-                                        <div class="title"><span>필수교육현황</span></div>
-                                        <div class="list">
-                                            <!-- nodata -->
-                                            <!-- <div class="nodata">
+                          </li>
+                          <li class="swiper-slide">
+                            <div class="round__box">
+                              <div class="tit">
+                                <span>인쇄복권 판매액</span>
+                                <em>934,386천원</em>
+                              </div>
+                              <div class="level">
+                                <b class="down"
+                                  >5<span class="percent">%</span></b
+                                >
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="btn__area type__mo">
+                        <button class="btn_swiper prev" id="arrow-prev-slide4">
+                          <span>prev</span>
+                        </button>
+                        <button class="btn_swiper next" id="arrow-next-slide4">
+                          <span>next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="sub__content">
+                    <div class="lastweek round__box">
+                      <ul>
+                        <li>
+                          <div>
+                            <span>이번주 온라인복권</span>
+                            <em>934,386천원</em>
+                            <b class="up">+10<span class="percent">%</span></b>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <span>이번주 인쇄복권</span>
+                            <em>934,386천원</em>
+                            <b class="down"
+                              >-10<span class="percent">%</span></b
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="education round__box">
+                      <div class="title"><span>필수교육현황</span></div>
+                      <div class="list">
+                        <!-- nodata -->
+                        <!-- <div class="nodata">
                                                 <span>진행중인</span> 필수 교육이 없습니다.
                                             </div> -->
-                                            <!--// nodata  -->
-                                            <ul>
-                                                <li>
-                                                    <div class="incomplete">
-                                                        <span>
-                                                            미완료
-                                                            <a href="#none">1<em>건</em></a>
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="total">
-                                                        <span>전체 3건</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-
-                        </div>
+                        <!--// nodata  -->
+                        <ul>
+                          <li>
+                            <div class="incomplete">
+                              <span>
+                                미완료
+                                <a href="#none">1<em>건</em></a>
+                              </span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="total">
+                              <span>전체 3건</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                </section>
-                <section class="summary__banner">
-                    <h2 class="blind">요약정보</h2>
-                    <ul>
-                        <li class="manager">
-                            <div class="round__box">
-                                <i aria-hidden="true"><span>star</span></i>
-                                <span>담당 매니저</span>
-                                <em>홍길동</em>
-                            </div>
-                        </li>
-                        <li class="sales__day">
-                            <div class="round__box">
-                                <i aria-hidden="true"><span>calendar</span></i>
-                                <span>올해 영업일수</span>
-                                <em>125 일</em>
-                            </div>
-                        </li>
-                        <li class="order__status--lotto">
-                            <div class="round__box">
-                                <i aria-hidden="true"><span>recipe</span></i>
-                                <span>로또 소모품 주문상태</span>
-                                <em>배송중</em>
-                            </div>
-                        </li>
-                        <li class="order__status--print">
-                            <div class="round__box">
-                                <i aria-hidden="true"><span>print</span></i>
-                                <span>인쇄복권 주문상태</span>
-                                <em>주문승인</em>
-                            </div>
-                        </li>
-                        <li class="penalty">
-                            <div class="round__box">
-                                <i aria-hidden="true"><span>penalty</span></i>
-                                <span>올해 벌칙 누계</span>
-                                <a href="#none">0건</a>
-                            </div>
-                        </li>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="summary__banner">
+            <h2 class="blind">요약정보</h2>
+            <ul>
+              <li class="manager">
+                <div class="round__box">
+                  <i aria-hidden="true"><span>star</span></i>
+                  <span>담당 매니저</span>
+                  <em>홍길동</em>
+                </div>
+              </li>
+              <li class="sales__day">
+                <div class="round__box">
+                  <i aria-hidden="true"><span>calendar</span></i>
+                  <span>올해 영업일수</span>
+                  <em>125 일</em>
+                </div>
+              </li>
+              <li class="order__status--lotto">
+                <div class="round__box">
+                  <i aria-hidden="true"><span>recipe</span></i>
+                  <span>로또 소모품 주문상태</span>
+                  <em>배송중</em>
+                </div>
+              </li>
+              <li class="order__status--print">
+                <div class="round__box">
+                  <i aria-hidden="true"><span>print</span></i>
+                  <span>인쇄복권 주문상태</span>
+                  <em>주문승인</em>
+                </div>
+              </li>
+              <li class="penalty">
+                <div class="round__box">
+                  <i aria-hidden="true"><span>penalty</span></i>
+                  <span>올해 벌칙 누계</span>
+                  <a href="#none">0건</a>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="main__content">
+            <div class="con__wrap">
+              <div class="board__info">
+                <div class="title">
+                  <h2>알려드립니다</h2>
+                  <div class="btn__area">
+                    <button class="btn_swiper prev" id="arrow-prev-slide">
+                      <span>prev</span>
+                    </button>
+                    <button class="btn_swiper next" id="arrow-next-slide">
+                      <span>next</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="list">
+                  <div class="slide__wrap swiper" id="slideNotice">
+                    <ul class="swiper-wrapper">
+                      <li class="swiper-slide">
+                        <a href="#none" class="round__box outline emergency">
+                          <div class="badges">
+                            <em class="badge emergency large"
+                              ><span>긴급공지</span></em
+                            >
+                            <em class="badge new large"><span>New</span></em>
+                          </div>
+                          <div class="title">
+                            <span
+                              >2025년 상반기 운영 관련 공지사항 관련 안내 및
+                              판매인 공지사항</span
+                            >
+                          </div>
+                          <div class="content">
+                            <span
+                              >콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대 3줄까지 콘텐츠 영역
+                            </span>
+                          </div>
+                          <div class="date">
+                            <span>2025.04.10</span>
+                            <i class="file_attach"
+                              ><span>첨부파일 있음</span></i
+                            >
+                          </div>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#none" class="round__box outline">
+                          <div class="badges">
+                            <span class="badge new large">new</span>
+                            <span class="badge noti large">공지</span>
+                          </div>
+                          <div class="title">
+                            <span
+                              >2025년 상반기 운영 관련 공지사항 관련 안내 및
+                              판매인 공지사항</span
+                            >
+                          </div>
+                          <div class="content">
+                            <span
+                              >콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대 3줄까지 콘텐츠 영역
+                            </span>
+                          </div>
+                          <div class="date">
+                            <span>2025.04.10</span>
+                            <i class="file_attach"
+                              ><span>file download</span></i
+                            >
+                          </div>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#none" class="round__box outline">
+                          <div class="badges">
+                            <span class="badge data large">자료실</span>
+                          </div>
+                          <div class="title">
+                            <span
+                              >2025년 상반기 운영 관련 공지사항 관련 안내 및
+                              판매인 공지사항</span
+                            >
+                          </div>
+                          <div class="content">
+                            <span
+                              >콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대 3줄까지 콘텐츠 영역
+                            </span>
+                          </div>
+                          <div class="date">
+                            <span>2025.04.10</span>
+                            <i class="file_attach"
+                              ><span>file download</span></i
+                            >
+                          </div>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#none" class="round__box outline">
+                          <div class="badges">
+                            <span class="badge new large">new</span>
+                            <span class="badge data large">자료실</span>
+                          </div>
+                          <div class="title">
+                            <span
+                              >2025년 상반기 운영 관련 공지사항 관련 안내 및
+                              판매인 공지사항</span
+                            >
+                          </div>
+                          <div class="content">
+                            <span
+                              >콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대 3줄까지 콘텐츠 영역
+                            </span>
+                          </div>
+                          <div class="date">
+                            <span>2025.04.10</span>
+                            <i class="file_attach"
+                              ><span>file download</span></i
+                            >
+                          </div>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#none" class="round__box outline">
+                          <div class="badges">
+                            <span class="badge new large">new</span>
+                            <span class="badge noti large">공지</span>
+                          </div>
+                          <div class="title">
+                            <span
+                              >2025년 상반기 운영 관련 공지사항 관련 안내 및
+                              판매인 공지사항</span
+                            >
+                          </div>
+                          <div class="content">
+                            <span
+                              >콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대 3줄까지 콘텐츠 영역
+                            </span>
+                          </div>
+                          <div class="date">
+                            <span>2025.04.10</span>
+                            <i class="file_attach"
+                              ><span>file download</span></i
+                            >
+                          </div>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#none" class="round__box outline">
+                          <div class="badges">
+                            <span class="badge data large">자료실</span>
+                          </div>
+                          <div class="title">
+                            <span
+                              >2025년 상반기 운영 관련 공지사항 관련 안내 및
+                              판매인 공지사항</span
+                            >
+                          </div>
+                          <div class="content">
+                            <span
+                              >콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
+                              콘텐츠 영역 최대 3줄까지 콘텐츠 영역
+                            </span>
+                          </div>
+                          <div class="date">
+                            <span>2025.04.10</span>
+                            <i class="file_attach"
+                              ><span>file download</span></i
+                            >
+                          </div>
+                        </a>
+                      </li>
                     </ul>
-                </section>
-                <section class="main__content">
-                    <div class="con__wrap">
-                        <div class="board__info">
-                            <div class="title">
-                                <h2>알려드립니다</h2>
-                                <div class="btn__area">
-                                    <button class="btn_swiper prev" id="arrow-prev-slide"><span>prev</span></button>
-                                    <button class="btn_swiper next" id="arrow-next-slide"><span>next</span></button>
-                                </div>
-                            </div>
-                            <div class="list ">
-                                <div class="slide__wrap swiper" id="slideNotice">
-                                    <ul class="swiper-wrapper">
-                                        <li class="swiper-slide">
-                                            <a href="#none" class="round__box outline emergency">
-                                                <div class="badges">
-                                                    <em class="badge emergency large"><span>긴급공지</span></em>
-                                                    <em class="badge new large"><span>New</span></em>
-                                                </div>
-                                                <div class="title">
-                                                    <span>2025년 상반기 운영 관련 공지사항 관련 안내 및 판매인 공지사항</span>
-                                                </div>
-                                                <div class="content">
-                                                    <span>콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
-                                                        콘텐츠
-                                                        영역 최대 3줄까지 콘텐츠 영역 </span>
-                                                </div>
-                                                <div class="date">
-                                                    <span>2025.04.10</span>
-                                                    <i class="file_attach"><span>첨부파일 있음</span></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <a href="#none" class="round__box outline">
-                                                <div class="badges">
-                                                    <span class="badge new large">new</span>
-                                                    <span class="badge noti large">공지</span>
-                                                </div>
-                                                <div class="title">
-                                                    <span>2025년 상반기 운영 관련 공지사항 관련 안내 및 판매인 공지사항</span>
-                                                </div>
-                                                <div class="content">
-                                                    <span>콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
-                                                        콘텐츠
-                                                        영역 최대 3줄까지 콘텐츠 영역 </span>
-                                                </div>
-                                                <div class="date">
-                                                    <span>2025.04.10</span>
-                                                    <i class="file_attach"><span>file download</span></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <a href="#none" class="round__box outline">
-                                                <div class="badges">
-                                                    <span class="badge data large">자료실</span>
-                                                </div>
-                                                <div class="title">
-                                                    <span>2025년 상반기 운영 관련 공지사항 관련 안내 및 판매인 공지사항</span>
-                                                </div>
-                                                <div class="content">
-                                                    <span>콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
-                                                        콘텐츠
-                                                        영역 최대 3줄까지 콘텐츠 영역 </span>
-                                                </div>
-                                                <div class="date">
-                                                    <span>2025.04.10</span>
-                                                    <i class="file_attach"><span>file download</span></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <a href="#none" class="round__box  outline">
-                                                <div class="badges">
-                                                    <span class="badge new large">new</span>
-                                                    <span class="badge data large">자료실</span>
-                                                </div>
-                                                <div class="title">
-                                                    <span>2025년 상반기 운영 관련 공지사항 관련 안내 및 판매인 공지사항</span>
-                                                </div>
-                                                <div class="content">
-                                                    <span>콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
-                                                        콘텐츠
-                                                        영역 최대 3줄까지 콘텐츠 영역 </span>
-                                                </div>
-                                                <div class="date">
-                                                    <span>2025.04.10</span>
-                                                    <i class="file_attach"><span>file download</span></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <a href="#none" class="round__box outline">
-                                                <div class="badges">
-                                                    <span class="badge new large">new</span>
-                                                    <span class="badge noti large">공지</span>
-                                                </div>
-                                                <div class="title">
-                                                    <span>2025년 상반기 운영 관련 공지사항 관련 안내 및 판매인 공지사항</span>
-                                                </div>
-                                                <div class="content">
-                                                    <span>콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
-                                                        콘텐츠
-                                                        영역 최대 3줄까지 콘텐츠 영역 </span>
-                                                </div>
-                                                <div class="date">
-                                                    <span>2025.04.10</span>
-                                                    <i class="file_attach"><span>file download</span></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <a href="#none" class="round__box outline">
-                                                <div class="badges">
-                                                    <span class="badge data large">자료실</span>
-                                                </div>
-                                                <div class="title">
-                                                    <span>2025년 상반기 운영 관련 공지사항 관련 안내 및 판매인 공지사항</span>
-                                                </div>
-                                                <div class="content">
-                                                    <span>콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대 3줄까지 콘텐츠 영역 최대3줄까지 콘텐츠 영역 최대 3줄까지
-                                                        콘텐츠
-                                                        영역 최대 3줄까지 콘텐츠 영역 </span>
-                                                </div>
-                                                <div class="date">
-                                                    <span>2025.04.10</span>
-                                                    <i class="file_attach"><span>file download</span></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sales__info">
+                <h2>회차별 판매 정보</h2>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <div class="round__box outline">
+                        <div class="logo_area">
+                          <span
+                            ><img
+                              src="/resources/img/common/logo-lotto.svg"
+                              alt="Lotto"
+                          /></span>
+                          <em>7079회(판매마감)</em>
                         </div>
-                        <div class="sales__info">
-                            <h2>회차별 판매 정보</h2>
+                        <div class="date">12월 24일 20시 00분</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="round__box outline">
+                        <div class="logo_area">
+                          <span
+                            ><img
+                              src="/resources/img/common/logo-pension.svg"
+                              alt="연금복권"
+                          /></span>
+                          <em>7079회(판매마감)</em>
+                        </div>
+                        <div class="date">12월 24일 20시 00분</div>
+                      </div>
+                    </li>
+                    <li class="speeto__area">
+                      <div class="slide__wrap round__box outline">
+                        <div class="wrapper swiper" id="slideSpeeto">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="logo">
+                                <img
+                                  src="/resources/img/common/logo-speeto.svg"
+                                  alt="스피또"
+                                />
+                                <span>60회</span>
+                              </div>
+                              <div class="text">
+                                <span>판매종료 12월 24일</span>
+                                <span
+                                  >반품기한 12월 24일
+                                  <button type="button" class="btn_view_detail">
+                                    <i><span>자세히 보기</span></i>
+                                  </button></span
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="logo">
+                                <img
+                                  src="/resources/img/common/logo-speeto.svg"
+                                  alt="스피또"
+                                />
+                                <span>60회</span>
+                              </div>
+                              <div class="text">
+                                <span>판매종료 12월 24일</span>
+                                <span
+                                  >반품기한 12월 24일
+                                  <button type="button" class="btn_view_detail">
+                                    <i><span>자세히 보기</span></i>
+                                  </button></span
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="logo">
+                                <img
+                                  src="/resources/img/common/logo-speeto.svg"
+                                  alt="스피또"
+                                />
+                                <span>60회</span>
+                              </div>
+                              <div class="text">
+                                <span>판매종료 12월 24일</span>
+                                <span
+                                  >반품기한 12월 24일
+                                  <button type="button" class="btn_view_detail">
+                                    <i><span>자세히 보기</span></i>
+                                  </button></span
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="logo">
+                                <img
+                                  src="/resources/img/common/logo-speeto.svg"
+                                  alt="스피또"
+                                />
+                                <span>60회</span>
+                              </div>
+                              <div class="text">
+                                <span>판매종료 12월 24일</span>
+                                <span
+                                  >반품기한 12월 24일
+                                  <button type="button" class="btn_view_detail">
+                                    <i><span>자세히 보기</span></i>
+                                  </button></span
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="logo">
+                                <img
+                                  src="/resources/img/common/logo-speeto.svg"
+                                  alt="스피또"
+                                />
+                                <span>60회</span>
+                              </div>
+                              <div class="text">
+                                <span>판매종료 12월 24일</span>
+                                <span
+                                  >반품기한 12월 24일
+                                  <button type="button" class="btn_view_detail">
+                                    <i><span>자세히 보기</span></i>
+                                  </button></span
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="logo">
+                                <img
+                                  src="/resources/img/common/logo-speeto.svg"
+                                  alt="스피또"
+                                />
+                                <span>60회</span>
+                              </div>
+                              <div class="text">
+                                <span>판매종료 12월 24일</span>
+                                <span
+                                  >반품기한 12월 24일
+                                  <button type="button" class="btn_view_detail">
+                                    <i><span>자세히 보기</span></i>
+                                  </button></span
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tooltip__wrap">
+                          <div class="tooltip">
+                            <span>
+                              스피또 반품기한은 판매종료일<br />로부터 1개월까지
+                              입니다.
+                            </span>
+                          </div>
+                        </div>
+                        <div class="btn__area">
+                          <button
+                            class="btn_swiper prev small"
+                            id="arrow-prev-slide2"
+                          >
+                            <span>prev</span>
+                          </button>
+                          <button
+                            class="btn_swiper next small"
+                            id="arrow-next-slide2"
+                          >
+                            <span>next</span>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="con__wrap">
+              <div class="online__edu">
+                <div class="title">
+                  <h2>소상공인 교육</h2>
+                  <div class="btn__area">
+                    <button class="btn_swiper prev" id="arrow-prev-slide3">
+                      <span>prev</span>
+                    </button>
+                    <button class="btn_swiper next" id="arrow-next-slide3">
+                      <span>next</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="list">
+                  <div class="wrapper round__box outline">
+                    <div class="slide__wrap swiper" id="slideEdu">
+                      <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                          <a href="#none" target="_blank" title="새창">
+                            <div
+                              class="thumb"
+                              style="
+                                background-image: url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2592);
+                              "
+                            ></div>
                             <div class="content">
-                                <ul>
-                                    <li>
-                                        <div class="round__box outline">
-                                            <div class="logo_area">
-                                                <span><img src="/resources/img/common/logo-lotto.svg"
-                                                        alt="Lotto"></span>
-                                                <em>7079회(판매마감)</em>
-                                            </div>
-                                            <div class="date">12월 24일 20시 00분</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="round__box outline">
-                                            <div class="logo_area">
-                                                <span><img src="/resources/img/common/logo-pension.svg"
-                                                        alt="연금복권"></span>
-                                                <em>7079회(판매마감)</em>
-                                            </div>
-                                            <div class="date">12월 24일 20시 00분</div>
-                                        </div>
-                                    </li>
-                                    <li class="speeto__area">
-                                        <div class="slide__wrap round__box outline">
-                                            <div class="wrapper swiper" id="slideSpeeto">
-                                                <ul class="swiper-wrapper">
-                                                    <li class="swiper-slide">
-                                                        <div class="logo">
-                                                            <img src="/resources/img/common/logo-speeto.svg" alt="스피또">
-                                                            <span>60회</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span>판매종료 12월 24일</span>
-                                                            <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i><span>자세히
-                                                                            보기</span></i></button></span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <div class="logo">
-                                                            <img src="/resources/img/common/logo-speeto.svg" alt="스피또">
-                                                            <span>60회</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span>판매종료 12월 24일</span>
-                                                            <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i><span>자세히
-                                                                            보기</span></i></button></span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <div class="logo">
-                                                            <img src="/resources/img/common/logo-speeto.svg" alt="스피또">
-                                                            <span>60회</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span>판매종료 12월 24일</span>
-                                                            <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i><span>자세히
-                                                                            보기</span></i></button></span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <div class="logo">
-                                                            <img src="/resources/img/common/logo-speeto.svg" alt="스피또">
-                                                            <span>60회</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span>판매종료 12월 24일</span>
-                                                            <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i><span>자세히
-                                                                            보기</span></i></button></span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <div class="logo">
-                                                            <img src="/resources/img/common/logo-speeto.svg" alt="스피또">
-                                                            <span>60회</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span>판매종료 12월 24일</span>
-                                                            <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i><span>자세히
-                                                                            보기</span></i></button></span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <div class="logo">
-                                                            <img src="/resources/img/common/logo-speeto.svg" alt="스피또">
-                                                            <span>60회</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span>판매종료 12월 24일</span>
-                                                            <span>반품기한 12월 24일 <button type="button"
-                                                                    class="btn_view_detail"><i><span>자세히
-                                                                            보기</span></i></button></span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="tooltip__wrap">
-                                                <div class="tooltip">
-                                                    <span>
-                                                        스피또 반품기한은 판매종료일<br>로부터 1개월까지 입니다.
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="btn__area">
-                                                <button class="btn_swiper prev small"
-                                                    id="arrow-prev-slide2"><span>prev</span></button>
-                                                <button class="btn_swiper next small"
-                                                    id="arrow-next-slide2"><span>next</span></button>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                              <div class="tit">
+                                <span
+                                  >소상공인이 알아야 할 트렌드 및 고객 동향
+                                  소상공인이 알아야 할 트렌드 및 고객 동향</span
+                                >
+                              </div>
+                              <div class="date">2025.04.10</div>
+                              <span class="badge new">New</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="con__wrap">
-                        <div class="online__edu">
-                            <div class="title">
-                                <h2>소상공인 교육</h2>
-                                <div class="btn__area">
-                                    <button class="btn_swiper prev" id="arrow-prev-slide3"><span>prev</span></button>
-                                    <button class="btn_swiper next" id="arrow-next-slide3"><span>next</span></button>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div class="wrapper round__box outline">
-                                    <div class="slide__wrap swiper" id="slideEdu">
-                                        <ul class="swiper-wrapper">
-                                            <li class="swiper-slide">
-                                                <a href="#none" target="_blank" title="새창">
-                                                    <div class="thumb"
-                                                        style="background-image:url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2592)">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="tit"><span>소상공인이 알아야 할 트렌드 및 고객
-                                                                동향 소상공인이 알아야 할 트렌드 및 고객
-                                                                동향</span></div>
-                                                        <div class="date">2025.04.10</div>
-                                                        <span class="badge new">New</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="swiper-slide">
-                                                <a href="#none" target="_blank" title="새창">
-                                                    <div class="thumb"
-                                                        style="background-image:url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2590)">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="tit"><span>소상공인이 알아야 할 트렌드 및 고객
-                                                                동향</span></div>
-                                                        <div class="date">2025.04.10</div>
-                                                        <span class="badge new">New</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="swiper-slide">
-                                                <a href="#none" target="_blank" title="새창">
-                                                    <div class="thumb"
-                                                        style="background-image:url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2592)">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="tit"><span>소상공인이 알아야 할 트렌드 및 고객
-                                                                동향</span></div>
-                                                        <div class="date">2025.04.10</div>
-                                                        <span class="badge new">New</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="swiper-slide">
-                                                <a href="#none" target="_blank" title="새창">
-                                                    <div class="thumb"
-                                                        style="background-image:url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2590)">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="tit"><span>소상공인이 알아야 할 트렌드 및 고객 동향</span></div>
-                                                        <div class="date">2025.04.10</div>
-                                                        <span class="badge new">New</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="link__banner">
-                            <h2>관련링크</h2>
+                          </a>
+                        </li>
+                        <li class="swiper-slide">
+                          <a href="#none" target="_blank" title="새창">
+                            <div
+                              class="thumb"
+                              style="
+                                background-image: url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2590);
+                              "
+                            ></div>
                             <div class="content">
-                                <div class="round__box bg__gray">
-                                    <a href="#none" target="_blank" title="새창">
-                                        <div>
-                                            <i class="logo"></i>
-                                            <span class="type__pc">동행복권 홈페이지 바로가기</span>
-                                            <span class="type__mo">홈페이지</span>
-                                        </div>
-                                    </a>
-                                    <a href="#none" target="_blank" title="새창">
-                                        <div>
-                                            <i class="blog"></i>
-                                            <span class="type__pc">동행복권 공식 블로그 바로가기</span>
-                                            <span class="type__mo">블로그</span>
-                                        </div>
-                                    </a>
-                                    <a href="#none" target="_blank" title="새창">
-                                        <div>
-                                            <i class="youtube"></i>
-                                            <span class="type__pc">동행복권 공식 유튜브 바로가기</span>
-                                            <span class="type__mo">유튜브</span>
-
-                                        </div>
-                                    </a>
-                                    <a href="#none" target="_blank" title="새창">
-                                        <div>
-                                            <i class="order"></i>
-                                            <span class="type__pc">소모품 주문 사이트 바로가기</span>
-                                            <span class="type__mo">소모품 주문</span>
-                                        </div>
-                                    </a>
-                                </div>
+                              <div class="tit">
+                                <span
+                                  >소상공인이 알아야 할 트렌드 및 고객
+                                  동향</span
+                                >
+                              </div>
+                              <div class="date">2025.04.10</div>
+                              <span class="badge new">New</span>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="schedule__area">
-                    <div class="inner__wrap">
-                        <div class="title">
-                            <h2>일정</h2>
-                            <button type="button" class="btn__more"><span>전체보기</span><i
-                                    class="svg__icon plus"></i></button>
-                        </div>
-                        <div class="list swiper" id="slideCalendar">
-                            <ul class="swiper-wrapper">
-                                <li class="swiper-slide">
-                                    <div class="round__box outline calendar">
-                                        <div id="mainDatepicker"></div>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="round__box outline">
-                                        <div class="top sun"><em>03</em> / <span>일</span></div>
-                                        <div class="content">
-                                            <div class="plan speeto">
-                                                <em>스피또</em>
-                                                <span> 301회 마감</span>
-                                            </div>
-                                            <div class="plan pension">
-                                                <em>연금</em>
-                                                <span>17:00 125회 마감</span>
-                                            </div>
-                                            <div class="plan lotto">
-                                                <em>로또</em>
-                                                <span>20:00 1237회 마감</span>
-                                            </div>
-                                            <div class="module type1">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-
-                                            <div class="module type2">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="round__box outline">
-                                        <div class="top"><em>04</em> / <span>월</span></div>
-                                        <div class="content">
-                                            <div class="plan speeto">
-                                                <em>스피또</em>
-                                                <span> 301회 마감</span>
-                                            </div>
-                                            <div class="plan pension">
-                                                <em>연금</em>
-                                                <span>17:00 125회 마감</span>
-                                            </div>
-                                            <div class="plan lotto">
-                                                <em>로또</em>
-                                                <span>20:00 1237회 마감</span>
-                                            </div>
-                                            <div class="module type1">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-
-                                            <div class="module type2">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="round__box outline">
-                                        <div class="top"><em>05</em> / <span>화</span></div>
-                                        <div class="content">
-                                            <div class="plan speeto">
-                                                <em>스피또</em>
-                                                <span> 301회 마감</span>
-                                            </div>
-                                            <div class="plan pension">
-                                                <em>연금</em>
-                                                <span>17:00 125회 마감</span>
-                                            </div>
-                                            <div class="plan lotto">
-                                                <em>로또</em>
-                                                <span>20:00 1237회 마감</span>
-                                            </div>
-                                            <div class="module type1">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-
-                                            <div class="module type2">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="round__box outline">
-                                        <div class="top"><em>06</em> / <span>수</span></div>
-                                        <div class="content">
-                                            <div class="plan speeto">
-                                                <em>스피또</em>
-                                                <span> 301회 마감</span>
-                                            </div>
-                                            <div class="plan pension">
-                                                <em>연금</em>
-                                                <span>17:00 125회 마감</span>
-                                            </div>
-                                            <div class="plan lotto">
-                                                <em>로또</em>
-                                                <span>20:00 1237회 마감</span>
-                                            </div>
-                                            <div class="module type1">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-
-                                            <div class="module type2">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="round__box outline">
-                                        <div class="top"><em>07</em> / <span>목</span></div>
-                                        <div class="content">
-                                            <div class="plan speeto">
-                                                <em>스피또</em>
-                                                <span> 301회 마감</span>
-                                            </div>
-                                            <div class="plan pension">
-                                                <em>연금</em>
-                                                <span>17:00 125회 마감</span>
-                                            </div>
-                                            <div class="plan lotto">
-                                                <em>로또</em>
-                                                <span>20:00 1237회 마감</span>
-                                            </div>
-                                            <div class="module type1">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-
-                                            <div class="module type2">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="round__box outline">
-                                        <div class="top"><em>08</em> / <span>금</span></div>
-                                        <div class="content">
-                                            <div class="plan speeto">
-                                                <em>스피또</em>
-                                                <span> 301회 마감</span>
-                                            </div>
-                                            <div class="plan pension">
-                                                <em>연금</em>
-                                                <span>17:00 125회 마감</span>
-                                            </div>
-                                            <div class="plan lotto">
-                                                <em>로또</em>
-                                                <span>20:00 1237회 마감</span>
-                                            </div>
-                                            <div class="module type1">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-
-                                            <div class="module type2">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="round__box outline">
-                                        <div class="top"><em>09</em> / <span>토</span></div>
-                                        <div class="content">
-                                            <div class="plan speeto">
-                                                <em>스피또</em>
-                                                <span> 301회 마감</span>
-                                            </div>
-                                            <div class="plan pension">
-                                                <em>연금</em>
-                                                <span>17:00 125회 마감</span>
-                                            </div>
-                                            <div class="plan lotto">
-                                                <em>로또</em>
-                                                <span>20:00 1237회 마감</span>
-                                            </div>
-                                            <div class="module type1">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-
-                                            <div class="module type2">
-                                                <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="btn__area type__mo">
-                                <button class="btn_swiper prev" id="arrow-prev-slide5"><span>prev</span></button>
-                                <button class="btn_swiper next" id="arrow-next-slide5"><span>next</span></button>
+                          </a>
+                        </li>
+                        <li class="swiper-slide">
+                          <a href="#none" target="_blank" title="새창">
+                            <div
+                              class="thumb"
+                              style="
+                                background-image: url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2592);
+                              "
+                            ></div>
+                            <div class="content">
+                              <div class="tit">
+                                <span
+                                  >소상공인이 알아야 할 트렌드 및 고객
+                                  동향</span
+                                >
+                              </div>
+                              <div class="date">2025.04.10</div>
+                              <span class="badge new">New</span>
                             </div>
-                        </div>
+                          </a>
+                        </li>
+                        <li class="swiper-slide">
+                          <a href="#none" target="_blank" title="새창">
+                            <div
+                              class="thumb"
+                              style="
+                                background-image: url(https://edu.sbiz.or.kr/edu/common/photoImageViewer.do?fileGb=online&courseNo=2590);
+                              "
+                            ></div>
+                            <div class="content">
+                              <div class="tit">
+                                <span
+                                  >소상공인이 알아야 할 트렌드 및 고객
+                                  동향</span
+                                >
+                              </div>
+                              <div class="date">2025.04.10</div>
+                              <span class="badge new">New</span>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
-                </section>
-            </main>
-        </div>
-        @@include('@@webRoot/resources/html/_include/footer.html')
+                  </div>
+                </div>
+              </div>
+              <div class="link__banner">
+                <h2>관련링크</h2>
+                <div class="content">
+                  <div class="round__box bg__gray">
+                    <a href="#none" target="_blank" title="새창">
+                      <div>
+                        <i class="logo"></i>
+                        <span class="type__pc">동행복권 홈페이지 바로가기</span>
+                        <span class="type__mo">홈페이지</span>
+                      </div>
+                    </a>
+                    <a href="#none" target="_blank" title="새창">
+                      <div>
+                        <i class="blog"></i>
+                        <span class="type__pc"
+                          >동행복권 공식 블로그 바로가기</span
+                        >
+                        <span class="type__mo">블로그</span>
+                      </div>
+                    </a>
+                    <a href="#none" target="_blank" title="새창">
+                      <div>
+                        <i class="youtube"></i>
+                        <span class="type__pc"
+                          >동행복권 공식 유튜브 바로가기</span
+                        >
+                        <span class="type__mo">유튜브</span>
+                      </div>
+                    </a>
+                    <a href="#none" target="_blank" title="새창">
+                      <div>
+                        <i class="order"></i>
+                        <span class="type__pc"
+                          >소모품 주문 사이트 바로가기</span
+                        >
+                        <span class="type__mo">소모품 주문</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="schedule__area">
+            <div class="inner__wrap">
+              <div class="title">
+                <h2>일정</h2>
+                <button type="button" class="btn__more">
+                  <span>전체보기</span><i class="svg__icon plus"></i>
+                </button>
+              </div>
+              <div class="list swiper" id="slideCalendar">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <div class="round__box outline calendar">
+                      <div id="mainDatepicker"></div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="round__box outline">
+                      <div class="top sun"><em>03</em> / <span>일</span></div>
+                      <div class="content">
+                        <div class="plan speeto">
+                          <em>스피또</em>
+                          <span> 301회 마감</span>
+                        </div>
+                        <div class="plan pension">
+                          <em>연금</em>
+                          <span>17:00 125회 마감</span>
+                        </div>
+                        <div class="plan lotto">
+                          <em>로또</em>
+                          <span>20:00 1237회 마감</span>
+                        </div>
+                        <div class="module type1">
+                          <span
+                            >13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰
+                            테뷰다 테스트</span
+                          >
+                        </div>
+
+                        <div class="module type2">
+                          <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="round__box outline">
+                      <div class="top"><em>04</em> / <span>월</span></div>
+                      <div class="content">
+                        <div class="plan speeto">
+                          <em>스피또</em>
+                          <span> 301회 마감</span>
+                        </div>
+                        <div class="plan pension">
+                          <em>연금</em>
+                          <span>17:00 125회 마감</span>
+                        </div>
+                        <div class="plan lotto">
+                          <em>로또</em>
+                          <span>20:00 1237회 마감</span>
+                        </div>
+                        <div class="module type1">
+                          <span
+                            >13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰
+                            테뷰다 테스트</span
+                          >
+                        </div>
+
+                        <div class="module type2">
+                          <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="round__box outline">
+                      <div class="top"><em>05</em> / <span>화</span></div>
+                      <div class="content">
+                        <div class="plan speeto">
+                          <em>스피또</em>
+                          <span> 301회 마감</span>
+                        </div>
+                        <div class="plan pension">
+                          <em>연금</em>
+                          <span>17:00 125회 마감</span>
+                        </div>
+                        <div class="plan lotto">
+                          <em>로또</em>
+                          <span>20:00 1237회 마감</span>
+                        </div>
+                        <div class="module type1">
+                          <span
+                            >13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰
+                            테뷰다 테스트</span
+                          >
+                        </div>
+
+                        <div class="module type2">
+                          <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="round__box outline">
+                      <div class="top"><em>06</em> / <span>수</span></div>
+                      <div class="content">
+                        <div class="plan speeto">
+                          <em>스피또</em>
+                          <span> 301회 마감</span>
+                        </div>
+                        <div class="plan pension">
+                          <em>연금</em>
+                          <span>17:00 125회 마감</span>
+                        </div>
+                        <div class="plan lotto">
+                          <em>로또</em>
+                          <span>20:00 1237회 마감</span>
+                        </div>
+                        <div class="module type1">
+                          <span
+                            >13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰
+                            테뷰다 테스트</span
+                          >
+                        </div>
+
+                        <div class="module type2">
+                          <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="round__box outline">
+                      <div class="top"><em>07</em> / <span>목</span></div>
+                      <div class="content">
+                        <div class="plan speeto">
+                          <em>스피또</em>
+                          <span> 301회 마감</span>
+                        </div>
+                        <div class="plan pension">
+                          <em>연금</em>
+                          <span>17:00 125회 마감</span>
+                        </div>
+                        <div class="plan lotto">
+                          <em>로또</em>
+                          <span>20:00 1237회 마감</span>
+                        </div>
+                        <div class="module type1">
+                          <span
+                            >13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰
+                            테뷰다 테스트</span
+                          >
+                        </div>
+
+                        <div class="module type2">
+                          <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="round__box outline">
+                      <div class="top"><em>08</em> / <span>금</span></div>
+                      <div class="content">
+                        <div class="plan speeto">
+                          <em>스피또</em>
+                          <span> 301회 마감</span>
+                        </div>
+                        <div class="plan pension">
+                          <em>연금</em>
+                          <span>17:00 125회 마감</span>
+                        </div>
+                        <div class="plan lotto">
+                          <em>로또</em>
+                          <span>20:00 1237회 마감</span>
+                        </div>
+                        <div class="module type1">
+                          <span
+                            >13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰
+                            테뷰다 테스트</span
+                          >
+                        </div>
+
+                        <div class="module type2">
+                          <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="round__box outline">
+                      <div class="top"><em>09</em> / <span>토</span></div>
+                      <div class="content">
+                        <div class="plan speeto">
+                          <em>스피또</em>
+                          <span> 301회 마감</span>
+                        </div>
+                        <div class="plan pension">
+                          <em>연금</em>
+                          <span>17:00 125회 마감</span>
+                        </div>
+                        <div class="plan lotto">
+                          <em>로또</em>
+                          <span>20:00 1237회 마감</span>
+                        </div>
+                        <div class="module type1">
+                          <span
+                            >13:00 정기대면 인터뷰 테뷰다 테스트 정기대면 인터뷰
+                            테뷰다 테스트</span
+                          >
+                        </div>
+
+                        <div class="module type2">
+                          <span>13:00 정기대면 인터뷰 테뷰다 테스트</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="btn__area type__mo">
+                  <button class="btn_swiper prev" id="arrow-prev-slide5">
+                    <span>prev</span>
+                  </button>
+                  <button class="btn_swiper next" id="arrow-next-slide5">
+                    <span>next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      @@include('@@webRoot/resources/html/_include/footer.html')
     </div>
 
     <!-- Script -->
@@ -759,143 +937,135 @@
     <script src="/resources/common/lib/moment.min.js"></script>
     <!-- Add Script -->
     <script>
-        $(function () {
-            const today = new Date();
-            $("#mainDatepicker").datepicker({
-                language: "ko",
-                todayHighlight: true,
-                maxViewMode: 0,
-                format: 'yyyy.mm.dd',
-            });
-
-            $('#mainDatepicker').datepicker('setDate', today);
-            const swiper = new Swiper('#slideNotice', {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                navigation: {
-                    nextEl: '#arrow-next-slide',
-                    prevEl: '#arrow-prev-slide',
-                },
-                spaceBetween: 24,
-                breakpoints: {
-                    1279: {
-                        slidesPerView: 3,
-                        slidesPerGroup: 3,
-
-                    }
-                },
-            });
-            const swiper2 = new Swiper('#slideSpeeto', {
-                slidesPerView: 1,
-                grid: {
-                    rows: 1,
-                },
-                navigation: {
-                    nextEl: '#arrow-next-slide2',
-                    prevEl: '#arrow-prev-slide2',
-                },
-                breakpoints: {
-                    1279: {
-                        slidesPerView: 1,
-                        grid: {
-                            rows: 2,
-                        },
-
-                    }
-                },
-            })
-            const swiper3 = new Swiper('#slideEdu', {
-                slidesPerView: 'auto',
-                navigation: {
-                    nextEl: '#arrow-next-slide3',
-                    prevEl: '#arrow-prev-slide3',
-                },
-                spaceBetween: 16,
-                breakpoints: {
-                    1279: {
-                        slidesPerView: 2,
-                        slidesPerGroup: 2,
-                        spaceBetween: 32,
-
-                    }
-                },
-            });
-            const swiper4 = new Swiper('#slideInfo', {
-                slidesPerView: 1,
-                breakpoints: {
-                    1279: {
-                        slidesPerView: 3,
-                        spaceBetween: 12,
-
-                    }
-                },
-                navigation: {
-                    nextEl: '#arrow-next-slide4',
-                    prevEl: '#arrow-prev-slide4',
-                },
-            });
-
-            var contaierW = $(window).width();
-            var swiper5 = undefined;
-
-            //swiper 오늘 요일로 셋팅
-            var idxDay = moment().day();
-
-            function initSwiper() {
-
-                if (contaierW < 1280 && swiper5 == undefined) {
-                    swiper5 = new Swiper("#slideCalendar", {
-                        slidesPerView: 1,
-                        slidesPerGroup: 1,
-                        spaceBetween: 24,
-                        observer: true,
-                        observeParents: true,
-                        simulateTouch: true,
-                        initialSlide: idxDay,
-                        navigation: {
-                            nextEl: '#arrow-next-slide5',
-                            prevEl: '#arrow-prev-slide5',
-                        },
-
-                    });
-                } else if (contaierW >= 1280 && swiper5 != undefined) {
-                    swiper5.destroy();
-                    swiper5 = undefined;
-                }
-            }
-
-            initSwiper();
-
-            $(window).on('resize', function () {
-                contaierW = $(window).width();
-                initSwiper();
-            });
-
-
-            $(".btn_view_detail").on('click', function () {
-                var setLeft = parseInt($(this).position().left) - 65;
-                $('.tooltip__wrap').toggleClass('active');
-                var idx = $(this).closest('li').index();
-                if (idx % 2 > 0 && contaierW >= 1280) {
-                    $('.tooltip__wrap').addClass('odd');
-                } else {
-                    $('.tooltip__wrap').removeClass('odd');
-                }
-                if (contaierW <= 1280) {
-                    $('.tooltip__wrap').css('left', setLeft + "px");
-                } else {
-                    $('.tooltip__wrap').removeAttr('style');
-                }
-            });
-            $(".btn_view_detail").on('mouseleave', function () {
-                $('.tooltip__wrap').removeClass('active');
-                $('.tooltip__wrap').removeClass('odd');
-            });
-
-            //$('.ui-datepicker-today').closest('tr').addClass('current__week');
-
+      $(function () {
+        const today = new Date();
+        $("#mainDatepicker").datepicker({
+          language: "ko",
+          todayHighlight: true,
+          maxViewMode: 0,
+          format: "yyyy.mm.dd",
         });
-    </script>
-</body>
 
+        $("#mainDatepicker").datepicker("setDate", today);
+
+        const swiper = new Swiper("#slideNotice", {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          navigation: {
+            nextEl: "#arrow-next-slide",
+            prevEl: "#arrow-prev-slide",
+          },
+          spaceBetween: 24,
+          breakpoints: {
+            1279: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+            },
+          },
+        });
+        const swiper2 = new Swiper("#slideSpeeto", {
+          slidesPerView: 1,
+          grid: {
+            rows: 1,
+          },
+          navigation: {
+            nextEl: "#arrow-next-slide2",
+            prevEl: "#arrow-prev-slide2",
+          },
+          breakpoints: {
+            1279: {
+              slidesPerView: 1,
+              grid: {
+                rows: 2,
+              },
+            },
+          },
+        });
+        const swiper3 = new Swiper("#slideEdu", {
+          slidesPerView: "auto",
+          navigation: {
+            nextEl: "#arrow-next-slide3",
+            prevEl: "#arrow-prev-slide3",
+          },
+          spaceBetween: 16,
+          breakpoints: {
+            1279: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              spaceBetween: 32,
+            },
+          },
+        });
+        const swiper4 = new Swiper("#slideInfo", {
+          slidesPerView: 1,
+          breakpoints: {
+            1279: {
+              slidesPerView: 3,
+              spaceBetween: 12,
+            },
+          },
+          navigation: {
+            nextEl: "#arrow-next-slide4",
+            prevEl: "#arrow-prev-slide4",
+          },
+        });
+
+        var contaierW = $(window).width();
+        var swiper5 = undefined;
+
+        //swiper 오늘 요일로 셋팅
+        var idxDay = moment().day();
+
+        function initSwiper() {
+          if (contaierW < 1280 && swiper5 == undefined) {
+            swiper5 = new Swiper("#slideCalendar", {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+              spaceBetween: 24,
+              observer: true,
+              observeParents: true,
+              simulateTouch: true,
+              initialSlide: idxDay,
+              navigation: {
+                nextEl: "#arrow-next-slide5",
+                prevEl: "#arrow-prev-slide5",
+              },
+            });
+          } else if (contaierW >= 1280 && swiper5 != undefined) {
+            swiper5.destroy();
+            swiper5 = undefined;
+          }
+        }
+
+        initSwiper();
+
+        $(window).on("resize", function () {
+          contaierW = $(window).width();
+          initSwiper();
+        });
+
+        $(".btn_view_detail").on("click", function () {
+          var setLeft = parseInt($(this).position().left) - 65;
+          $(".tooltip__wrap").toggleClass("active");
+          var idx = $(this).closest("li").index();
+          if (idx % 2 > 0 && contaierW >= 1280) {
+            $(".tooltip__wrap").addClass("odd");
+          } else {
+            $(".tooltip__wrap").removeClass("odd");
+          }
+          if (contaierW <= 1280) {
+            $(".tooltip__wrap").css("left", setLeft + "px");
+          } else {
+            $(".tooltip__wrap").removeAttr("style");
+          }
+        });
+        $(".btn_view_detail").on("mouseleave", function () {
+          $(".tooltip__wrap").removeClass("active");
+          $(".tooltip__wrap").removeClass("odd");
+        });
+
+        $(".ui-datepicker-today").closest("tr").addClass("current__week");
+      });
+    </script>
+  </body>
 </html>
