@@ -20,6 +20,7 @@
       font-weight: v.$font-weight-semi-bold;
       background-size: 32px;
       width: 195px;
+      color: v.$text-color-base;
 
       &:focus {
         outline: v.$input-outline;
@@ -112,11 +113,11 @@
     .order__quantity {
       flex-grow: 1;
 
-      &>ul {
+      .quantity__area {
         display: flex;
         gap: v.$gap-7;
 
-        &>li {
+        .up, .down {
           flex-grow: 1;
 
           .round__box {
@@ -184,15 +185,15 @@
           .round__box {
             position: relative;
 
-            &::after {
-              content: '';
-              position: absolute;
-              top: 24px;
-              left: 312px;
-              height: 140px;
-              width: 1px;
-              background-color: v.$border-gray-lighter;
-            }
+            // &::after {
+            //   content: '';
+            //   position: absolute;
+            //   top: 24px;
+            //   left: 312px;
+            //   height: 140px;
+            //   width: 1px;
+            //   background-color: v.$border-gray-lighter;
+            // }
 
             &>ul {
               display: flex;
@@ -225,7 +226,15 @@
                 }
 
               }
-
+              li + .graph:after{
+              content: '';
+              position: absolute;
+              top: 24px;
+              left: 304px;
+              height: 140px;
+              width: 1px;
+              background-color: v.$border-gray-lighter;
+              }
               .graph {
                 flex-grow: 1;
                 padding-left: v.$padding-9;

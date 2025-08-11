@@ -68,6 +68,7 @@ input[type=radio] {
             border: 1px solid $input-border-color;
             background-color: #fff;
             border-radius: v.$gap-2;
+            flex-shrink: 0;
         }
 
         &:checked {
@@ -133,6 +134,7 @@ input[type=radio] {
         &+label::before {
             @include m.square($input-size-base);
             border-radius: 50%;
+             flex-shrink: 0;
         }
 
         &:checked {
@@ -465,19 +467,19 @@ input[type=radio] {
     }
 
     tbody {
-        tr{
-            &.current__week {
-                td{
-                    background: v.$color-success-lighter;
-                    &:first-child{
-                        border-radius: 38px 0 0 38px;
-                    }
-                    &:last-child {
-                        border-radius: 0 38px 38px 0;
-                    }
-                }
-            }
-        }
+        // tr{
+        //     &.current__week {
+        //         td{
+        //             background: v.$color-success-lighter;
+        //             &:first-child{
+        //                 border-radius: 38px 0 0 38px;
+        //             }
+        //             &:last-child {
+        //                 border-radius: 0 38px 38px 0;
+        //             }
+        //         }
+        //     }
+        // }
         td {
             position: relative;
             height: 38px;

@@ -112,6 +112,7 @@ body {
 
     &.search {
         background: url(../img/layout/search.svg) no-repeat center / contain;
+        margin: 0 auto;
     }
 
     &.plus {
@@ -140,6 +141,7 @@ body {
 
     &.download {
         background: url(../img/common/download.svg) no-repeat center center / contain;
+        margin: 0 auto;
     }
     &.logout{
         background: url(../img/common/logout.svg) no-repeat center center / contain;

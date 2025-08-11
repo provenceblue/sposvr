@@ -305,13 +305,16 @@
         }
         .board__table{
             width: 1350px;
+            &.no__list{
+              width: 100%;
+            }
             .td,
             .th {
                 &.status {
-                    width: 7%;
+                    width: 8%;
                 }
                 &.offense {
-                    width: 24%;
+                    width: 23%;
                     text-align: left;
                 }
                 &.grade {
@@ -328,16 +331,15 @@
                 }
                 &.detail {
                     width: 22%;
-                    text-align: left;
                 }
                 &.manager {
                     width: 9%;
                 }
-
-
-
-                
-
+            }
+            .td{
+              &.detail {
+                    text-align:left;
+                }
             }
         }
     }
@@ -776,6 +778,9 @@
             }
         }
         .board__list {
+            &.scroll{
+              max-width:100%;
+            }
             .board__table {
                 width: 100%;
                 .board__tr{

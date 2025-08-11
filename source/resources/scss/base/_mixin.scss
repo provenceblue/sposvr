@@ -53,6 +53,7 @@
 	}
 
 	@else {
+    display: inline-block;
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: $line;
