@@ -178,6 +178,9 @@ button {
         @include m.square(32px);
         background-size: 19px;
     }
+    &:disabled{
+      background-color: v.$gray-color-5;
+    }
 }
 
 .btn_view_detail {

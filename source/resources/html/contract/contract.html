@@ -52,9 +52,10 @@
                                                     aria-controls="view_1" id="control_1"
                                                     data-call-more='content__area'><i class="svg__icon arrow"
                                                         aria-hidden="true"></i><span>신규계약 더보기</span></button>
-                                                        <!-- 펼침상태 class on 추가, aria-expanded='true', 하위 컨텐츠영역과 id 값 매칭 -->
+                                                <!-- 펼침상태 class on 추가, aria-expanded='true', 하위 컨텐츠영역과 id 값 매칭 -->
                                             </div>
-                                            <div class="content__area active" id="view_1" aria-labelledby="control_1"><!-- 펼침상태 class active 추가, 아코디언 버튼 영역과 id 값 매칭 -->
+                                            <div class="content__area active" id="view_1" aria-labelledby="control_1">
+                                                <!-- 펼침상태 class active 추가, 아코디언 버튼 영역과 id 값 매칭 -->
                                                 <div class="round__box bg__gray">
                                                     <div class="info__wrap">
                                                         <span class="info">계약 준비 과정을 모두 완료하시면 전자계약 링크가 활성화 됩니다.</span>
@@ -104,7 +105,7 @@
                                                                     <span class="mo__label">상태</span>
                                                                     <em>100% <span
                                                                             class="mo__label finished">(완료)</span></em>
-                                                                    
+
                                                                     <!-- 모바일용 -->
                                                                 </div>
                                                                 <div class="td check">
@@ -130,7 +131,7 @@
                                                                     <span class="mo__label">상태</span>
                                                                     <em>83% <span class="mo__label finished">(완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -155,9 +156,9 @@
                                                                     <span class="mo__label">상태</span>
                                                                     <em>0% <span
                                                                             class="mo__label unfinished">(미완료)</span>
-                                                                            <!-- 모바일용 --></em>
-                                                                    
-                                                                    
+                                                                        <!-- 모바일용 --></em>
+
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="unfinished">미완료</span>
@@ -183,7 +184,7 @@
                                                                     <em>0% <span
                                                                             class="mo__label unfinished">(미완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="unfinished">미완료</span>
@@ -210,7 +211,7 @@
                                                                     <em>0% <span
                                                                             class="mo__label unfinished">(미완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="unfinished">미완료</span>
@@ -245,7 +246,8 @@
                                             <div class="content__area" id="view_2" aria-labelledby="control_2">
                                                 <div class="round__box bg__gray">
                                                     <div class="info__wrap complete">
-                                                        <a href="#none" type="button" class="btn primary large"><span>계약서 보기</span></a>
+                                                        <a href="#none" type="button"
+                                                            class="btn primary large"><span>계약서 보기</span></a>
                                                         <span class="date">(계약완료 2025.06.17 16:01)</span>
                                                     </div>
                                                 </div>
@@ -284,7 +286,7 @@
                                                                     <em>100% <span
                                                                             class="mo__label finished">(완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -309,7 +311,7 @@
                                                                     <span class="mo__label">상태</span>
                                                                     <em>83% <span class="mo__label finished">(완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -335,7 +337,7 @@
                                                                     <em>100% <span
                                                                             class="mo__label finished">(완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -360,7 +362,7 @@
                                                                     <span class="mo__label">상태</span>
                                                                     <em>95% <span class="mo__label finished">(완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -387,7 +389,7 @@
                                                                     <em>100% <span
                                                                             class="mo__label finished">(완료)</span>
                                                                         <!-- 모바일용 --></em>
-                                                                    
+
                                                                 </div>
                                                                 <div class="td check">
                                                                     <span class="finished">완료</span>
@@ -407,6 +409,19 @@
                                 </li>
                             </ul>
                             @@include('@@webRoot/resources/html/_include/pagination.html')
+                            <div class="board__wrap">
+                                <div class="board__list">
+                                    <ul class="board__table">
+
+                                        <!-- 조회된 내역이 없을 때 -->
+                                        <li class="board__tr tbody no__list">
+                                            <span><i class="svg__icon no__list" aria-hidden="true"></i>조회된 내역이
+                                                없습니다.</span>
+                                        </li>
+                                        <!--// 조회된 내역이 없을 때 -->
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

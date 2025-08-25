@@ -52,7 +52,12 @@
         height: 166px;
         padding: v.$padding-8 v.$padding-9;
 
-        &::before {
+        
+
+        &>ul {
+          display: flex;
+          align-items: stretch;
+          &::before {
           content: '';
           height: 100%;
           width: 1px;
@@ -63,11 +68,18 @@
           height: 71%;
           transform: translate(-50%, -50%);
         }
-
-        &>ul {
-          display: flex;
-          align-items: stretch;
-
+        &.single__type{
+          &::before{
+            display: none;
+          }
+          &>li{
+              flex: 1 1 90%;
+              text-align: center;
+             &:first-child{
+              padding-right:0;
+             }
+            }
+        }
           li {
             flex: 1 1 40%;
             position: relative;
@@ -114,9 +126,9 @@
       flex-grow: 1;
 
       .quantity__area {
-        display: flex;
+        display: grid;
         gap: v.$gap-7;
-
+        grid-template-columns: 1fr 1fr;
         .up, .down {
           flex-grow: 1;
 
@@ -1076,6 +1088,32 @@
             margin-top: v.$padding-7;
           }
         }
+        &.speeto.no__list {
+          padding: v.$padding-7;
+          margin-top: v.$padding-6;
+          border: 1px solid v.$border-gray;
+          border-radius: 12px;
+          .board__tit.type__pc{
+            display: block;
+          }
+
+          .board__grid {
+            margin-top: v.$padding-7;
+
+            .board__tr {
+              border: none;
+              padding: 0 0 v.$padding-6 0;
+              border-bottom: 1px solid v.$border-gray-light;
+              border-radius: 0;
+
+              &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+              }
+
+            }
+          }
+        }
       }
     }
   }
@@ -1374,10 +1412,10 @@
       }
 
       .order__quantity {
-        &>ul {
+        .quantity__area {
           gap: v.$gap-4;
-
-          &>li .round__box {
+          .up, .down{
+            .round__box {
             padding: v.$padding-7;
             height: auto;
 
@@ -1407,6 +1445,8 @@
               }
             }
           }
+          }
+          
         }
 
         .label {
