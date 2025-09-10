@@ -32,6 +32,9 @@
                                     <li>
                                         <div class="round__box">
                                             <div class="tit"><span>온라인복권</span></div>
+                                            <!-- <div class="no__list">
+                                                 <span><i class="svg__icon no__list" aria-hidden="true"></i>온라인복권 판매점이 아닙니다.</span>
+                                            </div> -->
                                             <ul>
                                                 <li>
                                                     <div class="label">합계액</div>
@@ -53,7 +56,10 @@
                                     <li>
                                         <div class="round__box">
                                             <div class="tit"><span>인쇄복권</span></div>
-                                            <ul>
+                                            <div class="no__list">
+                                                 <span><i class="svg__icon no__list" aria-hidden="true"></i>인쇄복권 판매점이 아닙니다.</span>
+                                            </div>
+                                            <!-- <ul>
                                                 <li>
                                                     <div class="label">합계액</div>
                                                     <div class="text">
@@ -68,7 +74,7 @@
                                                         <em class="account">100-123-456789 (유복권)</em>
                                                     </div>
                                                 </li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                     </li>
                                 </ul>
@@ -326,6 +332,17 @@
                                     </ul>
                                 </div>
                                 @@include('@@webRoot/resources/html/_include/pagination.html')
+
+                                <!-- 조회내역 없을 때 -->
+                                <div class="board__list scroll  no__list" tanindex="0"><!-- no__list 추가 -->
+                                    <ul class="board__table online">
+                                        <li class="board__tr tbody no__list">
+                                            <span><i class="svg__icon no__list" aria-hidden="true"></i>조회된 내역이
+                                            없습니다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--// 조회내역 없을 때  -->
                             </li>
                             <!--// 온라인복권 -->
                             <!-- 인쇄복권 -->
@@ -515,6 +532,16 @@
                                     </ul>
                                 </div>
                                 @@include('@@webRoot/resources/html/_include/pagination.html')
+                                 <!-- 조회내역 없을 때 -->
+                                <div class="board__list scroll  no__list" tanindex="0"><!-- no__list 추가 -->
+                                    <ul class="board__table print">
+                                        <li class="board__tr tbody no__list">
+                                            <span><i class="svg__icon no__list" aria-hidden="true"></i>조회된 내역이
+                                            없습니다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--// 조회내역 없을 때  -->
                             </li>
                         </ul>
                     </div>

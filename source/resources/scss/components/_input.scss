@@ -423,7 +423,18 @@ input[type=radio] {
         position: relative;
         font-size: v.$font-heading-small;
         font-weight: v.$font-weight-bold;
-
+      select{
+        border-radius: v.$gap-2;
+        padding: v.$padding-1 v.$padding-2;
+        width: 30%;
+        background: url(../img/common/arrow-down.svg) no-repeat center right 4px / 16px;
+        margin-right: v.$padding-2;
+        border-color: #58616A;
+        font-size: v.$font-heading-small;
+        &.ui-datepicker-month{
+          margin-left:v.$padding-5;
+        }
+      }
     }
 
     .ui-datepicker-prev,

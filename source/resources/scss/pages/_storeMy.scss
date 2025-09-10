@@ -362,6 +362,12 @@
             flex-direction: column;
             gap: v.$padding-8;
         }
+        .con{
+          pre{
+            font-family: v.$font-family-base;
+            white-space: pre-wrap;
+          }
+        }
     }
 } 
 .deposit{

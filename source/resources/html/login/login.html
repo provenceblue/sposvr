@@ -19,26 +19,26 @@
                         <span><em>판매인포탈</em> 서비스</span>
                     </div>
                     <div class="input__area">
-                        <div class="id__con">
+                        <div class="id__con full"><!-- full 추가 -->
                             <span class="form__area">
                                 <input type="text" class="input__box" id="userId" placeholder="아이디 입력">
                                 <label for="userId">아이디</label>
                             </span>
-                            <span class="form__area">
+                            <!-- <span class="form__area">
                                 <span class="select__label">이메일 주소 선택</span>
                                 <select name="email" id="email" title="이메일 선택" class="select__box">
                                     <option selected="" disabled="" hidden=""></option>
                                     <option value="0">직접 입력</option>
                                     <option value="@gmail.com">@gmail.com</option>
                                 </select>
-                            </span>
+                            </span> -->
                         </div>
-                        <div class="input__email">
+                        <!-- <div class="input__email">
                             <span class="form__area">
                                 <input type="text" placeholder="이메일 주소 직접 입력" id="inputEmail" class="input__box full">
                                 <label for="inputEmail">이메일 주소 직접 입력</label>
                             </span>
-                        </div>
+                        </div> -->
                         <div class="pw__con">
                             <div class="form__area">
                                 <input type="password" placeholder="비밀번호 입력" id="userPw" class="input__box full">
@@ -137,8 +137,8 @@
         });
 
         function modalDemo1() {
-            //$.confirm("소중한 개인정보 보호를 위해<br />비밀번호 변경을 하시겠습니까?", '', '', '변경 할게요', '다음에 할게요', 'loginBtn'); //리턴할 엘리먼트의 id 전달
-            $.alert("아이디를 입력해주세요.", '', '', '', 'loginBtn'); //리턴할 엘리먼트의 id 전달
+            $.confirm("소중한 개인정보 보호를 위해<br />비밀번호 변경을 하시겠습니까?", '', '', '변경 할게요', '다음에 할게요', 'loginBtn'); //리턴할 엘리먼트의 id 전달
+            //$.alert("아이디를 입력해주세요.", '', '', '', 'loginBtn'); //리턴할 엘리먼트의 id 전달
         }
     </script>
     <!-- 비밀번호 변경 안내 팝업-->

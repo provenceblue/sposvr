@@ -426,6 +426,11 @@
         .fc-view-harness-active {
             //height: 398px !important;
         }
-
+        .fc .fc-popover{
+            max-width:100%;
+        }
+        .fc-h-event .fc-event-title{
+            white-space: normal;
+        }
     }
 }

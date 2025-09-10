@@ -216,12 +216,31 @@ $(document).ready(function () {
         $parent.addClass('active');
         $('.' + name).hide().removeClass('active');
         $target.show().addClass('active');
-        $('.' + $(this).attr('aria-expanded', false));
+        $(this).parent().siblings('li').find('button').attr('aria-expanded', false);
         $(this).attr('aria-expanded', true);
     });
-
+    $('body').on('click', '.go__top > button', function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 200);
+    })
+    var topBtn = $(".go__top");
+    
+    $(window).scroll(function () {
+        var windowWidth = $(window).width();
+        if(windowWidth < 1280){
+            if ($(this).scrollTop() > 100) {
+              
+              topBtn.fadeIn(); 
+            } else {
+              topBtn.fadeOut(); 
+            }
+        }
+        
+    });
 
 })
+
 
 //byte check
 function gfn_fnChkByte($target, maxByte) {

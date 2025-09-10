@@ -85,11 +85,12 @@ body {
                     height: 0;
                     width: 0;
                 }
-                &.no__list{
-                    .svg__icon{
+
+                &.no__list {
+                    .svg__icon {
                         background-image: url(../img/common/ico-bell.svg);
                     }
-                    
+
                 }
             }
         }
@@ -101,11 +102,13 @@ body {
         background-color: #fff;
         height: $gnb-height;
         align-items: center;
-        .logo{
+
+        .logo {
             position: relative;
             z-index: 10;
 
         }
+
         a {
             display: flex;
             align-items: center;
@@ -133,6 +136,45 @@ body {
                 column-gap: v.$gap-5;
                 transition: all 0.188s ease-in;
 
+                >li {
+                    &:nth-child(2) {
+                        .sub__inner {
+                            .title {
+                                i {
+                                    background-image: url(../img/common/ico-gnb-2.png);
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        .sub__inner {
+                            .title {
+                                i {
+                                    background-image: url(../img/common/ico-gnb-3.png);
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(4) {
+                        .sub__inner {
+                            .title {
+                                i {
+                                    background-image: url(../img/common/ico-gnb-4.png);
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(5) {
+                        .sub__inner {
+                            .title {
+                                i {
+                                    background-image: url(../img/common/ico-gnb-5.png);
+                                }
+                            }
+                        }
+                    }
+                }
+
                 >li>a {
                     display: block;
                     padding: 0 v.$padding-6;
@@ -141,7 +183,8 @@ body {
                     color: v.$text-color-sub;
                     height: $gnb-height;
                     line-height: $gnb-height;
-                    &:hover{
+
+                    &:hover {
                         color: v.$primary-color-dark;
                         border-bottom: 4px solid v.$primary-color;
                     }
@@ -207,7 +250,8 @@ body {
                                 border-bottom: 1px solid v.$gray-color-20;
                                 font-size: v.$font-heading-small;
                                 font-weight: v.$font-weight-bold;
-                                &:hover{
+
+                                &:hover {
                                     text-decoration: underline;
                                 }
                             }
@@ -239,8 +283,9 @@ body {
                                             padding-left: v.$padding-4;
 
                                         }
+
                                         &:hover {
-                                            span{
+                                            span {
                                                 text-decoration: underline;
                                             }
                                         }
@@ -296,40 +341,43 @@ body {
             z-index: 1000;
             position: relative;
         }
+
         .notice__area {
-        @include m.flex-between();
-        align-items: center;
-        background-color: #EEF2F7;
-        padding: v.$padding-3 v.$padding-4;
-        font-size: v.$font-body-xsmall;
-        width:100%;
-        div>ul {
-            li>span {
-                line-height: 20px;
-            }
+            @include m.flex-between();
+            align-items: center;
+            background-color: #EEF2F7;
+            padding: v.$padding-3 v.$padding-4;
+            font-size: v.$font-body-xsmall;
+            width: 100%;
 
-            .age {
-                padding-left: 32px;
-                background: url(../img/common/ico_megaphone.svg) no-repeat center left 6px / 18px;
-
-                span {
-                    color: v.$color-information;
-                    font-weight: v.$font-weight-semi-bold;
+            div>ul {
+                li>span {
+                    line-height: 20px;
                 }
-            }
 
-            .maximum {
-                padding-left: 45px;
-                background: url(../img/common/img-sale-notice.png) no-repeat center left /42px;
+                .age {
+                    padding-left: 32px;
+                    background: url(../img/common/ico_megaphone.svg) no-repeat center left 6px / 18px;
 
-                span {
-                    color: v.$color-dager-dark;
-                    font-weight: v.$font-weight-semi-bold;
+                    span {
+                        color: v.$color-information;
+                        font-weight: v.$font-weight-semi-bold;
+                    }
                 }
+
+                .maximum {
+                    padding-left: 45px;
+                    background: url(../img/common/img-sale-notice.png) no-repeat center left /42px;
+
+                    span {
+                        color: v.$color-dager-dark;
+                        font-weight: v.$font-weight-semi-bold;
+                    }
+                }
+
             }
-            
         }
-    }
+
         .header__inner {
             display: flex;
             align-items: center;
@@ -380,6 +428,7 @@ body {
                             background-size: 16px;
                             margin: 0 auto;
                         }
+
                         &.no__list {
                             .svg__icon {
                                 background-image: url(../img/common/ico-bell.svg);
@@ -392,12 +441,14 @@ body {
                 .btn__area {
                     .btn__navi {
                         display: block;
-                        text-align:center;
+                        text-align: center;
+
                         span {
                             display: block;
                         }
-                        i{
-                          margin: 0 auto;
+
+                        i {
+                            margin: 0 auto;
                         }
 
                     }
@@ -444,13 +495,15 @@ body {
                     z-index: -1;
                     content: '';
                 }
+
                 .logout__area {
                     width: 39vw;
                     display: flex;
                     justify-content: center;
                     position: absolute;
-                    bottom:24px;
+                    bottom: 24px;
                 }
+
                 .gnb__inner {
                     display: flex;
                     align-items: normal;
@@ -622,7 +675,7 @@ body {
 }
 
 @media (orientation: landscape) {
-    .mo__header .menu__mobile .gnb__wrap .logout__area{
+    .mo__header .menu__mobile .gnb__wrap .logout__area {
         position: static;
     }
 }

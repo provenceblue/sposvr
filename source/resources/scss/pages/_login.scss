@@ -84,7 +84,21 @@
           .form__area:nth-child(2) {
             flex-grow: 1;
           }
+          
+          &.full{
+          align-items: stretch;
+          .input__box {
+            width:100%;
+          }
+           .form__area:first-child {
+            flex-basis: 100%;
+            input{
+              width:100%;
+            }
+           }
         }
+        }
+        
 
         .input__email {
           display: none;

@@ -127,15 +127,16 @@
         max-width: 1026px;
 
         .page__title {
-            margin-bottom: v.$gap-10;
+            margin-bottom: v.$gap-5;
 
             h2 {
-                font-size: v.$font-heading-xlarge;
+                font-size: 36px;
             }
 
             .sub__text {
                 font-size: v.$font-heading-small;
-                margin-top: v.$padding-8;
+                margin-top: v.$padding-3;
+                display: none;
             }
         }
     }
@@ -145,8 +146,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: row;
-    margin-bottom: v.$gap-10;
-
+    justify-content: flex-end;
     .breadcrumb {
         display: flex;
         align-items: center;
@@ -265,6 +265,7 @@
 
         .breadcrumb__wrap {
             margin-bottom: v.$gap-8;
+            justify-content: flex-start;
 
             .breadcrumb {
                 li {

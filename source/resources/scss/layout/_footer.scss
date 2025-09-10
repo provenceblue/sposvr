@@ -55,6 +55,23 @@ footer{
         }
     }
 }
+.go__top{
+    position: fixed;
+    bottom: 16px;
+    right:16px;
+    z-index:999;
+    display: none;
+    button{
+        @include m.square(60px);
+        border-radius: 50%;
+        border: 1px solid v.$border-gray-light;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+        font-size: v.$font-body-xsmall;
+        font-weight: 600;
+        background-color: #fff;
+        
+    }
+}
 
 @include b.size-mobile {
     footer{
@@ -78,7 +95,7 @@ footer{
                     gap: v.$padding-3;
                     flex-direction: column;
                     em{
-                        display: none;
+                        font-weight: v.$font-weight-semi-bold;
                     }
                     b{
                         font-weight: v.$font-weight-semi-bold;

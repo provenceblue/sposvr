@@ -155,6 +155,10 @@ body {
         background: url(../img/layout/no-alrim.svg) no-repeat center center / contain;
         @include m.square(16px);
     }
+    &.on__top {
+        background: url(../img/layout/ico-go-top.svg) no-repeat center center / 16px;
+        @include m.square(18px);
+    }
 }
 
 .file_attach {

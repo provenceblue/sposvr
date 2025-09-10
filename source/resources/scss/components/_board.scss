@@ -10,6 +10,14 @@
     &.scroll {
       overflow-x: auto;
       max-width: 978px;
+      &.no__list{
+        overflow: hidden;
+        .board__table {
+          &.online {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 

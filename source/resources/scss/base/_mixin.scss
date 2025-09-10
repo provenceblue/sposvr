@@ -46,7 +46,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-width: $max-width;
-
+    word-break: break-all;
 	@if ($line==1) {
 		display: block;
 		white-space: nowrap;
